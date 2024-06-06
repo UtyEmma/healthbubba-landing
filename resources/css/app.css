@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+      font-family: "Aeonik", system-ui, sans-serif;
+    }
+  }
+
+@layer components {
+    .btn {
+        @apply py-3 px-4 rounded-xl font-medium space-x-2
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white border-2 border-primary-500
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-white
+    }
+
+    .btn-white {
+        @apply bg-white text-black
+    }
+
+    .btn-square {
+        @apply shrink-0
+    }
+}

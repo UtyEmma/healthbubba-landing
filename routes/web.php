@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,14 +13,18 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/register', function(){
+    return Inertia::render('Auth/Register');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/download', function(){
+    return Inertia::render('Download');
+});
+
+Route::get('/packages', function(){
+    return Inertia::render('Packages');
+});
+
+Route::get('/privacy-policy', function(){
+    return Inertia::render('Policy/PrivacyPolicy');
+});
