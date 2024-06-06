@@ -28,3 +28,7 @@ Route::get('/packages', function(){
 Route::get('/privacy-policy', function(){
     return Inertia::render('Policy/PrivacyPolicy');
 });
+
+Route::get('/terms', function(){
+    return Inertia::render('Policy/Terms');
+});
