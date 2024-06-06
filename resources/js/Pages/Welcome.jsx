@@ -1,6 +1,7 @@
 import { Footer } from '@/Layouts/Partials/Footer';
 import { Header } from '@/Layouts/Partials/Header';
 import { Cta } from '@/Partials/Cta';
+import SinglePackage from '@/Partials/Packages/SinglePackage';
 import { Link, Head } from '@inertiajs/react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
@@ -424,56 +425,22 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         <button className="border-2 text-sm items-center space-x-1 p-2 px-3 bg-gray-100 rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Specialized Tests</button>
                         <button className="border-2 text-sm items-center space-x-1 p-2 px-3 bg-gray-100 rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Chemical Pathology</button>
                     </div>
+
                     <div className="grid grid-cols-4 gap-5">
-                        <div className="p-1 rounded-2xl shadow-xl ">
-                            <div>
-                                <img src="/assets/imgs/packages/microbiology.png" alt="" />
-                            </div>
-                            <div className="p-3 space-y-4">
-                                <div className="space-y-2">
-                                <a className="font-semibold " href="#">Microscopy</a>
-                                <p className="text-muted line-clamp-3">This test looks at a sample of choice under a microscope. It can see cells from your urinary tract, blood cell...</p>
-                                </div>
-                                <button className="py-2 px-5 border space-x-3 rounded-[50px] shadow">Read More <i className="bi bi-arrow-right" /></button>
-                            </div>
-                        </div>
-                        <div className="p-1 rounded-2xl shadow-xl ">
                         <div>
-                            <img src="/assets/imgs/packages/microbiology.png" alt="" />
+                            <SinglePackage />
                         </div>
-                        <div className="p-3 space-y-4">
-                            <div className="space-y-2">
-                            <a className="font-semibold " href="#">Microscopy</a>
-                            <p className="text-muted line-clamp-3">This test looks at a sample of choice under a microscope. It can see cells from your urinary tract, blood cell...</p>
-                            </div>
-                            <button className="py-2 px-5 border space-x-3 rounded-[50px] shadow">Read More <i className="bi bi-arrow-right" /></button>
-                        </div>
-                        </div>
-                        <div className="p-1 rounded-2xl shadow-xl ">
                         <div>
-                            <img src="/assets/imgs/packages/microbiology.png" alt="" />
+                            <SinglePackage />
                         </div>
-                        <div className="p-3 space-y-4">
-                            <div className="space-y-2">
-                            <a className="font-semibold " href="#">Microscopy</a>
-                            <p className="text-muted line-clamp-3">This test looks at a sample of choice under a microscope. It can see cells from your urinary tract, blood cell...</p>
-                            </div>
-                            <button className="py-2 px-5 border space-x-3 rounded-[50px] shadow">Read More <i className="bi bi-arrow-right" /></button>
-                        </div>
-                        </div>
-                        <div className="p-1 rounded-2xl shadow-xl ">
                         <div>
-                            <img src="/assets/imgs/packages/microbiology.png" alt="" />
+                            <SinglePackage />
                         </div>
-                        <div className="p-3 space-y-4">
-                            <div className="space-y-2">
-                            <a className="font-semibold " href="#">Microscopy</a>
-                            <p className="text-muted line-clamp-3">This test looks at a sample of choice under a microscope. It can see cells from your urinary tract, blood cell...</p>
-                            </div>
-                            <button className="py-2 px-5 border space-x-3 rounded-[50px] shadow">Read More <i className="bi bi-arrow-right" /></button>
-                        </div>
+                        <div>
+                            <SinglePackage />
                         </div>
                     </div>
+
                     <div className="text-center">
                         <button className="border px-3 py-1 bg-neutral-50 rounded-full shadow justify-start items-start inline-flex">
                         View all Tests <i className="ms-2 bi bi-arrow-right-short" />
@@ -481,6 +448,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </section>
 
+                {/* Testimonials Start */}
                 <section className="bg-gray-100 relative">
                     <img src="/assets/imgs/media/banners/banner-2.svg" alt="" />
                     <div className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
@@ -526,7 +494,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </div>
                     </div>
                 </section>
+                {/* Testimonials End */}
 
+                {/* FAQs Start */}
                 <section className="py-20 max-w-7xl mx-auto space-y-10">
                     <div className="w-2/4 mx-auto space-y-10">
                         <div className="flex justify-center">
@@ -651,6 +621,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </div>
                     </div>
                 </section>
+                {/* FAQs End */}
 
                 <section className="py-20 max-w-7xl mx-auto ">
                     <Cta />

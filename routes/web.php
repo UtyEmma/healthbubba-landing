@@ -21,8 +21,16 @@ Route::get('/download', function(){
     return Inertia::render('Download');
 });
 
-Route::get('/packages', function(){
-    return Inertia::render('Packages');
+Route::prefix('packages')->group(function(){
+    Route::get('/', function(){
+        return Inertia::render('Packages/Packages');
+    });
+
+    Route::prefix('{package}')->group(function(){
+        Route::get('', function(){
+            return Inertia::render('Packages/PackageDetails');
+        });
+    });
 });
 
 Route::get('/privacy-policy', function(){
