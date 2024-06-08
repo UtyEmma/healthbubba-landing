@@ -85,37 +85,37 @@ export const Footer = () => {
 
                     <div class={'flex space-x-3'}>
                         <div>
-                            <div className="w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/twitter.svg" alt="" />
                             </div>
                         </div>
 
                         <div>
-                            <div className="w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/instagram.svg" alt="" />
                             </div>
                         </div>
 
                         <div>
-                            <div className="w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/facebook.svg" alt="" />
                             </div>
                         </div>
 
                         <div>
-                            <div className="w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/threads.svg" alt="" />
                             </div>
                         </div>
 
                         <div>
-                            <div className="w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/telegram.svg" alt="" />
                             </div>
                         </div>
 
                         <div>
-                            <div className="w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/linkedin.svg" alt="" />
                             </div>
                         </div>
