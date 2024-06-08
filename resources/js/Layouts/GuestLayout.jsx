@@ -7,7 +7,7 @@ export default function ({ children, ...props }) {
         <div className={`min-h-screen ${props.className ?? ''}`}>
             <Header />
 
-            <main>
+            <main class='py-10'>
                 {children}
             </main>
 

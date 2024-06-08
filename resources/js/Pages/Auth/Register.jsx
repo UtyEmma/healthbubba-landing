@@ -34,23 +34,23 @@ export default function Register() {
                             <p class={'text-muted'}>Book appointment, Order Lab Test and Manage Prescription</p>
                         </div>
 
-                        <div>
-                            <label class={'font-medium mb-2'}>Email Address</label>
-                            <input type="text" class={'shadow w-full rounded-md border-gray-100'} placeholder='Email Address' />
+                        <div className='space-y-1'>
+                            <label class={'font-medium'}>Email Address</label>
+                            <input type="text" class={'form-control'} placeholder='Email Address' />
+                        </div>
+
+                        <div className='space-y-1'>
+                            <label class={'font-medium'}>Password</label>
+                            <input type="password" class={'form-control'} placeholder='Email Address' />
+                        </div>
+
+                        <div className='space-y-1'>
+                            <label class={'font-medium'}>Confirm Password</label>
+                            <input type="password" class={'form-control'} placeholder='Password' />
                         </div>
 
                         <div>
-                            <label class={'font-medium mb-2'}>Password</label>
-                            <input type="password" class={'shadow w-full rounded-md border-gray-100'} placeholder='Email Address' />
-                        </div>
-
-                        <div>
-                            <label class={'font-medium mb-2'}>Confirm Password</label>
-                            <input type="password" class={'shadow w-full rounded-md border-gray-100'} placeholder='Email Address' />
-                        </div>
-
-                        <div>
-                            <Button class={'w-full btn-primary'}>Get Started</Button>
+                            <Button class={'btn w-full btn-primary'}>Get Started</Button>
                         </div>
                     </div>
                 </div>

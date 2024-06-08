@@ -10,11 +10,20 @@
 
 @layer components {
     .btn {
-        @apply py-3 px-4 rounded-xl font-medium space-x-2
+        @apply py-2 px-4 rounded-lg relative space-x-2 inline-flex justify-center transition-all duration-150 font-medium gap-1 items-center active:scale-95
     }
 
     .btn-primary {
-        @apply bg-primary text-white border-2 border-primary-500
+        @apply bg-primary overflow-hidden text-white ring-2 ring-primary shadow-lg shadow-primary-200  hover:shadow-none
+    }
+
+    .btn-light {
+        @apply bg-gray-100 overflow-hidden text-muted ring-2 ring-gray-200 shadow-lg shadow-gray-200  hover:shadow-none
+    }
+
+    .btn-primary::before {
+        content: '';
+        @apply bg-white absolute top-0 left-0 right-0 bottom-[50%] bg-opacity-10
     }
 
     .btn-secondary {
@@ -27,5 +36,17 @@
 
     .btn-square {
         @apply shrink-0
+    }
+
+    .form-control{
+        @apply shadow-sm w-full rounded-lg focus:border-0 border-gray-200 focus:ring-1 focus:ring-primary;
+    }
+
+    .form-label{
+        @apply leading-loose font-medium
+    }
+
+    .card {
+        @apply shadow p-5 rounded-xl border border-gray-200 shadow-gray-100
     }
 }

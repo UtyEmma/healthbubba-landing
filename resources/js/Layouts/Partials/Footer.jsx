@@ -13,7 +13,7 @@ export const Footer = () => {
                         <div class="p-5 rounded-xl shadow border space-y-3 bg-white">
                             <h5 class={'font-semibold'}>Subscribe to Our Newsletter</h5>
                             <div className="flex space-x-3">
-                                <input type="text" placeholder='Email Address' class="shadow-md border-gray-200 rounded-lg flex-1" />
+                                <input type="text" placeholder='Email Address' class="form-control flex-1" />
                                 <button class="btn btn-primary">Subscribe</button>
                             </div>
 
