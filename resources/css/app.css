@@ -4,7 +4,7 @@
 
 @layer base {
     html {
-      font-family: "Aeonik", system-ui, sans-serif;
+      font-family: "Aeonik", system-ui, sans-serif !important;
     }
   }
 
@@ -27,7 +27,12 @@
     }
 
     .btn-secondary {
-        @apply bg-secondary text-white
+        @apply bg-secondary overflow-hidden text-white ring-2 ring-secondary shadow-lg shadow-secondary  hover:shadow-none
+    }
+
+    .btn-secondary::before {
+        content: '';
+        @apply bg-white absolute top-0 left-0 right-0 bottom-[50%] bg-opacity-10
     }
 
     .btn-white {

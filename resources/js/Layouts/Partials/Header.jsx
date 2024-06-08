@@ -1,4 +1,6 @@
 import CartIcon from '@/Icons/CartIcon'
+import Separator from '@/Icons/Separator'
+import { Menu } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { Link } from '@inertiajs/react'
 import React from 'react'
@@ -34,11 +36,29 @@ export const Header = () => {
                 </div>
             </div>
             <div className="col-span-2">
-                <div className="rounded-xl bg-secondary p-2 flex justify-between items-center">
+                <div className="rounded-xl bg-secondary p-2 flex justify-between items-center relative">
                 <div>
-                    <button className="btn btn-white bg-opacity-10 text-white">For Patients <ChevronDownIcon class={'w-5 h-5'} /></button>
+                    <Menu>
+                        <Menu.Button className="btn btn-white bg-opacity-10 text-white">
+                            For Patients <ChevronDownIcon class={'w-4 h-4'} />
+                        </Menu.Button>
+
+                        <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
+                            <Menu.Item as='div' className="py-2">
+                                <Link href="#" className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">
+                                For Patients
+                                </Link>
+                            </Menu.Item>
+
+                            <Menu.Item as='div' className="py-2">
+                                <Link href="#" className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">
+                                    Health Practitioners
+                                </Link>
+                            </Menu.Item>
+                        </Menu.Items>
+                    </Menu>
                 </div>
-                <div className="bg-white px-1 h-full before:w-2 before:absolute before:h-2 before:bg-white before:rounded-full before:top-0 after:w-2 after:absolute after:h-2 after:bg-white after:rounded-full after:bottom-0" />
+                <Separator className='w-2 h-auto' />
                 <div>
                     <button className="btn btn-white w-auto">
                         <CartIcon className="w-6 h-6 stroke-black" />

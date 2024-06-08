@@ -1,7 +1,9 @@
 import { Footer } from '@/Layouts/Partials/Footer';
 import { Header } from '@/Layouts/Partials/Header';
 import { Cta } from '@/Partials/Cta';
+import { FaqItem } from '@/Partials/FAQs/FaqItem';
 import SinglePackage from '@/Partials/Packages/SinglePackage';
+import { Disclosure } from '@headlessui/react';
 import { Link, Head } from '@inertiajs/react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
@@ -391,7 +393,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </section>
 
-                <section className="bg-primary p-10 relative overflow-hidden bg-[url('/assets/imgs/media/banners/curved-bg.svg')] bg-no-repeat bg-center">
+                {/* Client Start */}
+                <section className="bg-primary py-10 px-20  relative overflow-hidden bg-[url('/assets/imgs/media/banners/curved-bg.svg')] bg-no-repeat bg-center bg-origin-content">
                     <div className="w-1/2 text-center text-white mx-auto space-y-10 z-10">
                         <p className="text-xl font-medium">“I am impressed by Health Bubba's patient-centric contributions towards the Nigerian Health sector by leveraging technology to redefine quality healthcare. ”</p>
                         <div className="flex justify-center space-x-3">
@@ -405,7 +408,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </div>
                     </div>
                 </section>
+                {/* Client End */}
 
+                {/* Package Start */}
                 <section className="py-20 max-w-7xl mx-auto space-y-10">
                     <div className="flex justify-center">
                         <div className="mx-auto inline-flex border shadow text-sm items-center space-x-1 p-2 px-3 rounded-[50px]">
@@ -447,6 +452,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </button>
                     </div>
                 </section>
+                {/* Package End */}
 
                 {/* Testimonials Start */}
                 <section className="bg-gray-100 relative">
@@ -500,124 +506,35 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 <section className="py-20 max-w-7xl mx-auto space-y-10">
                     <div className="w-2/4 mx-auto space-y-10">
                         <div className="flex justify-center">
-                        <div className="mx-auto inline-flex border shadow text-sm items-center space-x-1 p-2 px-3 rounded-[50px]">
-                            <svg width={22} height={20} viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M3.76953 3.95833C3.76953 3.15292 4.42245 2.5 5.22786 2.5H17.3112C18.1166 2.5 18.7695 3.15292 18.7695 3.95833V14.375C18.7695 15.1804 18.1166 15.8333 17.3112 15.8333H14.0828C14.0342 15.8333 13.9872 15.8503 13.9499 15.8812L12.2013 17.3299C11.6592 17.779 10.8736 17.7768 10.3341 17.3245L8.61321 15.882C8.5757 15.8506 8.52832 15.8333 8.47938 15.8333H5.22786C4.42245 15.8333 3.76953 15.1804 3.76953 14.375V3.95833ZM11.2695 5.83333C11.5325 5.83333 11.7457 6.04653 11.7457 6.30952C11.7457 7.24346 11.9526 7.80724 12.2907 8.14543C12.6289 8.48361 13.1927 8.69048 14.1266 8.69048C14.3896 8.69048 14.6028 8.90367 14.6028 9.16667C14.6028 9.42966 14.3896 9.64286 14.1266 9.64286C13.1927 9.64286 12.6289 9.84972 12.2907 10.1879C11.9526 10.5261 11.7457 11.0899 11.7457 12.0238C11.7457 12.2868 11.5325 12.5 11.2695 12.5C11.0065 12.5 10.7933 12.2868 10.7933 12.0238C10.7933 11.0899 10.5865 10.5261 10.2483 10.1879C9.91011 9.84972 9.34632 9.64286 8.41239 9.64286C8.14939 9.64286 7.9362 9.42966 7.9362 9.16667C7.9362 8.90367 8.14939 8.69048 8.41239 8.69048C9.34632 8.69048 9.91011 8.48361 10.2483 8.14543C10.5865 7.80724 10.7933 7.24346 10.7933 6.30952C10.7933 6.04653 11.0065 5.83333 11.2695 5.83333Z" fill="#11244A" />
-                            </svg>
-                            <span>FAQ</span>
-                        </div>
+                            <div className="mx-auto inline-flex border shadow text-sm items-center space-x-1 p-2 px-3 rounded-[50px]">
+                                <svg width={22} height={20} viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M3.76953 3.95833C3.76953 3.15292 4.42245 2.5 5.22786 2.5H17.3112C18.1166 2.5 18.7695 3.15292 18.7695 3.95833V14.375C18.7695 15.1804 18.1166 15.8333 17.3112 15.8333H14.0828C14.0342 15.8333 13.9872 15.8503 13.9499 15.8812L12.2013 17.3299C11.6592 17.779 10.8736 17.7768 10.3341 17.3245L8.61321 15.882C8.5757 15.8506 8.52832 15.8333 8.47938 15.8333H5.22786C4.42245 15.8333 3.76953 15.1804 3.76953 14.375V3.95833ZM11.2695 5.83333C11.5325 5.83333 11.7457 6.04653 11.7457 6.30952C11.7457 7.24346 11.9526 7.80724 12.2907 8.14543C12.6289 8.48361 13.1927 8.69048 14.1266 8.69048C14.3896 8.69048 14.6028 8.90367 14.6028 9.16667C14.6028 9.42966 14.3896 9.64286 14.1266 9.64286C13.1927 9.64286 12.6289 9.84972 12.2907 10.1879C11.9526 10.5261 11.7457 11.0899 11.7457 12.0238C11.7457 12.2868 11.5325 12.5 11.2695 12.5C11.0065 12.5 10.7933 12.2868 10.7933 12.0238C10.7933 11.0899 10.5865 10.5261 10.2483 10.1879C9.91011 9.84972 9.34632 9.64286 8.41239 9.64286C8.14939 9.64286 7.9362 9.42966 7.9362 9.16667C7.9362 8.90367 8.14939 8.69048 8.41239 8.69048C9.34632 8.69048 9.91011 8.48361 10.2483 8.14543C10.5865 7.80724 10.7933 7.24346 10.7933 6.30952C10.7933 6.04653 11.0065 5.83333 11.2695 5.83333Z" fill="#11244A" />
+                                </svg>
+                                <span>FAQ</span>
+                            </div>
                         </div>
                         <div className="text-center  mb-20">
-                        <h2 className="text-3xl font-semibold">Frequently Asked Questions (FAQs)</h2>
-                        <p className="text-muted">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
+                            <h2 className="text-3xl font-semibold">Frequently Asked Questions (FAQs)</h2>
+                            <p className="text-muted">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
                         </div>
+
                         <div className="border rounded-2xl divide-y">
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium">What is HealthBubba?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                            <div className>
-                            <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                            <div className />
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium">How does  HealthBubba Work?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                            <div className>
-                            <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                            <div className />
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium">How does Telemedicine work?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                            <div className>
-                            <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                            <div className />
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium">How do I access HealthBubba services?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                            <div className>
-                            <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                            <div className />
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium">Can I trust the accuracy of the test results obtained through
-                                HealthBubba?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                            <div className>
-                            <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                            <div className />
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium">How can I obtain my result?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                            <div className>
-                            <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                            <div className />
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium w-11/12 text-wrap">What measures are in place to ensure the safety of my personal and
-                                medical information on HealthBubba?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-dash" /></span>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium w-11/12 text-wrap">How do I prepare for the test? Are there any special instructions?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-plus" /></span>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium w-11/12 text-wrap">What should I do if I have trouble collecting my sample?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-plus" /></span>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="p-5 space-y-3">
-                            <div className="flex justify-between" role="button">
-                            <h4 className="text-medium w-11/12 text-wrap">Is there a way to track the status of my test kit shipment and delivery?</h4>
-                            <div className="w-1/12 text-end">
-                                <span><i className="bi bi-plus" /></span>
-                            </div>
-                            </div>
-                        </div>
+                            <FaqItem title={'What is Health Bubba'} open content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'How does  HealthBubba Work?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'How do I access HealthBubba services?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'Can I trust the accuracy of the test results obtained through HealthBubba?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'What measures are in place to ensure the safety of my personal and medical information on HealthBubba?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'What measures are in place to ensure the safety of my personal and medical information on HealthBubba?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'What should I do if I have trouble collecting my sample?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
+                            <FaqItem title={'Is there a way to track the status of my test kit shipment and delivery?'} content="Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate." />
+
                         </div>
                     </div>
                 </section>
