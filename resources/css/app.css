@@ -4,17 +4,21 @@
 
 @layer base {
     html {
-      font-family: "Aeonik", system-ui, sans-serif !important;
+        font-family: "Aeonik", system-ui, sans-serif !important;
+        }
+
+    p {
+        font-family: "Inter", sans-serif;
     }
-  }
+}
 
 @layer components {
     .btn {
-        @apply py-2 px-4 rounded-lg relative space-x-2 inline-flex justify-center transition-all duration-150 font-medium gap-1 items-center active:scale-95
+        @apply py-2 px-4 rounded-xl relative space-x-2 inline-flex justify-center transition-all duration-150 font-medium gap-1 items-center active:scale-95
     }
 
     .btn-primary {
-        @apply bg-primary overflow-hidden text-white ring-2 ring-primary shadow-lg shadow-primary-200  hover:shadow-none
+        @apply bg-primary rounded-lg overflow-hidden text-white ring-2 ring-primary shadow-lg shadow-primary-200  hover:shadow-none
     }
 
     .btn-light {
