@@ -25,5 +25,7 @@
     </head>
     <body >
         @inertia
+
+        <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
     </body>
 </html>

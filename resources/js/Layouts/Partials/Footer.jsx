@@ -1,3 +1,4 @@
+import { ChevronUpIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 export const Footer = () => {
@@ -28,19 +29,19 @@ export const Footer = () => {
                         </div>
 
                         <div class={'flex w-2/3 items-center space-x-3'}>
-                            <div className="p-2 flex-shrink-0 shadow-md inline-block rounded-lg">
+                            <div className="p-1 flex-shrink-0 shadow-md inline-block rounded-lg">
                                 <img src="/assets/imgs/qr-code.svg" alt="" />
                             </div>
 
                             <div class={'flex-1'}>
-                                <p className="text-xl font-semibold">Scan to download the Patient App</p>
+                                <p className="text-lg font-semibold">Scan to download the Patient App</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid grid-cols-3">
                         <div>
                             <p className="text-gray-400 mb-3 font-semibold">Company</p>
-                            <ul class="text-muted text-sm space-y-2  font-semibold">
+                            <ul class="text-gray-500 text-sm space-y-2  font-medium">
                                 <li>
                                     <a href="#">About</a>
                                 </li>
@@ -57,7 +58,7 @@ export const Footer = () => {
                         </div>
                         <div>
                             <p className="text-gray-400 mb-3 font-semibold">Legal</p>
-                            <ul class="text-muted text-sm space-y-2  font-semibold">
+                            <ul class="text-gray-500 text-sm space-y-2  font-medium">
                                 <li>
                                     <a href="#">Terms and Conditions</a>
                                 </li>
@@ -67,8 +68,8 @@ export const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <p class="text-gray-400 mb-3 font-semibold" >Need help</p>
-                            <ul class="text-muted text-sm space-y-2  font-semibold">
+                            <p class="text-gray-400 mb-3 font-semibold" >Need help?</p>
+                            <ul class="text-gray-500 text-sm space-y-2  font-medium">
                                 <li>
                                     <a href="#">FAQ</a>
                                 </li>
@@ -121,6 +122,10 @@ export const Footer = () => {
                         </div>
                     </div>
                 </div>
+
+                <button className="btn ring-0 fixed bottom-3 right-3 rounded-full p-2 bg-primary hover:bg-primary-500 text-white">
+                    <ChevronUpIcon className='w-6 h-6' />
+                </button>
             </div>
         </footer>
     )

@@ -4,7 +4,10 @@ import { Header } from '@/Layouts/Partials/Header';
 import { Cta } from '@/Partials/Cta';
 import { FaqItem } from '@/Partials/FAQs/FaqItem';
 import SinglePackage from '@/Partials/Packages/SinglePackage';
+import Testimonial from '@/Partials/Testimonial/Testimonial';
+import TestimonialContent from '@/Partials/Testimonial/TestimonialContent';
 import { Disclosure } from '@headlessui/react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Link, Head } from '@inertiajs/react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
@@ -252,11 +255,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </div>
                     </section>
 
-                    <section className="bg-[#F7F7F8] py-20 shadow-lg">
+                    <section className="bg-[#F7F7F8] py-20 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
                         <div className="max-w-7xl mx-auto px-4">
                             <div className="grid grid-cols-1 md:grid-cols-5 gap-y-5 md:gap-10">
                                 <div className="col-span-2">
-                                    <div className="border-t-4 border-t-gray-800 shadow-md space-y-7 py-7">
+                                    <div className="border-t border-t-gray-800 shadow-md space-y-7 py-7">
                                         <div className="px-7">
                                             <h3 className="text-lg font-semibold">Register your account and Use</h3>
                                             <p className="text-muted">You can signup through the website or on the mobile app and start connecting with Healthcare professionals</p>
@@ -267,7 +270,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <div className="col-span-3">
-                                    <div className="border-t-4 border-t-[#0470D1]  pt-7 bg-white min-h-full flex flex-col justify-between">
+                                    <div className="border-t border-t-[#0470D1]  pt-7 bg-white min-h-full flex flex-col justify-between shadow">
                                     <div className="px-7">
                                         <h3 className="text-lg font-semibold">Easy appointment booking</h3>
                                         <p className="text-muted">View your consultation timings and book appointments for clinic or online consultations without having to make phone calls. They also receive automated alerts about the status of their appointment requests.</p>
@@ -278,7 +281,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <div className="col-span-3">
-                                    <div className="border-t-4 border-t-[#223F59]  pt-7 bg-white min-h-full flex flex-col">
+                                    <div className="border-t border-t-[#223F59]  pt-7 bg-white min-h-full flex flex-col shadow">
                                     <div className="px-7">
                                         <h3 className="text-lg font-semibold">Telehealth and Consultations</h3>
                                         <p className="text-muted">You can easily follow-up and connect through your telemedicine sessions on the HealthBubba app. You can book a session, pay through the mobile app and consult via video. You also receive consultation summaries (including e-prescriptions) sent after a session.</p>
@@ -289,7 +292,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <div className="col-span-2">
-                                    <div className="border-t-4 border-t-[#C728FF] shadow-md space-y-7 py-7">
+                                    <div className="border-t border-t-[#C728FF] shadow-md space-y-7 py-7">
                                     <div className="px-7">
                                         <h3 className="text-lg font-semibold">Prescriptions on the go</h3>
                                         <p className="text-muted">Get accurate and legal prescriptions from medical experts with an accurate track record of your past prescriptions and sound analysis of your current health.</p>
@@ -300,7 +303,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <div className="col-span-2">
-                                    <div className="border-t-4 border-t-gray-800 shadow-md space-y-7 pt-7">
+                                    <div className="border-t border-t-gray-800 shadow-md space-y-7 pt-7">
                                     <div className="px-7">
                                         <h3 className="text-lg font-semibold">Mobile Payments</h3>
                                         <p className="text-muted">Make Payments for telemedicine sessions, Lab tests and prescriptions right from the app </p>
@@ -311,7 +314,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <div className="col-span-3">
-                                    <div className="border-t-4 border-t-[#068940]  pt-7 bg-white min-h-full flex flex-col">
+                                    <div className="border-t border-t-[#068940] shadow pt-7 bg-white min-h-full flex flex-col">
                                     <div className="px-7">
                                         <h3 className="text-lg font-semibold">Mobile Notifications and Alerts</h3>
                                         <p className="text-muted">You can receive notifications  about events, new services or any announcements that may be relevant to you, on your mobile app. You can also receive timely automated reminders about upcoming appointments, to reduce no-shows.</p>
@@ -394,7 +397,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </section>
 
                     {/* Client Start */}
-                    <section className="bg-primary py-10 md:px-20  relative overflow-hidden bg-[url('/assets/imgs/media/banners/curved-bg.svg')] bg-no-repeat bg-center bg-origin-content">
+                    <section className="bg-primary py-10 md:px-20 md:py-20  relative overflow-hidden bg-[url('/assets/imgs/media/banners/curved-bg.svg')] bg-no-repeat bg-top bg-origin-content">
                         <div className="md:w-1/2 text-center text-white mx-auto space-y-10 z-10 px-4">
                             <p className="md:text-xl font-medium">“I am impressed by Health Bubba's patient-centric contributions towards the Nigerian Health sector by leveraging technology to redefine quality healthcare. ”</p>
                             <div className="flex justify-center space-x-3">
@@ -465,36 +468,26 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 </svg>
                                 <span>People say this about us</span>
                             </div>
-                            <div className="text-center w-2/4 mx-auto mb-20">
-                                <h2 className="text-3xl font-medium">Wall of Love</h2>
+                            <div className="text-center w-4/6 mx-auto mb-20 space-y-4">
+                                <h2 className="text-4xl font-medium">Wall of Love</h2>
                                 <p className="text-muted">Lorem ipsum dolor sit amet consectetur. Odio leo quis pellentesque augue. Sapien pharetra metus vitae ullamcorper ultricies tortor quis. Integer integer id ac integer.</p>
                             </div>
+
                             <div className="max-w-7xl mx-auto">
-                                <div className="w-full">
-                                <div className="flex w-full space-x-5 justify-around items-center">
+                                <div className="flex space-x-20 justify-center items-center">
                                     <div>
-                                    <button className="rounded-full h-16 w-16 p-3 bg-white shadow border">
-                                        <i className="bi bi-chevron-left" />
-                                    </button>
+                                        <button className="rounded-full p-3 bg-white shadow border">
+                                            <ChevronLeftIcon className="w-5 h-5" />
+                                        </button>
                                     </div>
-                                    <div className="w-2/3">
-                                    <div className="rounded-2xl bg-white p-10 space-y-5">
-                                        <p className="text-muted text-lg">"I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched. The professionalism during sample collection and the subsequent consultation were impressive.</p>
-                                        <div className="justify-start items-start gap-2 inline-flex">
-                                        <img className="h-14" src="/assets/imgs/avatars/jane-nwosu.png" />
-                                        <div className="flex-col justify-start items-start inline-flex">
-                                            <div className="text-neutral-900 font-medium">Jane Nwosu</div>
-                                            <div className="text-gray-600 text-base font-normal">Healthcare Professional</div>
-                                        </div>
-                                        </div>
-                                    </div>
+                                    <div className="w-4/6 relative ">
+                                        <Testimonial />
                                     </div>
                                     <div>
-                                    <button className="rounded-full h-16 w-16 p-3 bg-white shadow border">
-                                        <i className="bi bi-chevron-right" />
-                                    </button>
+                                    <button className="rounded-full p-3 bg-white shadow border">
+                                            <ChevronRightIcon className="w-5 h-5" />
+                                        </button>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                             </div>

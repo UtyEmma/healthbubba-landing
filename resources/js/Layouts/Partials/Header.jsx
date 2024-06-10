@@ -3,9 +3,13 @@ import Separator from '@/Icons/Separator'
 import { Menu } from '@headlessui/react'
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import { Link } from '@inertiajs/react'
-import React from 'react'
+import React, { useContext } from 'react'
+import { DownloadContext } from '../GuestLayout'
 
 export const Header = () => {
+
+    const {open} = useContext(DownloadContext)
+
     return (
         <header>
             <div className="hidden lg:grid max-w-3xl py-4 mx-auto gap-x-5 grid-cols-6">
@@ -27,7 +31,7 @@ export const Header = () => {
                                 <Link href={route('packages')}>Services</Link>
                             </li>
                             <li>
-                                <Link href={route('download')}>Download</Link>
+                                <button onClick={open} >Download</button>
                             </li>
                         </ul>
                         <div>
@@ -39,7 +43,7 @@ export const Header = () => {
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-gray-200 flex space-x-2 justify-between items-center relative">
                         <div>
                             <Menu>
-                                <Menu.Button className="btn btn-white bg-opacity-10 text-white px-2">
+                                <Menu.Button className="btn btn-white bg-opacity-10 text-white font-normal">
                                     For Patients <ChevronDownIcon class={'w-4 h-4'} />
                                 </Menu.Button>
 
