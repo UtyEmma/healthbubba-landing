@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Services;
+
+use Illuminate\Support\Facades\Http;
+
+class ApiService {
+
+    public $api;
+
+    public function __construct() {
+        $this->api = Http::baseUrl(env('API_URL'));
+    }
+
+    function resolve($res){
+        if(!$res) return [false];
+        if(!$data = $res->json()) return [false];
+        return [$data['ok'], $data['message'], $data['data']];
+    }
+
+    function testCategories(){
+        return $this->resolve($this->api->get('test/categories'));
+    }
+
+    function packages($category){
+        return $this->resolve($this->api->get("test/{$category}/packages"));
+    }
+
+    function tests($category){
+        return $this->resolve($this->api->get("test/category/{$category}"));
+    }
+
+    function medicationCategories(){
+        return $this->resolve($this->api->get("medication/categories"));
+    }
+
+    function medications($category){
+        return $this->resolve($this->api->get("medication/category/{$category}"));
+    }
+
+}

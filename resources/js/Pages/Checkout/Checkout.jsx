@@ -6,7 +6,7 @@ import { CheckoutSuccess } from './CheckoutSuccess'
 export default function () {
     return (
         <GuestLayout>
-            <div className='py-5'>
+            <div className='pb-5'>
                 <h2 className={'text-4xl md:px-36 mx-auto font-semibold'}>Checkout</h2>
             </div>
 

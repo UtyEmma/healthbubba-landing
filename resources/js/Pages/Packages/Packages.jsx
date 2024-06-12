@@ -6,22 +6,23 @@ import React from 'react'
 export default function () {
     return (
         <GuestLayout>
-            <div class={'py-10 max-w-7xl mx-auto '}>
-                <div class={'mb-5'}>
+            <div class={'max-w-7xl mx-auto'}>
+                <div class={'mb-5 px-4'}>
                     <ul class={'flex space-x-1 items-center'}>
                         <li>Home</li>
                         <li>/</li>
                         <li>Packages</li>
                     </ul>
 
-                    <h2 class={'text-4xl font-semibold'}>Explore the available medical test packages</h2>
+                    <h2 class={'text-2xl md:text-4xl font-semibold'}>Explore the available medical test packages</h2>
                 </div>
 
-                <div className="py-3 border-y border-gray-200 flex justify-between items-center">
-                    <div>
+                <div className="py-3 px-4 border-y border-gray-200 flex justify-between items-center">
+                    <div className='md:block hidden'>
                         <p className="text-muted">1-25 of 179 results</p>
                     </div>
-                    <div class={'w-2/5'}>
+
+                    <div class={'w-full md:w-2/5'}>
                         <div class={'relative  flex items-center '}>
                             <span class={'absolute left-2'}>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,15 +32,15 @@ export default function () {
                             <input type="text" class={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Doctors, Symptoms e.t.c' />
                         </div>
                     </div>
-                    <div class={'w-1/6'}>
+                    <div class={'md:block hidden w-1/6'}>
                         <select name="" class={'border w-full border-gray-100 rounded-md shadow'} id="">
                             <option value="">Select</option>
                         </select>
                     </div>
                 </div>
 
-                <div class={'grid grid-cols-12 py-10'}>
-                    <div className="col-span-3 space-y-2">
+                <div class={'grid md:grid-cols-12 py-10 px-4'}>
+                    <div className="md:col-span-3 space-y-2">
                         <ul class={'space-y-2 sticky top-10'}>
                             <li >
                                 <label class='flex space-x-2 items-center font-medium'>
@@ -92,7 +93,7 @@ export default function () {
                         </ul>
                     </div>
 
-                    <div className="col-span-9">
+                    <div className="md:col-span-9">
                         <div className="grid md:grid-cols-3 gap-5 mb-4">
                             <div>
                                 <SinglePackage />
@@ -139,7 +140,7 @@ export default function () {
                     </div>
                 </div>
 
-                <div className="py-20">
+                <div className="py-20 px-4">
                     <Cta />
                 </div>
             </div>

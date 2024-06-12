@@ -6,7 +6,7 @@ import SinglePackage from '@/Partials/Packages/SinglePackage'
 export default function () {
     return (
         <GuestLayout>
-            <div className="border-gray-200 border-solid border-b py-5">
+            <div className="border-gray-200 border-solid border-b pb-5">
                 <div className="max-w-7xl mx-auto">
                     <div class={'space-y-1'}>
                         <ul class={'flex space-x-1 items-center text-muted'}>

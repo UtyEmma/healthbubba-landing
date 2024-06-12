@@ -8,7 +8,7 @@ import ServiceProduct from '../Shop/Partials/ServiceProduct'
 export default function () {
     return (
         <GuestLayout>
-            <div className='py-5'>
+            <div className='pb-5'>
                 <h2 className={'text-4xl md:px-36 mx-auto font-semibold'}>Cart</h2>
             </div>
 

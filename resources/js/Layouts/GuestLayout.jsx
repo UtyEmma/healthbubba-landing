@@ -6,6 +6,8 @@ import Button from '@/Components/Button';
 import Disclose from '@/Components/Display/Disclose';
 import { createContext, useState } from 'react';
 import DownloadModal from './Partials/DownloadModal';
+import { CartModal } from './Partials/CartModal';
+import { ScrollToTop } from './Partials/ScrollToTop';
 
 export const DownloadContext = createContext({
     status: false,
@@ -27,13 +29,17 @@ export default function ({ children, ...props }) {
             <div className={`min-h-screen ${props.className ?? ''}`}>
                 <Header />
 
-                <main class='py-10'>
+                <main class='md:py-10 py-5'>
                     {children}
                 </main>
 
                 <Footer />
 
+
+                <ScrollToTop />
                 <DownloadModal />
+
+                <CartModal />
             </div>
         </DownloadContext.Provider>
     );

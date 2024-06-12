@@ -1,44 +1,22 @@
 import { ChevronUpIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import { SubscriptionCTA } from './SubscriptionCTA'
+import { ScrollToTop } from './ScrollToTop'
 
 export const Footer = () => {
     return (
-        <footer className="border-t py-10">
+        <footer className="border-t md:py-10">
             <div className="max-w-7xl mx-auto divide-y">
-                <div className="grid grid-cols-2 py-10">
-                    <div className="w-2/3 space-y-5">
+                <div className="grid gap-5 md:grid-cols-2 py-10 px-4">
+                    <div className="md:w-2/3 space-y-5">
                         <div>
                             <img src="/assets/imgs/logos/logo-long.svg" alt="" />
                         </div>
 
-                        <div class="p-5 rounded-xl shadow border space-y-3 bg-white">
-                            <h5 class={'font-semibold'}>Subscribe to Our Newsletter</h5>
-                            <div className="flex space-x-3">
-                                <input type="text" placeholder='Email Address' class="form-control flex-1" />
-                                <button class="btn btn-primary">Subscribe</button>
-                            </div>
-
-                            <div class={'text-center'}>
-                                <p class={'font-medium text-sm'}>・ Unsubscribe anytime.</p>
-                            </div>
-                        </div>
-
-                        <div class={'space-y-2'}>
-                            <a href="" className="block underline">Download our Android App</a>
-                            <a href="" className="block underline">Download our iOS App</a>
-                        </div>
-
-                        <div class={'flex w-2/3 items-center space-x-3'}>
-                            <div className="p-1 flex-shrink-0 shadow-md inline-block rounded-lg">
-                                <img src="/assets/imgs/qr-code.svg" alt="" />
-                            </div>
-
-                            <div class={'flex-1'}>
-                                <p className="text-lg font-semibold">Scan to download the Patient App</p>
-                            </div>
-                        </div>
+                        <SubscriptionCTA className='hidden md:block' />
                     </div>
-                    <div class="grid grid-cols-3">
+
+                    <div class="grid gap-5 md:grid-cols-3">
                         <div>
                             <p className="text-gray-400 mb-3 font-semibold">Company</p>
                             <ul class="text-gray-500 text-sm space-y-2  font-medium">
@@ -79,12 +57,14 @@ export const Footer = () => {
                             </ul>
                         </div>
                     </div>
+
+                    <SubscriptionCTA className='md:hidden block' />
                 </div>
 
-                <div class={'pt-5 flex justify-between items-center'}>
-                    <p class={'font-semibold'}>© {new Date().getFullYear()} <a href="/">HealthBubba</a></p>
+                <div class={'pt-5 pb-5 md:pb-0 flex flex-col md:flex-row gap-y-5 justify-between items-center'}>
+                    <p class={'font-medium text-sm md:text-base order-2 md:order-1'}>© {new Date().getFullYear()} <a href="/">HealthBubba</a></p>
 
-                    <div class={'flex space-x-3'}>
+                    <div class={'flex space-x-3 order-1 md:order-2'}>
                         <div>
                             <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/twitter.svg" alt="" />
@@ -122,10 +102,6 @@ export const Footer = () => {
                         </div>
                     </div>
                 </div>
-
-                <button className="btn ring-0 fixed bottom-3 right-3 rounded-full p-2 bg-primary hover:bg-primary-500 text-white">
-                    <ChevronUpIcon className='w-6 h-6' />
-                </button>
             </div>
         </footer>
     )

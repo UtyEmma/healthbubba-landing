@@ -5,6 +5,8 @@ import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import { Link } from '@inertiajs/react'
 import React, { useContext } from 'react'
 import { DownloadContext } from '../GuestLayout'
+import { CartModal } from './CartModal'
+import { MobileMenu } from './MobileMenu'
 
 export const Header = () => {
 
@@ -28,7 +30,31 @@ export const Header = () => {
                                 <Link href={'#'}>FAQ</Link>
                             </li>
                             <li>
-                                <Link href={route('packages')}>Services</Link>
+                                <Menu >
+                                    <Menu.Button  className={'flex items-center'}>
+                                    Services <ChevronDownIcon class={'ms-1 w-4 h-4'} />
+                                    </Menu.Button>
+
+                                    <Menu.Items  as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 p-2 mt-4 divide-y divide-white/5 ' anchor="bottom">
+                                        <Menu.Item>
+                                            <Link href="#" className="block p-2 text-white rounded-lg">
+                                                Virtual Consultation
+                                            </Link>
+                                        </Menu.Item>
+
+                                        <Menu.Item>
+                                            <Link href="#" className="block p-2 text-white rounded-lg">
+                                                Order a Lab Test
+                                            </Link>
+                                        </Menu.Item>
+
+                                        <Menu.Item>
+                                            <Link href="#" className="block p-2 text-white rounded-lg">
+                                                Order Medications
+                                            </Link>
+                                        </Menu.Item>
+                                    </Menu.Items>
+                                </Menu>
                             </li>
                             <li>
                                 <button onClick={open} >Download</button>
@@ -74,7 +100,7 @@ export const Header = () => {
                 </div>
             </div>
 
-            <div className="lg:hidden p-4 mx-auto flex space-x-4">
+            <div className="lg:hidden p-4 mx-auto flex space-x-3">
                 <div className="flex-1">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-gray-200 flex items-center justify-between">
                         <div>
@@ -94,10 +120,9 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="shrink-0">
-                    <div className="btn rounded-2xl bg-secondary p-1 px-3 h-full shadow-xl shadow-gray-200 flex space-x-2 justify-between items-center relative">
-                        <Bars3Icon className="w-9 h-9 text-white" />
-                    </div>
+                    <MobileMenu />
                 </div>
             </div>
         </header>
