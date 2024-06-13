@@ -52,10 +52,10 @@
     }
 
     .form-label{
-        @apply leading-loose font-medium
+        @apply leading-loose font-medium text-sm md:text-base
     }
 
     .card {
-        @apply shadow p-5 rounded-xl border border-gray-200 shadow-gray-100
+        @apply shadow md:p-5 p-4 rounded-xl border border-gray-200 shadow-gray-100
     }
 }

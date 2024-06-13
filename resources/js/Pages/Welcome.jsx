@@ -3,6 +3,7 @@ import { Footer } from '@/Layouts/Partials/Footer';
 import { Header } from '@/Layouts/Partials/Header';
 import { Cta } from '@/Partials/Cta';
 import { FaqItem } from '@/Partials/FAQs/FaqItem';
+import PackageList from '@/Partials/Packages/PackageList';
 import SinglePackage from '@/Partials/Packages/SinglePackage';
 import Testimonial from '@/Partials/Testimonial/Testimonial';
 import TestimonialContent from '@/Partials/Testimonial/TestimonialContent';
@@ -10,13 +11,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Link, Head } from '@inertiajs/react';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
-    const handleImageError = () => {
-        document.getElementById('screenshot-container')?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
-        document.getElementById('docs-card-content')?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
-    };
+export default function Welcome({ categories }) {
 
     return (
         <>
@@ -427,32 +422,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             <h2 className="text-2xl font-semibold">Discover and Explore Healthbubba’s Packages</h2>
                             <p className="text-muted text-sm">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
                         </div>
-                        <div className="flex justify-center items-center gap-2 flex-wrap">
-                            <button className="border-2 text-sm items-center space-x-1 p-1 px-3 hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 bg-gray-100 rounded-[50px]">Hematology</button>
-                            <button className="border-2 border-black text-sm items-center space-x-1 p-2 px-3 bg-black text-white shadow-lg rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Microbiology</button>
-                            <button className="border-2 text-sm items-center space-x-1 p-2 px-3 bg-gray-100 rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Specialized Tests</button>
-                            <button className="border-2 text-sm items-center space-x-1 p-2 px-3 bg-gray-100 rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Chemical Pathology</button>
-                        </div>
 
-                        <div className="grid md:grid-cols-4 gap-5">
-                            <div>
-                                <SinglePackage />
-                            </div>
-                            <div>
-                                <SinglePackage />
-                            </div>
-                            <div>
-                                <SinglePackage />
-                            </div>
-                            <div>
-                                <SinglePackage />
-                            </div>
-                        </div>
+                        <PackageList categories={categories} />
 
                         <div className="text-center">
-                            <button className="border border-gray-200 px-3 py-1 bg-neutral-50 rounded-full justify-start items-start inline-flex">
+                            <Link href={route('packages')} className="border border-gray-200 px-3 py-1 bg-neutral-50 hover:bg-gray-200 duration-300 rounded-full justify-start items-start inline-flex">
                             View all Tests <i className="ms-1 bi bi-arrow-right-short" />
-                            </button>
+                            </Link>
                         </div>
                     </section>
                     {/* Package End */}

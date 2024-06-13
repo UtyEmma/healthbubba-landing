@@ -1,54 +1,34 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-})->name('home');
 
-Route::get('/register', function(){
-    return Inertia::render('Auth/Register');
-})->name('register');
+Route::get('/', [PagesController::class, 'index'])->name('home');
 
-Route::get('/download', function(){
-    return Inertia::render('Download');
-})->name('download');
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+
+Route::get('/download', [PagesController::class, 'download'])->name('download');
 
 Route::prefix('packages')->group(function(){
-    Route::get('/', function(){
-        return Inertia::render('Packages/Packages');
-    })->name('packages');
+    Route::get('/', [PackageController::class, 'index'])->name('packages');
 
     Route::prefix('{package}')->group(function(){
-        Route::get('', function(){
-            return Inertia::render('Packages/PackageDetails');
-        })->name('packages.detail');
+        Route::get('', [PackageController::class, 'show'])->name('packages.detail');
     });
 });
 
-Route::get('/privacy-policy', function(){
-    return Inertia::render('Policy/PrivacyPolicy');
-})->name('privacy-policy');
+Route::get('/privacy-policy', [PagesController::class, 'policy'])->name('privacy-policy');
 
-Route::get('/terms', function(){
-    return Inertia::render('Policy/Terms');
-})->name('terms');
+Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 
-Route::get('shop', function(){
-    return Inertia::render('Shop/Shop');
-})->name('shop');
+Route::get('medications', [PagesController::class, 'medications'])->name('shop');
 
-Route::get('cart', function(){
-    return Inertia::render('Checkout/Cart');
-})->name('cart');
+Route::get('cart', [PagesController::class, 'cart'])->name('cart');
 
-Route::get('checkout', function(){
-    return Inertia::render('Checkout/Checkout');
-})->name('checkout');
+Route::get('checkout', [PagesController::class, 'checkout'])->name('checkout');
+
+include_once __DIR__.'/api.php';

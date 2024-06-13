@@ -9,7 +9,7 @@ class ApiService {
     public $api;
 
     public function __construct() {
-        $this->api = Http::baseUrl(env('API_URL'));
+        $this->api = Http::baseUrl(env('API_URL').'/api');
     }
 
     function resolve($res){
@@ -28,6 +28,10 @@ class ApiService {
 
     function tests($category){
         return $this->resolve($this->api->get("test/category/{$category}"));
+    }
+
+    function allTests(){
+        return $this->resolve($this->api->get("tests"));
     }
 
     function medicationCategories(){

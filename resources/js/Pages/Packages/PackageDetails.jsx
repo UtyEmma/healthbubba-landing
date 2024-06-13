@@ -2,11 +2,12 @@ import GuestLayout from '@/Layouts/GuestLayout'
 import React from 'react'
 import { SelectPackageItem } from './Partials/SelectPackageItem'
 import SinglePackage from '@/Partials/Packages/SinglePackage'
+import PackageList from '@/Partials/Packages/PackageList'
 
-export default function () {
+export default function ({test, categories}) {
     return (
         <GuestLayout>
-            <div className="border-gray-200 border-solid border-b pb-5">
+            <div className="border-gray-200 border-solid border-b pb-5 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div class={'space-y-1'}>
                         <ul class={'flex space-x-1 items-center text-muted'}>
@@ -17,28 +18,28 @@ export default function () {
                             <li>STI Tests</li>
                         </ul>
 
-                        <h1 class={'text-4xl font-semibold'}>STI Tests</h1>
+                        <h1 class={'md:text-4xl text-2xl font-semibold'}>STI Tests</h1>
                     </div>
                 </div>
             </div>
 
             <div className="border-gray-200 border-solid border-b">
-                <div className="max-w-6xl mx-auto py-10">
-                    <div className="grid grid-cols-12 gap-5">
-                        <div className="col-span-8 space-y-10">
-                            <div className="rounded-2xl overflow-hidden h-96">
+                <div className="max-w-6xl mx-auto py-10 px-4">
+                    <div className="grid md:grid-cols-12 gap-5">
+                        <div className="md:col-span-8 space-y-5 md:space-y-10">
+                            <div className="rounded-2xl overflow-hidden md:h-96">
                                 <img src="/assets/imgs/media/banners/sti.jpeg" class='object-cover' alt="" />
                             </div>
 
                             <div>
-                                <div className="border bg-gray-100 p-2 rounded-2xl h-96">
+                                <div className="border bg-gray-100 p-2 rounded-2xl md:h-96">
                                     <div className="bg-white h-full w-full rounded-xl p-5 text-muted">
                                         <p>A simple screening panel that screens for a broad range of sexually transmitted infections. STIs don’t always cause symptoms. It’s possible to contract sexually transmitted infections from people who seem perfectly healthy and may not even know they have an infection. Get tested</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-4">
+                        <div className="md:col-span-4">
                             <div className="border bg-gray-100 p-2 rounded-2xl h-full space-y-3">
                                 <div >
                                     <p className="font-semibold">Packages</p>
@@ -68,116 +69,8 @@ export default function () {
                     </div>
                     </div>
                     <div className="text-center  mb-20">
-                    <h2 className="text-3xl font-semibold">Frequently Asked Questions (FAQs)</h2>
-                    <p className="text-muted">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
-                    </div>
-                    <div className="border rounded-2xl divide-y">
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium">What is HealthBubba?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                        <div className>
-                        <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                        <div className />
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium">How does  HealthBubba Work?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                        <div className>
-                        <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                        <div className />
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium">How does Telemedicine work?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                        <div className>
-                        <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                        <div className />
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium">How do I access HealthBubba services?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                        <div className>
-                        <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                        <div className />
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium">Can I trust the accuracy of the test results obtained through
-                            HealthBubba?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                        <div className>
-                        <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                        <div className />
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium">How can I obtain my result?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                        <div className>
-                        <p className="w-11/12 text-muted">Lorem ipsum dolor sit amet consectetur. Proin elit dui dis purus lacus elit morbi. Sed ante eget tortor aenean viverra molestie euismod blandit. Laoreet vestibulum vitae ac ante amet. Et lorem nisi vulputate.</p>
-                        <div className />
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium w-11/12 text-wrap">What measures are in place to ensure the safety of my personal and
-                            medical information on HealthBubba?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-dash" /></span>
-                        </div>
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium w-11/12 text-wrap">How do I prepare for the test? Are there any special instructions?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-plus" /></span>
-                        </div>
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium w-11/12 text-wrap">What should I do if I have trouble collecting my sample?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-plus" /></span>
-                        </div>
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-3">
-                        <div className="flex justify-between" role="button">
-                        <h4 className="text-medium w-11/12 text-wrap">Is there a way to track the status of my test kit shipment and delivery?</h4>
-                        <div className="w-1/12 text-end">
-                            <span><i className="bi bi-plus" /></span>
-                        </div>
-                        </div>
-                    </div>
+                        <h2 className="text-3xl font-semibold">Frequently Asked Questions (FAQs)</h2>
+                        <p className="text-muted">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
                     </div>
                 </div>
             </section>
@@ -195,27 +88,8 @@ export default function () {
                     <h2 className="text-2xl font-semibold">Discover and Explore Healthbubba’s Packages</h2>
                     <p className="text-muted">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
                 </div>
-                <div className="flex justify-center items-center space-x-3 flex-wrap">
-                    <button className="border-2 text-sm items-center space-x-1 p-2 px-3 hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 bg-gray-100 rounded-[50px]">Hematology</button>
-                    <button className="border-2 border-black text-sm items-center space-x-1 p-2 px-3 bg-black text-white shadow-lg rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Microbiology</button>
-                    <button className="border-2 text-sm items-center space-x-1 p-2 px-3 bg-gray-100 rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Specialized Tests</button>
-                    <button className="border-2 text-sm items-center space-x-1 p-2 px-3 bg-gray-100 rounded-[50px] hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300">Chemical Pathology</button>
-                </div>
 
-                <div className="grid grid-cols-4 gap-5">
-                    <div>
-                        <SinglePackage />
-                    </div>
-                    <div>
-                        <SinglePackage />
-                    </div>
-                    <div>
-                        <SinglePackage />
-                    </div>
-                    <div>
-                        <SinglePackage />
-                    </div>
-                </div>
+                <PackageList />
 
                 <div className="text-center">
                     <button className="border px-3 py-1 bg-neutral-50 rounded-full shadow justify-start items-start inline-flex">
