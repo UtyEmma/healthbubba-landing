@@ -122,7 +122,12 @@ export const Header = () => {
 
                             <div>
                                 <Link href={route('cart')} className="btn btn-white w-auto">
-                                    <CartIcon className="w-6 h-6 stroke-black" />
+                                    <div className="relative">
+                                        <CartIcon className="w-6 h-6 stroke-black" />
+                                        {
+                                            items.length > 0 && <div className="h-4 w-4 rounded-full bg-primary text-white text-xs flex items-center justify-center absolute -bottom-1 -right-1">{items.length}</div>
+                                        }
+                                    </div>
                                 </Link>
                             </div>
                         </div>
