@@ -6,24 +6,24 @@ import { SingleProduct } from './Partials/SingleProduct'
 export default function () {
     return (
         <GuestLayout>
-            <div className="py-5">
-                <div class={'max-w-7xl mx-auto'}>
+            <div className="mb-4">
+                <div class={'max-w-7xl mx-auto px-4'}>
                     <ul class={'flex space-x-1 items-center'}>
                         <li>Home</li>
                         <li>/</li>
                         <li>Medications</li>
                     </ul>
 
-                    <h2 class={'text-4xl font-semibold'}>Explore Medications</h2>
+                    <h2 class={'text-3xl md:text-4xl font-semibold'}>Explore Medications</h2>
                 </div>
             </div>
 
             <div className="py-3 border-y border-gray-200">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <div>
+                <div className="max-w-7xl mx-auto flex space-x-4 justify-between items-center px-4">
+                    <div className='shrink-0'>
                         <p className="text-muted">1-25 of 179 results</p>
                     </div>
-                    <div class={'w-2/5'}>
+                    <div class={'flex-1 md:w-2/5'}>
                         <div class={'relative  flex items-center '}>
                             <span class={'absolute left-2'}>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,15 +33,15 @@ export default function () {
                             <input type="text" class={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Medications' />
                         </div>
                     </div>
-                    <div class={'w-1/6'}>
+                    <div class={'mdLw-1/6'}>
 
                     </div>
                 </div>
             </div>
 
-            <div className="py-20 max-w-7xl mx-auto">
-                <div class={'grid grid-cols-12'}>
-                    <div className="col-span-3 space-y-2">
+            <div className="md:py-20 py-5 max-w-7xl mx-auto px-4">
+                <div class={'md:grid md:grid-cols-12 space-y-5 md:space-y-0'}>
+                    <div className="md:col-span-3 col-span-full space-y-2">
                         <ul class={'space-y-2 sticky top-10'}>
                             <li >
                                 <label class='flex space-x-2 items-center font-medium'>
@@ -101,7 +101,7 @@ export default function () {
                     </div>
 
                     <div className="col-span-9">
-                        <div className="grid md:grid-cols-3 gap-5 mb-4">
+                        <div className="grid md:grid-cols-3 grid-cols-2 gap-5 mb-4">
                             <div>
                                 <SingleProduct />
                             </div>

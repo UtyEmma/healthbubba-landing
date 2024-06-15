@@ -1,13 +1,10 @@
-import { Link } from '@inertiajs/react';
 import { Header } from './Partials/Header';
 import { Footer } from './Partials/Footer';
-import DownloadQR from '@/Components/QRCodes/DownloadQR';
-import Button from '@/Components/Button';
-import Disclose from '@/Components/Display/Disclose';
 import { createContext, useState } from 'react';
 import DownloadModal from './Partials/DownloadModal';
-import { CartModal } from './Partials/CartModal';
 import { ScrollToTop } from './Partials/ScrollToTop';
+import CartContext from '@/Context/CartContext';
+import { Toaster } from 'react-hot-toast';
 
 export const DownloadContext = createContext({
     status: false,
@@ -21,26 +18,31 @@ export default function ({ children, ...props }) {
 
     return (
 
-        <DownloadContext.Provider value={{
-            status: download,
-            open: () => setDownload(true),
-            close: () => setDownload(false)
-        }}>
-            <div className={`min-h-screen ${props.className ?? ''}`}>
-                <Header />
+        <CartContext>
+            <DownloadContext.Provider value={{
+                status: download,
+                open: () => setDownload(true),
+                close: () => setDownload(false)
+            }}>
+                <div className={`min-h-screen ${props.className ?? ''}`}>
+                    <Header />
 
-                <main class='md:py-10 py-5'>
-                    {children}
-                </main>
+                    <main class='md:py-10 py-5'>
+                        {children}
+                    </main>
 
-                <Footer />
+                    <Footer />
 
 
-                <ScrollToTop />
-                <DownloadModal />
+                    <ScrollToTop />
+                    <DownloadModal />
 
-                <CartModal />
-            </div>
-        </DownloadContext.Provider>
+                    <Toaster
+                        position='top-right'
+                        class='flex w-auto'
+                    />
+                </div>
+            </DownloadContext.Provider>
+        </CartContext>
     );
 }

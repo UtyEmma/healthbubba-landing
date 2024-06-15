@@ -7,10 +7,13 @@ import React, { useContext } from 'react'
 import { DownloadContext } from '../GuestLayout'
 import { CartModal } from './CartModal'
 import { MobileMenu } from './MobileMenu'
+import { useCart } from '@/Context/CartContext'
 
 export const Header = () => {
 
     const {open} = useContext(DownloadContext)
+
+    const {items} = useCart()
 
     return (
         <header>
@@ -43,13 +46,13 @@ export const Header = () => {
                                         </Menu.Item>
 
                                         <Menu.Item>
-                                            <Link href="#" className="block p-2 text-white rounded-lg">
+                                            <Link href={route('packages')} className="block p-2 text-white rounded-lg">
                                                 Order a Lab Test
                                             </Link>
                                         </Menu.Item>
 
                                         <Menu.Item>
-                                            <Link href="#" className="block p-2 text-white rounded-lg">
+                                            <Link href={route('shop')} className="block p-2 text-white rounded-lg">
                                                 Order Medications
                                             </Link>
                                         </Menu.Item>
@@ -92,9 +95,14 @@ export const Header = () => {
                         <Separator className='w-2 h-auto' />
 
                         <div>
-                            <button className="btn btn-white w-auto">
-                                <CartIcon className="w-6 h-6 stroke-black" />
-                            </button>
+                            <Link href={route('cart')} className="btn btn-white w-auto relative">
+                                <div className="relative">
+                                    <CartIcon className="w-6 h-6 stroke-black" />
+                                    {
+                                        items.length > 0 && <div className="h-4 w-4 rounded-full bg-primary text-white text-xs flex items-center justify-center absolute -bottom-1 -right-1">{items.length}</div>
+                                    }
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -113,9 +121,9 @@ export const Header = () => {
                             <Link href={route('register')} className="btn btn-white">Sign Up</Link>
 
                             <div>
-                                <button className="btn btn-white w-auto">
+                                <Link href={route('cart')} className="btn btn-white w-auto">
                                     <CartIcon className="w-6 h-6 stroke-black" />
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -11,11 +11,11 @@ class PagesController extends Controller {
 
     function index(){
         [$status, $message, $categories] = (new ApiService)->testCategories();
-        // [$status, $message, $categories] = (new ApiService)->allTests();
-        // $categories = collect($categories)->sortBy('category_id')->all();
+        $faqs = config('content.faqs');
 
         return Inertia::render('Welcome', [
-            'categories' => $categories
+            'categories' => $categories,
+            'faqs' => $faqs
         ]);
     }
 

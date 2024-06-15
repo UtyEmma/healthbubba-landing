@@ -39,6 +39,7 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'content' => 'https://healthbubba.com/uploads/images/'
         ];
     }
 }

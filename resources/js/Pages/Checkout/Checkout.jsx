@@ -1,16 +1,47 @@
 import GuestLayout from '@/Layouts/GuestLayout'
 import { PlayIcon } from '@heroicons/react/24/solid'
-import React from 'react'
+import React, { useState } from 'react'
 import { CheckoutSuccess } from './CheckoutSuccess'
+import { useCart } from '@/Context/CartContext'
 
 export default function () {
+
+    const [success, setSuccess] = useState(false)
+
     return (
         <GuestLayout>
+
+            {success || <Checkout {...{setSuccess}} /> }
+            {success && <CheckoutSuccess /> }
+
+        </GuestLayout>
+    )
+}
+
+const Checkout = ({setSuccess}) => {
+
+    const {total, clear} = useCart()
+
+    const onSuccess = () => {
+        setSuccess(true);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
+    const checkout = (event) => {
+        event.preventDefault();
+        onSuccess()
+        clear()
+    }
+
+    return (
+        <>
             <div className='pb-5 px-4'>
                 <h2 className={'md:text-4xl text-3xl md:px-36 mx-auto font-semibold'}>Checkout</h2>
             </div>
-
-            <div className="border-t border-gray-200 md:pl-36 ">
+            <form onSubmit={checkout} className="border-t border-gray-200 md:pl-36 ">
                 <div className="grid md:grid-cols-5 gap-10">
                     <div className="order-2 md:order-1 md:col-span-3 px-4 md:py-10 space-y-5">
                         <div className="card">
@@ -63,7 +94,7 @@ export default function () {
                         </div>
 
                         <div className="flex justify-end">
-                        <button className="btn btn-primary">Checkout <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></button>
+                        <button type='submit' className="btn btn-primary">Checkout <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></button>
                         </div>
                     </div>
                     <div className="order-1 md:order-2 md:col-span-2">
@@ -74,11 +105,11 @@ export default function () {
                             <div className="py-5 border-y border-gray-200 space-y-3">
                                 <div className="flex justify-between">
                                     <p className='text-muted'>Order Summary</p>
-                                    <p className='font-medium'>NGN 80.00</p>
+                                    <p className='font-medium'>NGN {total.toLocaleString()}</p>
                                 </div>
                                 <div className="flex justify-between">
                                     <p className='text-muted'>Order Total</p>
-                                    <p className='font-medium'>NGN 80.00</p>
+                                    <p className='font-medium'>NGN {total.toLocaleString()}</p>
                                 </div>
                             </div>
                             <div className="py-5 border-y border-gray-200 space-y-3">
@@ -94,10 +125,7 @@ export default function () {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* <CheckoutSuccess /> */}
-
-        </GuestLayout>
+            </form>
+        </>
     )
 }

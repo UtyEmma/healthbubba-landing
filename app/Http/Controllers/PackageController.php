@@ -15,11 +15,15 @@ class PackageController extends Controller {
 
     function show($package) {
         [$status, $message, $categories] = (new ApiService)->testCategories();
-        [$status, $message, $test] = (new ApiService)->tests($package);
+        [$status, $message, ['test' => $test, 'testPackages' => $packages]] = (new ApiService)->packages($package);
+        $faqs = config('content.faqs');
+        // dd($test, $packages);
         // packageItem
         return Inertia::render('Packages/PackageDetails',[
             'categories' => $categories,
-            'test' => $test
+            'test' => $test,
+            'packages' => $packages,
+            'faqs' => $faqs
         ]);
     }
 
