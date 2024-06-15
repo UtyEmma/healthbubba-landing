@@ -37,33 +37,13 @@ export default function ({categories}) {
 }
 
 const CategoryPackages = ({category, index, active}) => {
-    const [tests, setTests] = useState([])
-
-    const listTests = async () => {
-        const data = await fetch(route('tests.list', {
-            category: category.category_id
-        }), {
-            headers: {
-                'Accept' : 'application/json'
-            }
-        }).then(
-            (res) => res.json(),
-            (err) => err
-        ).catch(err => console.log(err))
-        if(data) setTests(data.tests);
-    }
-
-    useEffect(() => {
-        listTests()
-    }, [])
-
     return (
         <>
             <div className="md:block hidden">
                 <div className={`${index == active ? 'grid grid-cols-4 gap-5' : 'hidden'}`}>
                     {
-                        tests.map((test, index) => (
-                            <Disclose key={'test-'+index} show={index < 4} >
+                        category.tests.map((test, index) => (
+                            <Disclose key={'test-md-'+index} show={index < 4} >
                                 <SinglePackage test={test}  />
                             </Disclose>
                         ))
@@ -74,15 +54,21 @@ const CategoryPackages = ({category, index, active}) => {
             <div className='md:hidden' >
                 <div className={`${index == active ? 'flex' : 'hidden'}`}>
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={2}
+                        // slidesPerView={'auto'}
                         spaceBetween={10}
+                        // slideActiveClass='!w-[80%]'
+                        // onSlideChange={(swiper) => swiper.acti}
                         pagination={{
-                        clickable: true,
+                            clickable: true,
+                            enabled: false
                         }}
                         modules={[Pagination]}
+                        // slideActiveClass='w-4/5'
+                        // slideNextClass=''
                     >
                         {
-                            tests.map((test, index) => (
+                            category.tests.map((test, index) => (
                                 <Disclose key={'test-'+index} show={index < 4} >
                                     <SwiperSlide>
                                         <SinglePackage test={test}  />

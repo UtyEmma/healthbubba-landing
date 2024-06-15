@@ -2,6 +2,7 @@ import GuestLayout from '@/Layouts/GuestLayout'
 import { Cta } from '@/Partials/Cta'
 import React from 'react'
 import { SingleProduct } from './Partials/SingleProduct'
+import { Link } from '@inertiajs/react'
 
 export default function () {
     return (
@@ -9,7 +10,9 @@ export default function () {
             <div className="mb-4">
                 <div class={'max-w-7xl mx-auto px-4'}>
                     <ul class={'flex space-x-1 items-center'}>
-                        <li>Home</li>
+                        <li>
+                            <Link href={route('home')}>Home</Link>
+                        </li>
                         <li>/</li>
                         <li>Medications</li>
                     </ul>
@@ -20,10 +23,11 @@ export default function () {
 
             <div className="py-3 border-y border-gray-200">
                 <div className="max-w-7xl mx-auto flex space-x-4 justify-between items-center px-4">
-                    <div className='shrink-0'>
+                    <div className='shrink-0 md:w-2/5'>
                         <p className="text-muted">1-25 of 179 results</p>
                     </div>
-                    <div class={'flex-1 md:w-2/5'}>
+
+                    <div class={'flex-1 md:w-2/5 '}>
                         <div class={'relative  flex items-center '}>
                             <span class={'absolute left-2'}>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +37,8 @@ export default function () {
                             <input type="text" class={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Medications' />
                         </div>
                     </div>
-                    <div class={'mdLw-1/6'}>
+
+                    <div class={'md:w-1/6'}>
 
                     </div>
                 </div>

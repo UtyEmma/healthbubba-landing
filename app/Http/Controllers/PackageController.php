@@ -10,15 +10,27 @@ class PackageController extends Controller {
 
 
     function index(){
-        return Inertia::render('Packages/Packages');
+        [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
+        $tests = collect(collect($categories)->reduce(function($carry, $item) {
+            foreach ($item['tests'] as $test) {
+                $test['category_id'] = $item['category_id'];
+                $carry[] = $test;
+            }
+
+            return $carry;
+        }, []))->sortBy('test_id')->toArray();
+
+        return Inertia::render('Packages/Packages', [
+            'categories' => $categories,
+            'tests' => array_values($tests)
+        ]);
     }
 
     function show($package) {
-        [$status, $message, $categories] = (new ApiService)->testCategories();
+        [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
         [$status, $message, ['test' => $test, 'testPackages' => $packages]] = (new ApiService)->packages($package);
         $faqs = config('content.faqs');
-        // dd($test, $packages);
-        // packageItem
+
         return Inertia::render('Packages/PackageDetails',[
             'categories' => $categories,
             'test' => $test,

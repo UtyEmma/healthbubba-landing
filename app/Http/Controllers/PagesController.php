@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Services\ApiService;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class PagesController extends Controller {
 
 
     function index(){
-        [$status, $message, $categories] = (new ApiService)->testCategories();
+        // [$status, $message, $categories] = (new ApiService)->testCategories();
+        [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
+
         $faqs = config('content.faqs');
 
         return Inertia::render('Welcome', [
