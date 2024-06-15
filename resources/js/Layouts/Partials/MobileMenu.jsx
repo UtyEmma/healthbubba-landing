@@ -25,19 +25,25 @@ export const MobileMenu = () => {
                             >
                                 <div className='bg-[#292929] p-2 rounded-2xl text-gray-200 border z-50 border-[#505050] divide-y divide-white/5 text-sm'>
                                     <Disclosure >
-                                        <Disclosure.Button className='w-full group p-3 flex justify-between items-center'>
-                                            <p>For Patients</p>
-                                            <ChevronRightIcon className='w-5 transition-all duration-300 group-data-[headlessui-state=open]:rotate-90' />
-                                        </Disclosure.Button>
+                                        {
+                                            ({open}) => (
+                                                <>
+                                                    <Disclosure.Button className='w-full group p-3 flex justify-between items-center'>
+                                                        <p>For {open ? '' : 'Patients'}</p>
+                                                        <ChevronRightIcon className='w-5 transition-all duration-300 group-data-[headlessui-state=open]:rotate-90' />
+                                                    </Disclosure.Button>
 
-                                        <Disclosure.Panel as='div' className={'divide-y divide-white/5 transition-all duration-300'}>
-                                            <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
-                                                For Patients
-                                            </Link>
-                                            <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
-                                                Health Practitioners
-                                            </Link>
-                                        </Disclosure.Panel>
+                                                    <Disclosure.Panel as='div' className={'divide-y divide-white/5 transition-all duration-300'}>
+                                                        <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                            For Patients
+                                                        </Link>
+                                                        <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                            Health Practitioners
+                                                        </Link>
+                                                    </Disclosure.Panel>
+                                                </>
+                                            )
+                                        }
                                     </Disclosure>
 
                                     <Disclosure >
@@ -51,11 +57,11 @@ export const MobileMenu = () => {
                                                 Virtual Consultation
                                             </Link>
 
-                                            <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                            <Link href={route('packages')} className='w-full ps-7 p-3 flex justify-between items-center'>
                                                 Order a Lab test
                                             </Link>
 
-                                            <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                            <Link href={route('medications')} className='w-full ps-7 p-3 flex justify-between items-center'>
                                                 Order Medications
                                             </Link>
                                         </Disclosure.Panel>
