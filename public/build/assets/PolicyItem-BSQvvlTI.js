@@ -1,0 +1,1 @@
+import{j as s}from"./app-D7nhYm9e.js";const c=({title:e,children:t})=>s.jsxs("div",{class:"py-5 space-y-3",children:[s.jsx("h2",{class:"text-2xl font-medium",children:e}),s.jsx("div",{class:"bg-gray-100 p-5 space-y-3 border rounded-lg text-muted",children:t})]});export{c as PolicyItem};

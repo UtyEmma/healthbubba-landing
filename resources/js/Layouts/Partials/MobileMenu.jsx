@@ -61,7 +61,7 @@ export const MobileMenu = () => {
                                                 Order a Lab test
                                             </Link>
 
-                                            <Link href={route('medications')} className='w-full ps-7 p-3 flex justify-between items-center'>
+                                            <Link href={route('shop')} className='w-full ps-7 p-3 flex justify-between items-center'>
                                                 Order Medications
                                             </Link>
                                         </Disclosure.Panel>
