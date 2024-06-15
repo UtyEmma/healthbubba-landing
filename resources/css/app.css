@@ -25,6 +25,11 @@
         @apply bg-gray-100 overflow-hidden rounded-lg font-semibold text-muted ring-2 ring-gray-200 shadow-lg shadow-gray-200  hover:shadow-none
     }
 
+    .btn-light::before {
+        content: '';
+        @apply bg-gray-500 absolute bottom-0 left-0 right-0 top-[50%] bg-opacity-10
+    }
+
     .btn-primary::before {
         content: '';
         @apply bg-white absolute top-0 left-0 right-0 bottom-[50%] bg-opacity-10
