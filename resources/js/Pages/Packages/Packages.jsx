@@ -64,8 +64,8 @@ export default function ({categories, tests}) {
                     </div>
                 </div>
 
-                <div class={'max-w-7xl mx-auto grid md:grid-cols-12 py-10 px-4'}>
-                    <div className="md:col-span-3 space-y-2">
+                <div class={'max-w-7xl mx-auto grid md:grid-cols-12 gap-5 py-5 md:py-10 px-4'}>
+                    <div className="md:col-span-3">
                         <ul class={'space-y-2 sticky top-10'}>
                             <li >
                                 <label class='flex space-x-2 items-center font-medium'>
