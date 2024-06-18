@@ -7,7 +7,7 @@ export default function ({test, className}) {
     const {props} = usePage()
 
     return (
-        <div className={`p-1 rounded-2xl min-h-full flex flex-col hover:shadow-xl border border-gray-200 transition-all duration-150 ${className}`}>
+        <div className={`p-1 rounded-2xl min-h-full flex flex-col md:hover:shadow-xl border border-gray-200 transition-all duration-150 ${className}`}>
             <div className='rounded-xl overflow-hidden h-40'>
                 <img src={`${props.content}${test.test_pic}`} className='object-cover h-full w-full' alt="" />
             </div>

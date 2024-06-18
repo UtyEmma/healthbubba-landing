@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 import {Swiper, SwiperSlide} from 'swiper/react';
+import { Transition } from '@headlessui/react';
+import Carousel from 'react-multi-carousel';
 
 export default function ({categories}) {
     const [active, setActive] = useState(0)
@@ -52,35 +54,58 @@ const CategoryPackages = ({category, index, active}) => {
             </div>
 
             <div className='md:hidden' >
-                <div className={`${index == active ? 'flex' : 'hidden'}`}>
-                    <Swiper
-                        slidesPerView={2}
-                        // slidesPerView={'auto'}
-                        spaceBetween={10}
-                        // slideActiveClass='!w-[80%]'
-                        // onSlideChange={(swiper) => swiper.acti}
-                        pagination={{
-                            clickable: true,
-                            enabled: false
-                        }}
-                        modules={[Pagination]}
-                        // slideActiveClass='w-4/5'
-                        // slideNextClass=''
-                    >
-                        {
-                            category.tests.map((test, index) => (
-                                <Disclose key={'test-'+index} show={index < 4} >
-                                    <SwiperSlide>
-                                        <SinglePackage test={test}  />
-                                    </SwiperSlide>
-                                </Disclose>
-                            ))
-                        }
-                    </Swiper>
+                <div className='relative'>
+                    <div className={`${index == active ? 'block' : 'hidden'}`}>
+                        <PackageCarousel tests={category.tests} />
+                    </div>
                 </div>
             </div>
         </>
     )
 }
+
+const PackageCarousel = ({tests}) => {
+    return (
+        <div className='max-w-full overflow-x-auto'>
+            <div  className='inline-flex  relative gap-x-3 w-auto py-4 '>
+                {
+                    tests.map((test, index) => (
+                        <div className={`w-[70vw]`}>
+
+                            <SinglePackage key={'test'+index} test={test}  />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+    )
+}
+
+
+{/* <Swiper
+    slidesPerView={2}
+    // slidesPerView={'auto'}
+    spaceBetween={10}
+    // slideActiveClass='!w-[80%]'
+    // onSlideChange={(swiper) => swiper.acti}
+    pagination={{
+        clickable: true,
+        enabled: false
+    }}
+    modules={[Pagination]}
+    // slideActiveClass='w-4/5'
+    // slideNextClass=''
+>
+    {
+        category.tests.map((test, index) => (
+            <Disclose key={'test-'+index} show={index < 4} >
+                <SwiperSlide>
+                    <SinglePackage test={test}  />
+                </SwiperSlide>
+            </Disclose>
+        ))
+    }
+</Swiper> */}
 
 

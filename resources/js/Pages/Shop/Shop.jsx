@@ -17,13 +17,13 @@ export default function () {
                         <li>Medications</li>
                     </ul>
 
-                    <h2 class={'text-3xl md:text-4xl font-semibold'}>Explore Medications</h2>
+                    <h2 class={'text-2xl md:text-4xl font-semibold'}>Explore Medications</h2>
                 </div>
             </div>
 
             <div className="py-3 border-y border-gray-200">
-                <div className="max-w-7xl mx-auto flex space-x-4 justify-between items-center px-4">
-                    <div className='shrink-0 md:w-2/5'>
+                <div className="max-w-7xl mx-auto flex gap-x-4 justify-between items-center px-4">
+                    <div className='shrink-0 md:w-2/5 hidden md:block'>
                         <p className="text-muted">1-25 of 179 results</p>
                     </div>
 
@@ -106,7 +106,7 @@ export default function () {
                     </div>
 
                     <div className="col-span-9">
-                        <div className="grid md:grid-cols-3 grid-cols-2 gap-5 mb-4">
+                        <div className="grid md:grid-cols-3 gap-5 mb-4">
                             <div>
                                 <SingleProduct />
                             </div>

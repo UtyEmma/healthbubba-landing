@@ -36,7 +36,7 @@ export default function Welcome({ categories, faqs = [] }) {
                         </div>
                     </section>
 
-                    <section className="text-sm mx-auto py-10 flex md:grid md:grid-cols-9 overflow-x-auto gap-5">
+                    <section className="text-sm mx-auto py-10 px-4 flex md:grid md:grid-cols-9 overflow-x-auto gap-5">
                         <div className="flex flex-col items-center justify-stretch text-center">
                             <div className="shadow border rounded-xl p-2 w-16 flex items-center justify-center aspect-square mb-4">
                             <svg width={34} height={33} viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +174,7 @@ export default function Welcome({ categories, faqs = [] }) {
                     <section className="bg-secondary overflow-hidden relative py-20 bg-cover bg-no-repeat bg-top" style={{backgroundImage: 'url(/assets/imgs/media/doodle-bg.svg)'}}>
                         <div className="text-center max-w-3xl mx-auto text-white px-4 flex flex-col items-center space-y-5">
                             <p>Trusted by fast-growing Pharmacies and Healthcare companies around the world</p>
-                            <div className="flex md:space-x-7 justify-around gap-3 flex-wrap">
+                            <div className="flex md:space-x-7 justify-around gap-2 gap-y-5 sm:gap-y-3 sm:gap-3 flex-wrap">
                                 <div>
                                     <img src="/assets/imgs/brands/synlab.svg" alt="" />
                                 </div>
@@ -194,11 +194,11 @@ export default function Welcome({ categories, faqs = [] }) {
                         </div>
                     </section>
 
-                    <section className="max-w-7xl mx-auto py-10 md:py-20 px-4">
+                    <section className="max-w-7xl mx-auto py-10 md:py-20 px-3 sm:px-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-5 md:gap-10">
                             <div>
                                 <div className="border shadow-lg h-full rounded-3xl flex flex-col justify-between">
-                                    <div className="md:p-10 p-5 mb-5 items-center  flex flex-col space-y-5">
+                                    <div className="md:p-10 p-3 sm:p-5 mb-5 items-center  flex flex-col space-y-5">
                                         <div className="p-3 border shadow-md inline-block mx-auto rounded-lg">
                                             <svg width={26} height={26} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20.3125 15.25H17.5V10.75H20.3125C21.3138 10.75 22.2926 10.4531 23.1251 9.89682C23.9576 9.34054 24.6065 8.54989 24.9896 7.62484C25.3728 6.69979 25.4731 5.68189 25.2777 4.69986C25.0824 3.71783 24.6002 2.81578 23.8922 2.10777C23.1842 1.39977 22.2822 0.917614 21.3001 0.722277C20.3181 0.526939 19.3002 0.627193 18.3752 1.01036C17.4501 1.39353 16.6595 2.0424 16.1032 2.87493C15.5469 3.70745 15.25 4.68623 15.25 5.6875V8.5H10.75V5.6875C10.75 4.68623 10.4531 3.70745 9.89682 2.87493C9.34054 2.0424 8.54989 1.39353 7.62484 1.01036C6.69979 0.627193 5.68189 0.526939 4.69986 0.722277C3.71783 0.917614 2.81578 1.39977 2.10777 2.10777C1.39977 2.81578 0.917614 3.71783 0.722277 4.69986C0.526939 5.68189 0.627193 6.69979 1.01036 7.62484C1.39353 8.54989 2.0424 9.34054 2.87493 9.89682C3.70745 10.4531 4.68623 10.75 5.6875 10.75H8.5V15.25H5.6875C4.68623 15.25 3.70745 15.5469 2.87493 16.1032C2.0424 16.6595 1.39353 17.4501 1.01036 18.3752C0.627193 19.3002 0.526939 20.3181 0.722277 21.3001C0.917614 22.2822 1.39977 23.1842 2.10777 23.8922C2.81578 24.6002 3.71783 25.0824 4.69986 25.2777C5.68189 25.4731 6.69979 25.3728 7.62484 24.9896C8.54989 24.6065 9.34054 23.9576 9.89682 23.1251C10.4531 22.2926 10.75 21.3138 10.75 20.3125V17.5H15.25V20.3125C15.25 21.3138 15.5469 22.2926 16.1032 23.1251C16.6595 23.9576 17.4501 24.6065 18.3752 24.9896C19.3002 25.3728 20.3181 25.4731 21.3001 25.2777C22.2822 25.0824 23.1842 24.6002 23.8922 23.8922C24.6002 23.1842 25.0824 22.2822 25.2777 21.3001C25.4731 20.3181 25.3728 19.3002 24.9896 18.3752C24.6065 17.4501 23.9576 16.6595 23.1251 16.1032C22.2926 15.5469 21.3138 15.25 20.3125 15.25ZM17.5 5.6875C17.5 5.13124 17.665 4.58747 17.974 4.12496C18.283 3.66245 18.7223 3.30196 19.2362 3.08909C19.7501 2.87622 20.3156 2.82052 20.8612 2.92904C21.4068 3.03756 21.9079 3.30543 22.3012 3.69876C22.6946 4.0921 22.9624 4.59324 23.071 5.13881C23.1795 5.68438 23.1238 6.24988 22.9109 6.7638C22.698 7.27772 22.3376 7.71697 21.875 8.02601C21.4125 8.33505 20.8688 8.5 20.3125 8.5H17.5V5.6875ZM2.875 5.6875C2.875 4.94158 3.17132 4.22621 3.69876 3.69876C4.22621 3.17132 4.94158 2.875 5.6875 2.875C6.43342 2.875 7.14879 3.17132 7.67624 3.69876C8.20369 4.22621 8.5 4.94158 8.5 5.6875V8.5H5.6875C4.94158 8.5 4.22621 8.20369 3.69876 7.67624C3.17132 7.14879 2.875 6.43342 2.875 5.6875ZM8.5 20.3125C8.5 20.8688 8.33505 21.4125 8.02601 21.875C7.71697 22.3376 7.27772 22.698 6.7638 22.9109C6.24988 23.1238 5.68438 23.1795 5.13881 23.071C4.59324 22.9624 4.0921 22.6946 3.69876 22.3012C3.30543 21.9079 3.03756 21.4068 2.92904 20.8612C2.82052 20.3156 2.87622 19.7501 3.08909 19.2362C3.30196 18.7223 3.66245 18.283 4.12496 17.974C4.58747 17.665 5.13124 17.5 5.6875 17.5H8.5V20.3125ZM10.75 10.75H15.25V15.25H10.75V10.75ZM20.3125 23.125C19.5666 23.125 18.8512 22.8287 18.3238 22.3012C17.7963 21.7738 17.5 21.0584 17.5 20.3125V17.5H20.3125C21.0584 17.5 21.7738 17.7963 22.3012 18.3238C22.8287 18.8512 23.125 19.5666 23.125 20.3125C23.125 21.0584 22.8287 21.7738 22.3012 22.3012C21.7738 22.8287 21.0584 23.125 20.3125 23.125Z" fill="url(#paint0_linear_690_857)" />
@@ -214,11 +214,11 @@ export default function Welcome({ categories, faqs = [] }) {
                                             <h2 className="font-bold text-2xl text-center">Begin your wellness journey</h2>
                                             <p className="text-muted md:text-lg text-center">Get the HealthBubba’s Patient App, consult and connect with specialists and healthcare professionals. </p>
                                         </div>
-                                        <div className="bg-gray-200 p-1 rounded-xl space-x-2">
-                                            <button className="btn btn-white shadow-md">
+                                        <div className="bg-gray-200 p-1 rounded-xl space-x-2 sm:space-x-2">
+                                            <button className="btn btn-white shadow-md text-sm md:text-base">
                                             Get on PlayStore
                                             </button>
-                                            <button role="button" className="btn btn-white shadow-md">
+                                            <button role="button" className="btn btn-white shadow-md text-sm md:text-base">
                                             Get on AppStore
                                             </button>
                                         </div>
