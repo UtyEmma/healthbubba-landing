@@ -25,7 +25,7 @@
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
         @inertiaHead
     </head>
-    <body >
+    <body class="scroll-smooth" >
         @inertia
 
         <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>

@@ -27,7 +27,7 @@ export default function () {
                         leaveTo="translate-y-full"
                     >
                         <div ref={qr} className="absolute bottom-3 right-0 left-0 px-3 md:flex md:justify-end justify-center duration-200 transition-all">
-                            <div className="w-4/5 md:w-1/5 mx-auto md:mx-0 space-y-5 aspect-square p-3 bg-[#1F1F1F] rounded-[14.51px]">
+                            <div className="w-5/6 sm:w-4/5 md:w-1/5 mx-auto md:mx-0 space-y-5 aspect-square p-3 bg-[#1F1F1F] rounded-[14.51px]">
                                 <DownloadQR className="w-full" />
 
                                 <div className="grid grid-cols-2 gap-2">

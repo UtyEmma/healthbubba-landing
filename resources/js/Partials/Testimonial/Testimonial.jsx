@@ -58,7 +58,7 @@ export default function () {
                 </button>
             </div>
 
-            <div className="flex justify-center space-x-10 mt-10">
+            <div className="md:hidden flex justify-center space-x-10 mt-10">
                 <button className="block md:hidden rounded-full p-3 bg-white shadow border">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>

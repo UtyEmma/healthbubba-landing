@@ -5,10 +5,10 @@ import { PolicyItem } from './Partials/PolicyItem'
 export default function () {
     return (
         <GuestLayout className="bg-gray-100">
-            <div className="max-w-6xl mx-auto py-10">
-                <div className="p-20 bg-white divide-y">
-                    <div class={'space-y-2'}>
-                        <h1 class={'text-4xl font-semibold'}>Privacy Policy</h1>
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="md:p-20 p-4 bg-white divide-y">
+                    <div class={'md:space-y-2'}>
+                        <h1 class={'text-2xl md:text-4xl font-semibold'}>Privacy Policy</h1>
                         <p class={'text-muted'}>Last updated May 25, 2023</p>
                     </div>
 

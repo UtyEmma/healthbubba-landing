@@ -1,11 +1,10 @@
-import { ChevronUpIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 import { SubscriptionCTA } from './SubscriptionCTA'
-import { ScrollToTop } from './ScrollToTop'
+import { Link } from '@inertiajs/react'
 
 export const Footer = () => {
     return (
-        <footer className="border-t md:py-10">
+        <footer className="border-t md:py-10 bg-white z-50">
             <div className="max-w-7xl mx-auto divide-y">
                 <div className="grid gap-5 md:grid-cols-2 py-10 px-4">
                     <div className="md:w-2/3 space-y-5">
@@ -21,16 +20,16 @@ export const Footer = () => {
                             <p className="text-gray-400 mb-3 font-semibold">Company</p>
                             <ul class="text-gray-500 text-sm space-y-2  font-medium">
                                 <li>
-                                    <a href="#">About</a>
+                                    <Link className='hover:text-gray-700' href={`${route('home')}#about`}>About</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Order a Lab test</a>
+                                    <Link className='hover:text-gray-700' href={route('packages')}>Order a Lab test</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Order Medications</a>
+                                    <Link className='hover:text-gray-700' href={route('shop')}>Order Medications</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Health Professional’s Page</a>
+                                    <Link className='hover:text-gray-700' href="#">Health Professional’s Page</Link>
                                 </li>
                             </ul>
                         </div>
@@ -38,10 +37,10 @@ export const Footer = () => {
                             <p className="text-gray-400 mb-3 font-semibold">Legal</p>
                             <ul class="text-gray-500 text-sm space-y-2  font-medium">
                                 <li>
-                                    <a href="#">Terms and Conditions</a>
+                                    <Link className='hover:text-gray-700' href={route('terms')}>Terms and Conditions</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Privacy Policy</a>
+                                    <Link className='hover:text-gray-700' href={route('privacy-policy')}>Privacy Policy</Link>
                                 </li>
                             </ul>
                         </div>
@@ -49,11 +48,11 @@ export const Footer = () => {
                             <p class="text-gray-400 mb-3 font-semibold" >Need help?</p>
                             <ul class="text-gray-500 text-sm space-y-2  font-medium">
                                 <li>
-                                    <a href="#">FAQ</a>
+                                    <Link className='hover:text-gray-700' href={`${route('home')}#faqs`}>FAQ</Link>
                                 </li>
                                 <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki
                                 Lagos State</li>
-                                <li>1 800 228 1966</li>
+                                <li>0916 332 6000</li>
                             </ul>
                         </div>
                     </div>
