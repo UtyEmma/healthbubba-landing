@@ -26,6 +26,7 @@ export default function Register() {
 
     return (
         <div className="min-h-screen flex flex-col items-center p-4 space-y-5 justify-center">
+            <Head title='Register' />
             <div>
                 <Link href={route('home')}>
                     <img src="/assets/imgs/logos/logo-long.svg" alt="" />

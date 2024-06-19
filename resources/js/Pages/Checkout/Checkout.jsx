@@ -3,6 +3,7 @@ import { PlayIcon } from '@heroicons/react/24/solid'
 import React, { useState } from 'react'
 import { CheckoutSuccess } from './CheckoutSuccess'
 import { useCart } from '@/Context/CartContext'
+import { Head } from '@inertiajs/react'
 
 export default function () {
 
@@ -38,6 +39,7 @@ const Checkout = ({setSuccess}) => {
 
     return (
         <>
+            <Head title='Checkout' />
             <div className='pb-5 px-4'>
                 <h2 className={'md:text-4xl text-3xl md:px-36 mx-auto font-semibold'}>Checkout</h2>
             </div>

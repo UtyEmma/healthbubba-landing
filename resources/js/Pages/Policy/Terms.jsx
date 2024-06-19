@@ -1,10 +1,12 @@
 import GuestLayout from '@/Layouts/GuestLayout'
 import React from 'react'
 import { PolicyItem } from './Partials/PolicyItem'
+import { Head } from '@inertiajs/react'
 
 export default function () {
     return (
         <GuestLayout className="bg-gray-100">
+            <Head title='Terms and Conditions' />
             <div className="max-w-6xl mx-auto px-4">
                 <div className="md:p-20 p-4 bg-white divide-y">
                     <div class={'md:space-y-2'}>

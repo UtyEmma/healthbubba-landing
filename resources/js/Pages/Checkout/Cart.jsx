@@ -4,7 +4,7 @@ import CartItem from './Partials/Cart/CartItem'
 import { PlayIcon } from '@heroicons/react/24/solid'
 import ServiceProduct from '../Shop/Partials/ServiceProduct'
 import { useCart } from '@/Context/CartContext'
-import { Link, router } from '@inertiajs/react'
+import { Head, Link, router } from '@inertiajs/react'
 import toast from 'react-hot-toast'
 
 export default function () {
@@ -56,6 +56,7 @@ const Cart = () => {
 
     return (
         <>
+            <Head title='Cart' />
             <div className="border-y border-gray-200 md:pl-36">
                 <div className="grid md:grid-cols-5 divide-x">
                     <div className="md:col-span-3 divide-y py-5">

@@ -2,11 +2,12 @@ import GuestLayout from '@/Layouts/GuestLayout'
 import { Cta } from '@/Partials/Cta'
 import React from 'react'
 import { SingleProduct } from './Partials/SingleProduct'
-import { Link } from '@inertiajs/react'
+import { Head, Link } from '@inertiajs/react'
 
 export default function () {
     return (
         <GuestLayout>
+            <Head title='Medication' />
             <div className="mb-4">
                 <div class={'max-w-7xl mx-auto px-4'}>
                     <ul class={'flex space-x-1 items-center'}>

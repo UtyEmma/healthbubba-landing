@@ -2,7 +2,7 @@ import GuestLayout from '@/Layouts/GuestLayout'
 import { Cta } from '@/Partials/Cta'
 import PackageList from '@/Partials/Packages/PackageList'
 import SinglePackage from '@/Partials/Packages/SinglePackage'
-import { Link } from '@inertiajs/react'
+import { Head, Link } from '@inertiajs/react'
 import React, { useState } from 'react'
 
 export default function ({categories, tests}) {
@@ -27,6 +27,7 @@ export default function ({categories, tests}) {
 
     return (
         <GuestLayout>
+            <Head title='Test Packages' />
             <div class={''}>
                 <div class={'max-w-7xl mx-auto mb-5 px-4'}>
                     <ul class={'flex space-x-1 items-center'}>

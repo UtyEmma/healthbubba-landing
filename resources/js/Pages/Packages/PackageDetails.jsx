@@ -4,13 +4,14 @@ import { SelectPackageItem } from './Partials/SelectPackageItem'
 import SinglePackage from '@/Partials/Packages/SinglePackage'
 import PackageList from '@/Partials/Packages/PackageList'
 import { Faq } from '@/Partials/FAQs/Faq'
-import { Link, usePage } from '@inertiajs/react'
+import { Head, Link, usePage } from '@inertiajs/react'
 
 export default function ({test, packages = [], categories, faqs}) {
 
     const {props} = usePage()
     return (
         <GuestLayout>
+            <Head title={test.test_name} />
             <div className="border-gray-200 border-solid border-b pb-5 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div class={'space-y-1'}>

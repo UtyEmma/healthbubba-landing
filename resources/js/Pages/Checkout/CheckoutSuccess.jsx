@@ -9,6 +9,7 @@ export const CheckoutSuccess = () => {
 
     return (
         <div className='max-w-7xl mx-auto py-10 md:py-20 px-4'>
+            <Head title='Order Success' />
             <div className="mx-auto w-1/2 md:w-1/6">
                 <img src="/assets/imgs/flowers.png"   alt="" />
             </div>
