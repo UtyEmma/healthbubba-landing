@@ -38,7 +38,7 @@ class ApiController extends Controller {
     function medications($category){
         [$status, $message, $data] = (new ApiService)->medications($category);
         if(!$status) return null;
-        return $data;
+        return response()->json($data);
     }
 
 }

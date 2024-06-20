@@ -25,7 +25,10 @@ Route::get('/privacy-policy', [PagesController::class, 'policy'])->name('privacy
 
 Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 
-Route::get('medications', [PagesController::class, 'medications'])->name('shop');
+Route::prefix('medications')->group(function(){
+    Route::get('', [PagesController::class, 'medications'])->name('shop');
+    // Route::get('{category}', [PagesController::class, 'medication'])->name('shop.details');
+});
 
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
 

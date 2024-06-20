@@ -25,7 +25,14 @@ class PagesController extends Controller {
     }
 
     function medications(){
-        return Inertia::render('Shop/Shop');
+        [$status, $message, $categories] = (new ApiService)->medicationCategories();
+        [$status, $message, ['medications' => $products]] = (new ApiService)->medications($categories[0]['category_id']);
+        return Inertia::render('Shop/Shop', compact('categories', 'products'));
+    }
+
+    function medication($category){
+        [$status, $message, ['medications' => $products]] = (new ApiService)->medications($category);
+        return back()->with(compact('products'));
     }
 
     function cart(){

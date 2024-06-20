@@ -1,10 +1,41 @@
 import GuestLayout from '@/Layouts/GuestLayout'
 import { Cta } from '@/Partials/Cta'
-import React from 'react'
+import React, { useState } from 'react'
 import { SingleProduct } from './Partials/SingleProduct'
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link, router } from '@inertiajs/react'
 
-export default function () {
+export default function ({categories, products}) {
+
+    const [medications, setMedications] = useState(products)
+    const [category, setCategory] = useState(categories[0])
+
+    const [prevCategory, setPrevCategory] = useState(null)
+
+    const [loading, setLoading] = useState(false)
+
+    const update = (category) => {
+        setCategory(prev => {
+            setPrevCategory(prev)
+            return category;
+        })
+
+        setLoading(true)
+
+        fetch(route('medications.list', {category: category.category_id}))
+            .then(async res => {
+                const {medications, category} = await res.json()
+                setMedications(medications)
+            })
+            .catch(err => {
+                console.log(err)
+                setCategory(prevCategory)
+                setPrevCategory(null)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }
+
     return (
         <GuestLayout>
             <Head title='Medication' />
@@ -25,7 +56,7 @@ export default function () {
             <div className="py-3 border-y border-gray-200">
                 <div className="max-w-7xl mx-auto flex gap-x-4 justify-between items-center px-4">
                     <div className='shrink-0 md:w-2/5 hidden md:block'>
-                        <p className="text-muted">1-25 of 179 results</p>
+                        <p className="text-muted">1-{medications.length} of {medications.length} results</p>
                     </div>
 
                     <div class={'flex-1 md:w-2/5 '}>
@@ -49,95 +80,31 @@ export default function () {
                 <div class={'md:grid md:grid-cols-12 space-y-5 md:space-y-0'}>
                     <div className="md:col-span-3 col-span-full space-y-2">
                         <ul class={'space-y-2 sticky top-10'}>
-                            <li >
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Antimalarial medications</span>
-                                </label>
-                            </li>
-                            <li class=''>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Vaccines</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Analgesics</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" defaultChecked name="" class='rounded checked:text-primary p-2' id="" />
-                                    <span>Antibiotics</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Antihypertensives</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Supplements</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Antidiabetics</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Antifungals</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class='flex space-x-2 items-center font-medium'>
-                                    <input type="checkbox" name="" class='rounded p-2' id="" />
-                                    <span>Antihistamines</span>
-                                </label>
-                            </li>
+                            {
+                                categories.map((item, index) => (
+                                    <li >
+                                        <label class='flex space-x-2  items-center font-medium'>
+                                            <input type="checkbox" checked={item.category_id == category.category_id} onChange={e => update(item)} class='rounded text-primary p-2' id="" />
+                                            <span>{item.category_name}</span>
+                                        </label>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
 
                     <div className="col-span-9">
                         <div className="grid md:grid-cols-3 gap-5 mb-4">
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
-                            <div>
-                                <SingleProduct />
-                            </div>
+                            {
+                                medications.map(medication => (
+                                    <div>
+                                        <SingleProduct medication={medication} />
+                                    </div>
+                                ))
+                            }
                         </div>
 
-                        <div class={'flex justify-between text-muted'}>
+                        {/* <div class={'flex justify-between text-muted'}>
                             <div>
                                 <p>1 - 13 of 200 results</p>
                             </div>
@@ -149,7 +116,7 @@ export default function () {
                                     <p>Next</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

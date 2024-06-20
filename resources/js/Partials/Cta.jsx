@@ -1,4 +1,5 @@
 import PlayIcon from '@/Icons/PlayIcon'
+import { Link } from '@inertiajs/react'
 import React from 'react'
 
 export const Cta = () => {
@@ -8,7 +9,7 @@ export const Cta = () => {
                 <div className="md:space-y-5 space-y-5">
                     <h2 className="text-3xl md:text-4xl font-semibold">Begin Your Wellness Journey</h2>
                     <p className="md:text-lg text-white">Discover a new era of personalized wellness – welcome to a platform that truly transforms healthcare.</p>
-                    <button class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></button>
+                    <Link href={route('download')} class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></Link>
                 </div>
             </div>
 

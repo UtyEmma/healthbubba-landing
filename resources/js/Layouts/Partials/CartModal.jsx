@@ -1,4 +1,5 @@
 import { useCart } from '@/Context/CartContext'
+import { toNumber } from '@/Helpers/Utils'
 import { Dialog, Popover, Transition } from '@headlessui/react'
 import { CheckCircleIcon, PlayIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link, usePage } from '@inertiajs/react'
@@ -41,9 +42,9 @@ export const CartModal = ({show, setShow, item, setItem}) => {
                                         <img src={`${props.content}${item.}`} className='aspect-square w-full rounded-xl object-cover' alt="" />
                                     </div> */}
                                     <div className="flex-1 space-y-1">
-                                        <h3 className='font-semibold'>{item.test_package_name}</h3>
+                                        <h3 className='font-semibold'>{item.name}</h3>
                                         <div class="h-7 px-2.5 py-1 bg-white border-2 border-gray-200 rounded-[99px] shadow-sm justify-center items-center gap-2.5 inline-flex font-medium">
-                                        <div class="text-neutral-900 text-sm font-normal font-['Inter'] leading-tight">NGN {item.test_package_price}</div>
+                                        <div class="text-neutral-900 text-sm font-normal font-['Inter'] leading-tight">NGN {toNumber(item.price).toLocaleString()}</div>
                                         </div>
                                     </div>
                                 </div>

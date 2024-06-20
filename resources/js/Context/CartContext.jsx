@@ -36,11 +36,11 @@ export default ({children}) => {
     const total = useMemo(() => items.reduce((prev, carry) => prev + carry.test_package_price * carry.quantity, 0), [items])
 
     const add = (item, qty = 1, update = false) => {
-        const existing = items.find(product => product.test_package_id == item.test_package_id)
+        const existing = items.find(product => product.id == item.id)
 
         if(existing) {
             setItems((prev) => prev.map(product => {
-                if(product.test_package_id == item.test_package_id) {
+                if(product.id == item.id) {
                     item.quantity = update ? qty : item.quantity + qty
                 }
 
@@ -62,7 +62,7 @@ export default ({children}) => {
     }
 
     const remove = (item) => {
-        setItems(items.filter(value => value.test_package_id !== item.test_package_id))
+        setItems(items.filter(value => value.id !== item.id))
     }
 
     const clear = () => setItems([])

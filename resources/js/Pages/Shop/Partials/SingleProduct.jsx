@@ -1,18 +1,28 @@
+import { useCart } from '@/Context/CartContext'
+import { toNumber } from '@/Helpers/Utils'
 import CartIcon from '@/Icons/CartIcon'
 import React from 'react'
 
-export const SingleProduct = () => {
+export const SingleProduct = ({medication}) => {
+
+    const {add} = useCart()
+
     return (
-        <div class={'p-3 rounded-xl shadow-sm border-2 border-gray-200'}>
+        <div class={'p-3 rounded-xl shadow-sm border-2 border-gray-200 h-full'}>
             <div>
                 <img src="/assets/imgs/products/product-img.png" alt="" />
             </div>
 
-            <div class={'md:py-5 space-y-5'}>
-                <h4 class={'font-medium text-sm md:text-base'}>Amoxicilin & Clavulanic Acid Tab - 375Mg</h4>
+            <div class={'md:py-3 space-y-5 flex-1 flex flex-col justify-between w-full'}>
+                <h4 class={'font-semibold text-sm md:text-base'}>{medication.medication_name}</h4>
                 <div className="flex justify-between items-center">
-                    <button className=" py-1 px-3 text-sm md:text-base border space-x-3 font-medium rounded-[50px] shadow">NGN 5,000</button>
-                    <button className="btn md:p-3 p-2 bg-black text-white space-x-3 rounded-xl shadow "><CartIcon className={'md:w-6 md:h-6 w-5 h-5 text-white stroke-white'} /></button>
+                    <button className=" py-1 px-3 text-sm md:text-base border-2 border-gray-200 space-x-3 font-medium rounded-[50px] shadow-sm"><span className='text-muted text-xs'>NGN</span> {toNumber(medication.medication_price).toLocaleString()}</button>
+                    <button onClick={() => add({
+                        name: medication.medication_name,
+                        price: toNumber(medication.medication_price),
+                        id: medication.medication_id,
+                        type: 'medication'
+                    })} className="btn md:p-3 p-2 bg-black text-white space-x-3 rounded-xl shadow "><CartIcon className={'md:w-6 md:h-6 w-5 h-5 text-white stroke-white'} /></button>
                 </div>
             </div>
         </div>
