@@ -33,7 +33,10 @@ export default ({children}) => {
     const [item, setItem] = useState({});
     const [show, setShow] = useState(false);
 
-    const total = useMemo(() => items.reduce((prev, carry) => prev + carry.test_package_price * carry.quantity, 0), [items])
+    const total = useMemo(() => {
+        const price = items.reduce((prev, carry) => prev + carry.price * carry.quantity, 0)
+        return price;
+    }, [items])
 
     const add = (item, qty = 1, update = false) => {
         const existing = items.find(product => product.id == item.id)

@@ -16,10 +16,10 @@ export const Header = () => {
     const {items} = useCart()
 
     return (
-        <header>
-            <div className="hidden lg:grid max-w-3xl py-4 mx-auto gap-x-5 grid-cols-6">
+        <header className='sticky top-0 z-[50]'>
+            <div className="hidden lg:grid max-w-3xl mx-auto py-4 gap-x-5 grid-cols-6 ">
                 <div className="col-span-4">
-                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-gray-200 flex items-center justify-between">
+                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
                         <div>
                             <Link href={route('home')}>
                                 <img src="/assets/imgs/logo.svg" alt="" />
@@ -69,7 +69,7 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="col-span-2">
-                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-gray-200 flex space-x-2 justify-between items-center relative">
+                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex space-x-2 justify-between items-center relative">
                         <div>
                             <Menu>
                                 <Menu.Button className="btn btn-white bg-opacity-10 text-white font-normal">
@@ -110,7 +110,7 @@ export const Header = () => {
 
             <div className="lg:hidden p-4 mx-auto flex space-x-3">
                 <div className="flex-1">
-                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-gray-200 flex items-center justify-between">
+                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
                         <div>
                             <Link href={route('home')}>
                                 <img src="/assets/imgs/logo.svg" alt="" />

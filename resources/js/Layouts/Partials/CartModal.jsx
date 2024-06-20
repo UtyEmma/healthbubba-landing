@@ -20,7 +20,7 @@ export const CartModal = ({show, setShow, item, setItem}) => {
     return (
         <>
             {/* <Transition appear show={show}> */}
-                <Dialog as="div" open={show} className="relative z-10 focus:outline-none" onClose={close}>
+                <Dialog as="div" open={show} className="relative z-50 focus:outline-none" onClose={close}>
                     <div className="fixed inset-0 z-10 w-screen bg-black/25 overflow-y-auto">
                         <div className="flex min-h-full relative items-center justify-center p-4">
                             <div className="absolute top-3 md:top-10 left-2 md:left-auto right-2 md:right-5 p-5 bg-white rounded-2xl space-y-7 w-auto md:w-2/6">

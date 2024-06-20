@@ -6,7 +6,6 @@ import { DownloadContext } from '../GuestLayout'
 
 export const MobileMenu = () => {
 
-
     const {open: openDownload} = useContext(DownloadContext)
 
     return (
@@ -15,7 +14,7 @@ export const MobileMenu = () => {
                 {
                     ({open, close}) => (
                         <>
-                            <Popover.Button className="btn rounded-2xl bg-secondary p-1 px-3 h-full shadow-xl shadow-gray-200 flex space-x-2 justify-between items-center">
+                            <Popover.Button className="btn rounded-2xl bg-secondary p-1 px-3 h-full shadow-xl shadow-[#0000001A] flex space-x-2 justify-between items-center">
                                 {open ? <XMarkIcon className='w-9 h-9 text-white' /> : <Bars3Icon className="w-9 h-9 text-white" />}
                             </Popover.Button>
 

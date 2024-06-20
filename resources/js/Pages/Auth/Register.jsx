@@ -46,12 +46,12 @@ export default function Register() {
 
                     <div className='space-y-1'>
                         <label class={'font-medium'}>Password</label>
-                        <input type="password" class={'form-control'} placeholder='Email Address' />
+                        <input type="password" class={'form-control'} placeholder='Password' />
                     </div>
 
                     <div className='space-y-1'>
                         <label class={'font-medium'}>Confirm Password</label>
-                        <input type="password" class={'form-control'} placeholder='Password' />
+                        <input type="password" class={'form-control'} placeholder='Confirm Password' />
                     </div>
 
                     <div>
