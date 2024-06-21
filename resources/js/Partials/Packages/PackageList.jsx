@@ -42,11 +42,13 @@ const CategoryPackages = ({category, index, active}) => {
     return (
         <>
             <div className="md:block hidden">
-                <div className={`${index == active ? 'grid grid-cols-4 gap-5' : 'hidden'}`}>
+                <div className={`${index == active ? 'flex justify-center gap-5' : 'hidden'}`}>
                     {
                         category.tests.map((test, index) => (
                             <Disclose key={'test-md-'+index} show={index < 4} >
-                                <SinglePackage test={test}  />
+                                <div className='w-1/4'>
+                                    <SinglePackage test={test}  />
+                                </div>
                             </Disclose>
                         ))
                     }

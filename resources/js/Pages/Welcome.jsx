@@ -18,7 +18,7 @@ export default function Welcome({ categories, faqs = [] }) {
                     <section className="border-b">
                         <div className="md:max-w-5xl mx-auto md:py-20 px-4">
                             <div className="text-center space-y-5 md:space-y-10">
-                                <h1 className="md:text-7xl text-[24px] sm:text-[28px] md:text-[64px] leading-[72px] font-bold">
+                                <h1 className="md:text-7xl text-[24px] sm:text-[28px] md:text-[64px] leading-tight md:leading-[72px] font-bold">
                                     Healthcare and Prescription.
                                     <span className="block text-primary">All from Home.</span>
                                 </h1>
