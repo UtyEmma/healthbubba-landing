@@ -17,42 +17,42 @@ export const Footer = () => {
 
                     <div class="grid gap-5 md:grid-cols-3">
                         <div>
-                            <p className="text-gray-400 mb-3 font-semibold">Company</p>
-                            <ul class="text-gray-500 text-sm space-y-2  font-medium">
+                            <p className="text-gray-400 mb-3 font-medium">Company</p>
+                            <ul class="text-neutral-800 text-sm space-y-2  font-medium ">
                                 <li>
-                                    <Link className='hover:text-gray-700' href={`${route('home')}#about`}>About</Link>
+                                    <Link className='hover:text-black' href={`${route('home')}#about`}>About</Link>
                                 </li>
                                 <li>
-                                    <Link className='hover:text-gray-700' href={route('packages')}>Order a Lab test</Link>
+                                    <Link className='hover:text-black' href={route('packages')}>Order a Lab test</Link>
                                 </li>
                                 <li>
-                                    <Link className='hover:text-gray-700' href={route('shop')}>Order Medications</Link>
+                                    <Link className='hover:text-black' href={route('shop')}>Order Medications</Link>
                                 </li>
                                 <li>
-                                    <Link className='hover:text-gray-700' href="#">Health Professional’s Page</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p className="text-gray-400 mb-3 font-semibold">Legal</p>
-                            <ul class="text-gray-500 text-sm space-y-2  font-medium">
-                                <li>
-                                    <Link className='hover:text-gray-700' href={route('terms')}>Terms and Conditions</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-gray-700' href={route('privacy-policy')}>Privacy Policy</Link>
+                                    <Link className='hover:text-black' href="#">Health Professional’s Page</Link>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <p class="text-gray-400 mb-3 font-semibold" >Need help?</p>
-                            <ul class="text-gray-500 text-sm space-y-2  font-medium">
+                            <p className="text-gray-400 mb-3 font-medium">Legal</p>
+                            <ul class="text-neutral-800 text-sm space-y-2  font-medium">
                                 <li>
-                                    <Link className='hover:text-gray-700' href={`${route('home')}#faqs`}>FAQ</Link>
+                                    <Link className='hover:text-black' href={route('terms')}>Terms and Conditions</Link>
                                 </li>
-                                <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki
-                                Lagos State</li>
+                                <li>
+                                    <Link className='hover:text-black' href={route('privacy-policy')}>Privacy Policy</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 mb-3 font-medium" >Need help?</p>
+                            <ul class="text-neutral-800 text-sm space-y-2  font-medium">
+                                <li>
+                                    <Link className='hover:text-black' href={`${route('home')}#faqs`}>FAQ</Link>
+                                </li>
+                                <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki Lagos State</li>
                                 <li>0916 332 6000</li>
+                                <li>0916 322 5000</li>
                             </ul>
                         </div>
                     </div>

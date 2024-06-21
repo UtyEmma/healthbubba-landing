@@ -41,15 +41,15 @@ export default function ({categories, products}) {
             <Head title='Medication' />
             <div className="mb-4">
                 <div class={'max-w-7xl mx-auto px-4'}>
-                    <ul class={'flex space-x-1 items-center'}>
+                    <ul class={'flex space-x-1 font-medium text-muted items-center'}>
                         <li>
-                            <Link href={route('home')}>Home</Link>
+                            <Link className='hover:text-primary' href={route('home')}>Home</Link>
                         </li>
                         <li>/</li>
                         <li>Medications</li>
                     </ul>
 
-                    <h2 class={'text-2xl md:text-4xl font-semibold'}>Explore Medications</h2>
+                    <h2 class={'text-2xl md:text-4xl font-medium'}>Explore Medications</h2>
                 </div>
             </div>
 

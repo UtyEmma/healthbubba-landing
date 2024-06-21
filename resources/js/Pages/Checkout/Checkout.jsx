@@ -41,7 +41,7 @@ const Checkout = ({setSuccess}) => {
         <>
             <Head title='Checkout' />
             <div className='pb-5 px-4'>
-                <h2 className={'md:text-4xl text-3xl md:px-36 mx-auto font-semibold'}>Checkout</h2>
+                <h2 className={'md:text-4xl text-3xl md:px-36 mx-auto font-medium'}>Checkout</h2>
             </div>
             <form onSubmit={checkout} className="border-t border-gray-200 md:pl-36 ">
                 <div className="grid md:grid-cols-5 gap-10">

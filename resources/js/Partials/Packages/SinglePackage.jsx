@@ -16,13 +16,13 @@ export default function ({test, className}) {
                     <Link href={route('packages.detail', {
                         package: test.test_id
                     })} className="font-semibold text-sm line-clamp-1" >{test.test_name}</Link>
-                    <p className="text-muted line-clamp-3">{test.test_heading}</p>
+                    <p className="text-muted line-clamp-3 text-[14px]">{test.test_heading}</p>
                 </div>
 
                 <div>
                     <Link href={route('packages.detail', {
                         package: test.test_id
-                    })} className="py-1 px-3 flex-shrink border-gray-200 border-2 space-x-5 font-medium rounded-[50px] shadow-sm inline-flex items-center">Read More <ArrowRightIcon className='w-3 ms-3' /></Link>
+                    })} className="py-1 px-3 flex-shrink border-gray-200 border-2 space-x-5 font-medium rounded-[50px] shadow-sm inline-flex items-center text-sm">Read More <ArrowRightIcon className='w-3 ms-2' /></Link>
                 </div>
             </div>
         </div>

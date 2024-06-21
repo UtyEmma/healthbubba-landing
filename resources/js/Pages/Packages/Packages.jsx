@@ -30,7 +30,7 @@ export default function ({categories, tests}) {
             <Head title='Test Packages' />
             <div className={''}>
                 <div className={'max-w-7xl mx-auto mb-5 px-4'}>
-                    <ul className={'flex font-medium text-muted space-x-1 items-center'}>
+                    <ul className={'flex font-medium text-muted text-[14px] space-x-1 items-center'}>
                         <li>
                             <Link className=' hover:text-primary' href={route('home')}>Home</Link>
                         </li>
@@ -38,7 +38,7 @@ export default function ({categories, tests}) {
                         <li>Packages</li>
                     </ul>
 
-                    <h2 className={'text-2xl md:text-4xl font-semibold'}>Explore the available medical test packages</h2>
+                    <h2 className={'text-2xl md:text-4xl font-medium'}>Explore the available medical test packages</h2>
                 </div>
 
                 <div className="py-3 border-y border-gray-200 ">

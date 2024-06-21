@@ -12,7 +12,7 @@ export default function () {
     return (
         <GuestLayout>
             <div className='pb-5 px-4'>
-                <h2 className={'text-4xl md:px-36 mx-auto font-semibold'}>Cart</h2>
+                <h2 className={'text-4xl md:px-36 mx-auto font-medium'}>Cart</h2>
             </div>
 
             <Cart />

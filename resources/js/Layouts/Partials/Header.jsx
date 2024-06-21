@@ -15,9 +15,19 @@ export const Header = () => {
 
     const {items} = useCart()
 
+    const scrollTo = (selector) => {
+        const elm = document.getElementById(selector)
+        window.scrollTo({
+            top: elm.offsetTop,
+            behavior: 'smooth'
+        })
+
+        // onClick={() => scrollTo('about')}
+    }
+
     return (
         <header className='sticky top-0 z-[50]'>
-            <div className="hidden lg:grid max-w-3xl mx-auto py-4 gap-x-5 grid-cols-6 ">
+            <div className="hidden lg:grid max-w-3xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
                 <div className="col-span-4">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
                         <div>
@@ -27,10 +37,10 @@ export const Header = () => {
                         </div>
                         <ul className="flex space-x-4 text-white">
                             <li>
-                                <Link href={'#'}>About Us</Link>
+                                <a href={`${route('home')}#about`} >About Us</a>
                             </li>
                             <li>
-                                <Link href={'#'}>FAQ</Link>
+                                <a href={`${route('home')}#faqs`}>FAQ</a>
                             </li>
                             <li>
                                 <Menu >

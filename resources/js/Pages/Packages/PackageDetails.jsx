@@ -15,19 +15,19 @@ export default function ({test, packages = [], categories, faqs}) {
             <div className="border-gray-200 border-solid border-b pb-5 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div class={'space-y-1'}>
-                        <ul class={'flex space-x-1 items-center text-muted'}>
+                        <ul class={'flex space-x-1 items-center font-medium text-muted'}>
                             <li>
-                                <Link href={route('home')}>Home</Link>
+                                <Link className='hover:text-primary' href={route('home')}>Home</Link>
                             </li>
                             <li>/</li>
                             <li>
-                                <Link href={route('packages')}>Packages</Link>
+                                <Link className='hover:text-primary' href={route('packages')}>Packages</Link>
                             </li>
                             <li>/</li>
                             <li>{test.test_name}</li>
                         </ul>
 
-                        <h1 class={'md:text-4xl text-2xl font-semibold'}>{test.test_name}</h1>
+                        <h1 class={'md:text-4xl text-2xl font-medium'}>{test.test_name}</h1>
                     </div>
                 </div>
             </div>

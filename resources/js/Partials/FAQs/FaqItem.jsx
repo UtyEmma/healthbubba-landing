@@ -9,7 +9,7 @@ export const FaqItem = ({title, content, open = false}) => {
                 {({open}) => (
                     <>
                         <Disclosure.Button className="flex w-full justify-between" role="button">
-                            <h4 className="font-semibold text-left">{title}</h4>
+                            <h4 className="font-semibold text-left font-[Inter] text-[14px]">{title}</h4>
                             <div className="w-1/12 text-end flex justify-end">
                                 {open ? <MinusIcon className='w-5 h-5' /> : <PlusIcon className='w-5 h-5' />}
                                 {/* <span><i className="bi bi-dash" /></span> */}
@@ -25,7 +25,7 @@ export const FaqItem = ({title, content, open = false}) => {
                             leaveTo="opacity-0 -translate-y-6"
                         >
                             <Disclosure.Panel>
-                                    <p className="w-11/12 text-muted">{content}</p>
+                                    <p className="w-11/12 text-muted font-[Inter] text-[14px]">{content}</p>
                             </Disclosure.Panel>
                         </Transition>
                     </>
