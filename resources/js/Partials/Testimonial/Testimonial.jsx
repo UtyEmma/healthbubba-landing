@@ -38,41 +38,37 @@ export default function () {
     const [active, setActive] = useState(0);
     const [next, setNext] = useState(1);
     const [prev, setPrev] = useState(items.length - 1);
-
-    // items.length - 1
-
     const [forward, setForward] = useState(false)
 
     const isLastItem = useMemo(() => next == items.length, [next])
 
     const nextItem = () => {
-        if(next == items.length) {
-            setActive(0)
-            setNext(1)
-            setPrev(items.length - 1)
-            // items.length - 1
-            return
-        };
+        setForward(true);
 
-        setForward(true)
-        setActive(active + 1);
-        setNext(next + 1);
-        setPrev(prev => {
-            let num = prev + 1;
-            return num >= items.length ? 0 : num;
+        let current = active;
+        let previousItem = prev
+        let nextItem = next
+
+        setActive(nextItem);
+        setPrev(current);
+        setNext((next) => {
+            const num = next + 1
+            return num == items.length ? 0 : num 
         });
     }
     
     const prevItem = () => {
-        if(prev == null) return;
-
         setForward(false)
 
-        setActive(active - 1);
-        setNext(next - 1);
+        let current = active;
+        let previousItem = prev
+        let nextItem = next
+
+        setActive(previousItem);
+        setNext(current);
         setPrev(prev => {
             let num = prev - 1
-            return num <= 0 ? items.length - 1 : num 
+            return num <= 0 ? (items.length - 1) : num 
         });
 
     }
@@ -80,26 +76,26 @@ export default function () {
 
 
     return (
-        <div className="flex flex-col md:flex-row md:space-x-20 justify-center items-center px-4">
+        <div className="flex flex-col md:flex-row md:space-x-20 justify-center items-center md:px-4">
             <div>
                 <button onClick={prevItem} className="hidden md:block rounded-full p-3 bg-white shadow border">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>
             </div>
 
-            <div className="md:w-4/6 relative">
-                <div className="px-5 md:px-0 relative p-5 overflow-hidden">
-                    <div className={'flex items-center p-10 px-5 space-x-3 ' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
+            <div className="md:w-4/6 relative overflow-hidden">
+                <div className="md:px-0 relative md:p-5 ">
+                    <div className={'flex items-center py-10 md:px-5 md:space-x-3 ' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
                         {
                             items.map((item, index) => (
                                 <>
                                     <Transition as='div' 
-                                        className={'w-1/2 duration-1000'} 
+                                        className={'duration-1000'} 
                                         show={index == prev}  
                                         enterFrom='translate-x-full'
                                         enterTo='translate-x-0'
                                         leaveFrom='translate-x-0'
-                                        leaveTo='scale-110 -translate-x-40'
+                                        leaveTo={forward ? 'scale-110 -translate-x-40' : 'translate-x-full'}
                                         leave='absolute z-50 hidden'
                                     >
                                         <TestimonialItem 
@@ -114,8 +110,8 @@ export default function () {
                                             active={false}
                                         />
                                     </Transition>
-
-                                    <Transition as='div' className={'w-1/2 duration-1000'} 
+                                
+                                    <Transition as='div' className={'duration-1000'} 
                                         enterFrom='translate-x-full'
                                         enterTo='translate-x-0'
                                         leaveFrom='translate-x-0'
@@ -138,7 +134,7 @@ export default function () {
                                     <Transition 
                                         show={index == active} 
                                         as='div'  
-                                        className={`absolute left-16 right-16 z-10 duration-1000 py-5`}
+                                        className={`absolute left-5 right-5 md:left-16 md:right-16 z-10 duration-1000 py-5`}
                                         enterFrom={`${forward ? 'translate-x-full' : '-translate-x-full'} scale-0`}
                                         enterTo='scale-100 translate-0'
                                         leaveFrom='scale-100 translate-0'
@@ -167,10 +163,10 @@ export default function () {
             </div>
 
             <div className="md:hidden flex justify-center space-x-10 mt-10">
-                <button className="block md:hidden rounded-full p-3 bg-white shadow border">
+                <button onClick={prevItem} className="block md:hidden rounded-full p-3 bg-white shadow border">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>
-                <button className="block md:hidden rounded-full p-3 bg-white shadow border">
+                <button onClick={nextItem} className="block md:hidden rounded-full p-3 bg-white shadow border">
                     <ChevronRightIcon className="w-5 h-5" />
                 </button>
             </div>

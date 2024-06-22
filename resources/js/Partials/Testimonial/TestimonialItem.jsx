@@ -11,10 +11,10 @@ export default function ({active = false, message, author,index, next, prev, lab
         <div className='relative'>
             <div style={{
                 zoom: active ? 1 : 0.95
-            }} className={`${active ? '' : 'bg-white p-5 md:p-10 md:rounded-2xl rounded-lg'}  overflow-hidden ${className}`}>
-                <div className={active ? 'md:rounded-2xl rounded-lg bg-white bg-opacity-95 p-5 md:p-16 space-y-5 relative z-50' : 'blur-sm'}>
+            }} className={`${active ? '' : 'bg-white p-5 md:p-10 md:rounded-2xl rounded-lg shadow-lg'}   ${className}`}>
+                <div className={active ? 'md:rounded-2xl rounded-lg shadow-lg bg-white bg-opacity-95 p-5 md:p-16 space-y-5 relative z-50' : 'blur-sm overflow-hidden'}>
                     <div className={`space-y-5`}>
-                        <p className={`text-muted text-sm md:text-lg font-medium leading-relaxed ${classes.message}`}>"{message}"</p>
+                        <p className={`text-muted text-sm md:text-lg font-medium leading-relaxed ${classes.message} ${active ? "" : 'line-clamp-2'}`}>"{message}"</p>
                         <div className="justify-start items-center gap-4 inline-flex">
                             <img className={`h-14 ${classes.image}`} src={image} />
                             <div className="flex-col text-xs md:text-base justify-start items-start inline-flex">

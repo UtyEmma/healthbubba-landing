@@ -324,7 +324,7 @@ export default function Welcome({ categories, faqs = [] }) {
                             <p className="text-muted text-sm md:text-base">You deserve convenient health care that meets you where you are.</p>
                         </div>
 
-                        <PackageList categories={categories} />
+                        {/* <PackageList categories={categories} /> */}
 
                         <div className="text-center">
                             <Link href={route('packages')} className="border border-gray-200 px-3 py-1 bg-neutral-50 hover:bg-gray-200 duration-300 rounded-full justify-start items-start inline-flex">

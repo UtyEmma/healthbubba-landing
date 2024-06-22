@@ -9,12 +9,12 @@ class PagesController extends Controller {
 
 
     function index(){
-        [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
+        // [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
 
         $faqs = config('content.faqs');
 
         return Inertia::render('Welcome', [
-            'categories' => collect($categories)->take(4)->toArray(),
+            // 'categories' => collect($categories)->take(4)->toArray(),
             'faqs' => $faqs
         ]);
     }
