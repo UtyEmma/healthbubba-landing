@@ -324,7 +324,7 @@ export default function Welcome({ categories, faqs = [] }) {
                             <p className="text-muted text-sm md:text-base">You deserve convenient health care that meets you where you are.</p>
                         </div>
 
-                        {/* <PackageList categories={categories} /> */}
+                        <PackageList categories={categories} />
 
                         <div className="text-center">
                             <Link href={route('packages')} className="border border-gray-200 px-3 py-1 bg-neutral-50 hover:bg-gray-200 duration-300 rounded-full justify-start items-start inline-flex">
@@ -349,7 +349,7 @@ export default function Welcome({ categories, faqs = [] }) {
                                 </div>
                                 <div className="text-center md:w-4/6 mx-auto md:mb-20 space-y-4">
                                     <h2 className="text-3xl md:text-4xl font-medium">Wall of Love</h2>
-                                    <p className="text-muted text-sm md:text-base">Lorem ipsum dolor sit amet consectetur. Odio leo quis pellentesque augue. Sapien pharetra metus vitae ullamcorper ultricies tortor quis. Integer integer id ac integer.</p>
+                                    <p className="text-muted text-sm md:text-base">Hear what our patients are saying about us.</p>
                                 </div>
 
                                 <div className="md:max-w-7xl mx-auto md:py-20">
