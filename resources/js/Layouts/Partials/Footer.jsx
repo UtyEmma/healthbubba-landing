@@ -15,10 +15,10 @@ export const Footer = () => {
                         <SubscriptionCTA className='hidden md:block' />
                     </div>
 
-                    <div class="grid gap-5 md:grid-cols-3">
+                    <div className="grid gap-5 md:grid-cols-3">
                         <div>
                             <p className="text-gray-400 mb-3 font-medium">Company</p>
-                            <ul class="text-neutral-800 text-sm space-y-2  font-medium ">
+                            <ul className="text-neutral-700 text-sm space-y-2  font-medium ">
                                 <li>
                                     <Link className='hover:text-black' href={`${route('home')}#about`}>About</Link>
                                 </li>
@@ -35,7 +35,7 @@ export const Footer = () => {
                         </div>
                         <div>
                             <p className="text-gray-400 mb-3 font-medium">Legal</p>
-                            <ul class="text-neutral-800 text-sm space-y-2  font-medium">
+                            <ul className="text-neutral-700 text-sm space-y-2  font-medium">
                                 <li>
                                     <Link className='hover:text-black' href={route('terms')}>Terms and Conditions</Link>
                                 </li>
@@ -45,8 +45,8 @@ export const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <p class="text-gray-400 mb-3 font-medium" >Need help?</p>
-                            <ul class="text-neutral-800 text-sm space-y-2  font-medium">
+                            <p className="text-gray-400 mb-3 font-medium" >Need help?</p>
+                            <ul className="text-neutral-700 text-sm space-y-2  font-medium">
                                 <li>
                                     <Link className='hover:text-black' href={`${route('home')}#faqs`}>FAQ</Link>
                                 </li>
@@ -60,10 +60,12 @@ export const Footer = () => {
                     <SubscriptionCTA className='md:hidden block' />
                 </div>
 
-                <div class={'pt-5 pb-5 md:pb-0 flex flex-col md:flex-row gap-y-5 justify-between items-center'}>
-                    <p class={'font-medium text-sm md:text-base order-2 md:order-1'}>© {new Date().getFullYear()} <a href="/">HealthBubba</a></p>
+                <div className={'pt-5 pb-5 md:pb-0 flex flex-col md:flex-row gap-y-5 justify-between items-center'}>
+                    <p className={'text-sm md:text-base font-normal order-2 md:order-1'}>
+                        © {new Date().getFullYear()} <Link href="/" className="hover:text-primary font-medium duration-150" >HealthBubba</Link>
+                    </p>
 
-                    <div class={'flex space-x-3 order-1 md:order-2'}>
+                    <div className={'flex space-x-3 order-1 md:order-2'}>
                         <div>
                             <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
                                 <img src="/assets/imgs/social/twitter.svg" alt="" />

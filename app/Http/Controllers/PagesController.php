@@ -14,7 +14,7 @@ class PagesController extends Controller {
         $faqs = config('content.faqs');
 
         return Inertia::render('Welcome', [
-            'categories' => collect($categories)->take(4)->toArray(),
+            'categories' => collect($categories)->take(3)->toArray(),
             'faqs' => $faqs
         ]);
     }
