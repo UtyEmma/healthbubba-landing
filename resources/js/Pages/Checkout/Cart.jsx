@@ -6,8 +6,9 @@ import ServiceProduct from '../Shop/Partials/ServiceProduct'
 import { useCart } from '@/Context/CartContext'
 import { Head, Link, router } from '@inertiajs/react'
 import toast from 'react-hot-toast'
+import SinglePackage from '@/Partials/Packages/SinglePackage'
 
-export default function () {
+export default function ({tests}) {
 
     return (
         <GuestLayout>
@@ -24,18 +25,9 @@ export default function () {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <div>
-                            <ServiceProduct />
-                        </div>
-                        <div>
-                            <ServiceProduct />
-                        </div>
-                        <div>
-                            <ServiceProduct />
-                        </div>
-                        <div>
-                            <ServiceProduct />
-                        </div>
+                        {
+                            tests.map(test => <SinglePackage test={test} />)
+                        }
                     </div>
                 </div>
             </div>

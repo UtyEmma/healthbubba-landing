@@ -35,7 +35,17 @@ class PagesController extends Controller {
     }
 
     function cart(){
-        return Inertia::render('Checkout/Cart');
+        [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
+        $tests = collect(collect($categories)->reduce(function($carry, $item) {
+            foreach ($item['tests'] as $test) {
+                $test['category_id'] = $item['category_id'];
+                $carry[] = $test;
+            }
+
+            return $carry;
+        }, []))->random(4);
+
+        return Inertia::render('Checkout/Cart', compact('tests'));
     }
 
     function checkout(){

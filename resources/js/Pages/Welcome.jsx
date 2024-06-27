@@ -349,7 +349,7 @@ export default function Welcome({ categories, faqs = [] }) {
                                 </div>
                                 <div className="text-center md:w-4/6 mx-auto md:mb-20 space-y-4">
                                     <h2 className="text-3xl md:text-4xl font-medium">Wall of Love</h2>
-                                    <p className="text-muted text-sm md:text-base">Hear what our patients are saying about us.</p>
+                                    <p className="text-muted text-sm md:text-base md:w-4/5 mx-auto">Listen to the buzz about us and discover why Health Bubba is making waves in the health tech world. Our innovative approach to healthcare is revolutionizing how people access medical services..</p>
                                 </div>
 
                                 <div className="md:max-w-7xl mx-auto md:py-20">
