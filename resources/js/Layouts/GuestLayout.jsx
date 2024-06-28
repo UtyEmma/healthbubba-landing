@@ -12,7 +12,7 @@ export const DownloadContext = createContext({
     close: () => {}
 })
 
-export default function ({ children, ...props }) {
+export default function ({ children, hideGap = false, ...props }) {
 
     const [download, setDownload] = useState(false)
 
@@ -27,7 +27,7 @@ export default function ({ children, ...props }) {
                 <div className={`min-h-screen ${props.className ?? ''}`}>
                     <Header />
 
-                    <main class='md:py-10 py-5'>
+                    <main className={hideGap ? '' : 'md:py-10 py-5'}>
                         {children}
                     </main>
 

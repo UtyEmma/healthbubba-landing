@@ -8,7 +8,7 @@ import { FeatureCards } from '@/Partials/Features/FeatureCards';
 import Marquee from 'react-fast-marquee';
 import { PlayIcon } from '@heroicons/react/24/solid';
 
-export default function Welcome({ categories, faqs = [] }) {
+export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
     return (
         <>
@@ -353,7 +353,7 @@ export default function Welcome({ categories, faqs = [] }) {
                                 </div>
 
                                 <div className="md:max-w-7xl mx-auto md:py-20">
-                                    <Testimonial />
+                                    <Testimonial testimonials={testimonials} />
                                 </div>
                             </div>
                         </div>

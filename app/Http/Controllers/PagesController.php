@@ -13,10 +13,15 @@ class PagesController extends Controller {
 
         $faqs = config('content.faqs');
 
-        return Inertia::render('Welcome', [
-            'categories' => collect($categories)->take(3)->toArray(),
-            'faqs' => $faqs
-        ]);
+        $testimonials = config('content.testimonials');
+
+        $categories = collect($categories)->take(3)->toArray();
+        return Inertia::render('Welcome', compact(['categories', 'faqs', 'testimonials']));
+    }
+
+    function about(){
+        $testimonials = config('content.testimonials');
+        return Inertia::render('About', compact('testimonials'));
     }
 
     function download(){

@@ -8,6 +8,7 @@ use Inertia\Inertia;
 
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('/about', [PagesController::class, 'about'])->name('about');
 
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 

@@ -5,48 +5,41 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Transition } from '@headlessui/react';
 import clsx from 'clsx';
 
-export default function () {
+export default function ({testimonials}) {
 
-    const [items, setItems] = useState([
-        {
-            message: 'I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched.',
-            image: '/assets/imgs/avatars/jane-nwosu.png',
-            role: 'Healthcare Professional',
-            author: 'Jane Nwosu'
-        },
-        {
-            message: 'I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched.',
-            image: '/assets/imgs/avatars/jane-nwosu.png',
-            role: 'Healthcare Professional',
-            author: 'Jane Nwosu'
-        },
-        {
-            message: 'I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched.',
-            image: '/assets/imgs/avatars/jane-nwosu.png',
-            role: 'Healthcare Professional',
-            author: 'Jane Nwosu'
-        },
-        {
-            message: 'I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched.',
-            image: '/assets/imgs/avatars/jane-nwosu.png',
-            role: 'Healthcare Professional',
-            author: 'Jane Nwosu'
-        },
-    ])
+    const [items, setItems] = useState(testimonials)
 
 
     const [active, setActive] = useState(0);
     const [next, setNext] = useState(1);
     const [prev, setPrev] = useState(items.length - 1);
     const [forward, setForward] = useState(false)
+    const [timeoutId, setTimeoutId] = useState(null)
 
     const isLastItem = useMemo(() => next == items.length, [next])
 
+    useEffect(() => {
+        timeout();
+    }, [active])
+
+    const timeout = () => {
+        const id = setTimeout(() => handleNext(), 5000)
+        setTimeoutId(id)
+    }
+
     const nextItem = () => {
+        if(timeoutId) {
+            clearTimeout();
+            setTimeoutId(null);
+        }
+
+        handleNext()
+    }
+
+    const handleNext = () => {
         setForward(true);
 
         let current = active;
-        let previousItem = prev
         let nextItem = next
 
         setActive(nextItem);
@@ -83,9 +76,9 @@ export default function () {
                 </button>
             </div>
 
-            <div className="md:w-4/6 relative overflow-hidden">
-                <div className="md:px-0 relative md:p-5 ">
-                    <div className={'flex items-center py-10 md:px-5 md:space-x-3 ' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
+            <div className="md:w-4/6 md:overflow-hidden overflow-hidden h-auto">
+                <div className="md:px-0 md:p-5 md:relative h-auto">
+                    <div className={'flex items-center py-10 md:px-5 md:space-x-3 h-auto' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
                         {
                             items.map((item, index) => (
                                 <>
@@ -97,6 +90,7 @@ export default function () {
                                         leaveFrom='translate-x-0'
                                         leaveTo={forward ? 'scale-110 -translate-x-40' : 'translate-x-full'}
                                         leave='absolute z-50 hidden'
+                                        key={`item-prev-${index}`}
                                     >
                                         <TestimonialItem 
                                             {...item}
@@ -117,7 +111,9 @@ export default function () {
                                         leaveFrom='translate-x-0'
                                         leaveTo='scale-110 -translate-x-40'
                                         leave='absolute z-50 hidden'
-                                        show={index == next}  >
+                                        show={index == next} 
+                                        key={`item-next-${index}`}
+                                         >
                                         <TestimonialItem 
                                             {...item}
                                             classes={{
@@ -134,19 +130,14 @@ export default function () {
                                     <Transition 
                                         show={index == active} 
                                         as='div'  
-                                        className={`absolute left-5 right-5 md:left-16 md:right-16 z-10 duration-1000 py-5`}
+                                        className={`absolute left-10 right-10 md:left-16 md:right-16 z-10 duration-1000 py-5`}
                                         enterFrom={`${forward ? 'translate-x-full' : '-translate-x-full'} scale-0`}
                                         enterTo='scale-100 translate-0'
                                         leaveFrom='scale-100 translate-0'
                                         leaveTo={`top-0 bottom-0 left-0 right-0 scale-0 ${forward ? '-translate-x-full' : ' translate-x-full'}`}
+                                        key={`item-active-${index}`}
                                     >
-                                        <TestimonialItem
-                                            message="I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched. "
-                                            image={'/assets/imgs/avatars/jane-nwosu.png'}
-                                            author={'Jane Nwosu'}
-                                            role={'Healthcare Professional'}
-                                            active={index == active}
-                                        />
+                                        <TestimonialItem {...item} active={index == active} />
                                     </Transition>
                                 </>
                             ))

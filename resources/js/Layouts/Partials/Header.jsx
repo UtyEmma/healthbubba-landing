@@ -37,7 +37,7 @@ export const Header = () => {
                         </div>
                         <ul className="flex space-x-4 text-white">
                             <li>
-                                <a href={`${route('home')}#about`} >About Us</a>
+                                <a href={`${route('about')}`} >About Us</a>
                             </li>
                             <li>
                                 <a href={`${route('home')}#faqs`}>FAQ</a>

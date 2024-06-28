@@ -73,13 +73,12 @@ export const MobileMenu = () => {
                                         Download
                                     </div>
                                     <div className='p-3 flex justify-between items-center'>
-                                        <p>FAQ</p>
+                                        <Link href={`${route(`home`)}#faqs`}>FAQ</Link>
                                     </div>
                                     <div className='p-3 flex justify-between items-center'>
-                                        <p>About</p>
+                                        <Link href={route('about')}>About</Link>
                                     </div>
                                 </div>
-
                             </Popover.Panel>
                         </>
                     )
