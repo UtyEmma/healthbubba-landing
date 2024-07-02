@@ -69,14 +69,14 @@ export const MobileMenu = () => {
                                     <div role='button' onClick={() => {
                                         close();
                                         openDownload();
-                                    }} className='p-3'>
+                                    }} className='p-3 w-full'>
                                         Download
                                     </div>
-                                    <div className='p-3 flex justify-between items-center'>
-                                        <Link href={`${route(`home`)}#faqs`}>FAQ</Link>
+                                    <div className='flex justify-between items-center'>
+                                        <Link className="p-3 w-full" href={`${route(`home`)}#faqs`}>FAQ</Link>
                                     </div>
-                                    <div className='p-3 flex justify-between items-center'>
-                                        <Link href={route('about')}>About</Link>
+                                    <div className='flex justify-between items-center'>
+                                        <Link className="p-3 w-full" href={route('about')}>About</Link>
                                     </div>
                                 </div>
                             </Popover.Panel>
