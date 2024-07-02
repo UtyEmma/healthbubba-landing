@@ -41,49 +41,49 @@ return [
             'name' => 'Jane Nwosu',
             'message' => 'I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched. The professionalism during sample collection and the subsequent consultation were impressive.',
             'role' => 'Healthcare Professional',
-            'avatar' => asset('assets/imgs/testimonials/jane-nwosu.png')
+            'avatar' => '/assets/imgs/testimonials/jane-nwosu.png'
         ],
         [
             'name' => 'Ukeme Akpan (MD)',
             'message' => 'I must commend Health Bubba for their exceptional telemedicine services. Their commitment to patient care and accessibility is truly commendable. The seamless experience they provide for both patients and healthcare providers is a testament to their dedication to improving healthcare delivery',
             'role' => 'Resident Doctor, Thornbury Circle Hospital (Sheffield, South Yorkshire),United Kingdom',
-            'avatar' => asset('assets/imgs/testimonials/ukeme-akpan.png')
+            'avatar' => '/assets/imgs/testimonials/ukeme-akpan.png'
         ],
         [
             'name' => 'Doctor Ebere Anikpo',
             'message' => "Health Bubba is a game-changer in the healthcare industry, offering Tele-health services that prioritize patient care and convenience. As a doctor, I appreciate the platform's focus on Tele-medicine consultations, at-home lab tests, and medication delivery, which enhance access to healthcare for patients.",
             'role' => 'Healthcare Professional',
-            'avatar' => asset('assets/imgs/testimonials/ebere-anikpo.png')
+            'avatar' => '/assets/imgs/testimonials/ebere-anikpo.png'
         ],
         [
             'name' => 'Sarah Yarama',
             'message' => "Health Bubba’s model enhances clinical efficiency and supports evidence-based decision-making.",
             'role' => 'Pharm Sarah Yarama (Pharmacy Council of Nigeria)',
-            'avatar' => asset('assets/imgs/testimonials/sarah-yarama.png')
+            'avatar' => '/assets/imgs/testimonials/sarah-yarama.png'
         ],
         [
             'name' => 'Pharm Goodness Nwoke',
             'message' => "I appreciate Health Bubba for its seamless integration of patient records and real-time health monitoring. It's a powerful asset that improves patient engagement and outcomes.",
             'role' => 'Pharm Goodness Nwoke ( FMC, Abuja)',
-            'avatar' => asset('assets/imgs/testimonials/goodness-nwoke.png')
+            'avatar' => '/assets/imgs/testimonials/goodness-nwoke.png'
         ],
         [
             'name' => 'Pharm Joshua Chimaobi',
             'message' => "Highly impressed with Health Bubba's ability to improve patient health. It's instrumental in creating personalized care plans and enhancing overall treatment outcomes.",
             'role' => '(FMC, Abuja)',
-            'avatar' => asset('assets/imgs/testimonials/joshua-chimaobi.png')
+            'avatar' => '/assets/imgs/testimonials/joshua-chimaobi.png'
         ],
         [
             'name' => 'Pharm Uche Dorothy',
             'message' => "Health Bubba is a reliable companion for delivering proactive and informed healthcare services.",
             'role' => 'Community Pharmacist, Lagos',
-            'avatar' => asset('assets/imgs/testimonials/uche-dorothy.png')
+            'avatar' => '/assets/imgs/testimonials/uche-dorothy.png'
         ],
         [
             'name' => 'Doctor Mmasinachi Jackson Ohia',
             'message' => "Health Bubba is top-notch for anyone looking into Tele-health services. Their Tele-medicine consultations, at-home lab tests, and medication delivery are super convenient. From a doctor's perspective, Health Bubba is a go-to for modern healthcare solutions.",
             'role' => 'Healthcare Professional',
-            'avatar' => asset('assets/imgs/testimonials/jackson-ohia.png')
+            'avatar' => '/assets/imgs/testimonials/jackson-ohia.png'
         ],
     ]
 ];

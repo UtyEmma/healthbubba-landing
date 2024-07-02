@@ -14,7 +14,7 @@ export default function ({testimonials}) {
     const [next, setNext] = useState(1);
     const [prev, setPrev] = useState(items.length - 1);
     const [forward, setForward] = useState(false)
-    const [timeoutId, setTimeoutId] = useState(null)
+    const [timeoutId, setTimeoutId] = useState(false)
 
     const isLastItem = useMemo(() => next == items.length, [next])
 
@@ -29,8 +29,8 @@ export default function ({testimonials}) {
 
     const nextItem = () => {
         if(timeoutId) {
-            clearTimeout();
-            setTimeoutId(null);
+            clearTimeout(timeoutId);
+            setTimeoutId(false);
         }
 
         handleNext()
@@ -49,8 +49,8 @@ export default function ({testimonials}) {
             return num == items.length ? 0 : num 
         });
     }
-    
-    const prevItem = () => {
+
+    const handlePrev = () => {
         setForward(false)
 
         let current = active;
@@ -64,6 +64,15 @@ export default function ({testimonials}) {
             return num <= 0 ? (items.length - 1) : num 
         });
 
+    }
+    
+    const prevItem = () => {
+        if(timeoutId) {
+            clearTimeout(timeoutId);
+            setTimeoutId(false);
+        }
+
+        handlePrev();
     }
 
 
@@ -164,38 +173,3 @@ export default function ({testimonials}) {
         </div>
     )
 }
-
-const Items = () => (
-    <div className="md:w-4/6 relative">
-        <div className="px-5 md:px-10">
-            <div className='flex space-x-2  md:space-x-5 absolute items-center top-0 bottom-0 z-0 right-0 left-0'>
-                <TestimonialItem
-                    message="I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched."
-                    image={'/assets/imgs/avatars/jane-nwosu.png'}
-                    author={'Jane Nwosu'}
-                    role={'Healthcare Professional'}
-                    classes={{
-                        message: 'line-clamp-1'
-                    }}
-                />
-                <TestimonialItem
-                    message="I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched. "
-                    image={'/assets/imgs/avatars/jane-nwosu.png'}
-                    author={'Jane Nwosu'}
-                    role={'Healthcare Professional'}
-                    classes={{
-                        message: 'line-clamp-1'
-                    }}
-                />
-            </div>
-
-            <TestimonialItem
-                message="I had a top-notch experience with Healthbubba! The speed and affordability of their services are unmatched. "
-                image={'/assets/imgs/avatars/jane-nwosu.png'}
-                author={'Jane Nwosu'}
-                role={'Healthcare Professional'}
-                active={true}
-            />
-        </div>
-    </div>
-)

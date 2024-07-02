@@ -15,8 +15,9 @@ class PagesController extends Controller {
 
         $testimonials = config('content.testimonials');
 
-        $categories = collect($categories)->take(3)->toArray();
-        return Inertia::render('Welcome', compact(['categories', 'faqs', 'testimonials']));
+        $activeItems = explode(',', env('ACTIVE_PACKAGES'));
+        $categories = array_values(collect($categories)->whereIn('category_name', $activeItems)->toArray());
+        return Inertia::render('Welcome', compact(['categories' , 'faqs', 'testimonials']));
     }
 
     function about(){

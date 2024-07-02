@@ -11,6 +11,7 @@ class PackageController extends Controller {
 
     function index(){
         [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
+        
         $tests = collect(collect($categories)->reduce(function($carry, $item) {
             foreach ($item['tests'] as $test) {
                 $test['category_id'] = $item['category_id'];

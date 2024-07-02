@@ -4,8 +4,6 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
@@ -28,7 +26,6 @@ Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 
 Route::prefix('medications')->group(function(){
     Route::get('', [PagesController::class, 'medications'])->name('shop');
-    // Route::get('{category}', [PagesController::class, 'medication'])->name('shop.details');
 });
 
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');

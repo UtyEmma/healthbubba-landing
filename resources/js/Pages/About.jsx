@@ -1,11 +1,13 @@
 import GuestLayout from "@/Layouts/GuestLayout"
 import { Faq } from "@/Partials/FAQs/Faq"
 import Testimonial from "@/Partials/Testimonial/Testimonial"
+import { Head } from "@inertiajs/react"
 
 export default ({faqs, testimonials}) => {
 
     return (
-        <GuestLayout title="About Us" hideGap>
+        <GuestLayout hideGap>
+            <Head title="About Us" />
             <section className="py-10 max-w-7xl mx-auto space-y-5 md:space-y-10 px-4">
                 <div className="flex justify-center items-center flex-col">
 
@@ -51,11 +53,12 @@ export default ({faqs, testimonials}) => {
                 </div>
                 <div className="space-y-2 md:space-y-7">
                     <h2 className="text-3xl md:text-4xl mt-5">Our Values</h2>
-                    <div className=" mb-20 space-y-3">
-                        <p className="text-muted ">Patient-Centered Care: Our patients are at the heart of everything we do. We are committed to delivering care that is tailored to meet each individual's needs.
-Innovation: We embrace the latest technological advancements to improve healthcare delivery and patient outcomes.
-Accessibility: We strive to make our services available to everyone, regardless of geographical or financial barriers.
-Integrity: We operate with the highest standards of ethics and professionalism in all our interactions.</p>
+                    <div className=" mb-20 space-y-3 text-muted ">
+                        <p className="">Patient-Centered Care: Our patients are at the heart of everything we do. We are committed to delivering care that is tailored to meet each individual's needs. </p>
+                            
+                        <p>Innovation: We embrace the latest technological advancements to improve healthcare delivery and patient outcomes.</p>
+
+                        <p>Accessibility: We strive to make our services available to everyone, regardless of geographical or financial barriers. Integrity: We operate with the highest standards of ethics and professionalism in all our interactions.</p>
                     </div>
                 </div>
             </section>
@@ -73,7 +76,7 @@ Integrity: We operate with the highest standards of ethics and professionalism i
                         </div>
                         <div className="text-center md:w-4/6 mx-auto md:mb-20 space-y-4">
                             <h2 className="text-3xl md:text-4xl font-medium">Wall of Love</h2>
-                            <p className="text-muted text-sm md:text-base md:w-4/5 mx-auto">Listen to the buzz about us and discover why Health Bubba is making waves in the health tech world. Our innovative approach to healthcare is revolutionizing how people access medical services..</p>
+                            <p className="text-muted text-sm md:text-base md:w-4/5 mx-auto">Listen to the buzz about us and discover why Health Bubba is making waves in the health tech world. Our innovative approach to healthcare is revolutionizing how people access medical services.</p>
                         </div>
 
                         <div className="md:max-w-7xl mx-auto py-10 md:py-20">
