@@ -121,7 +121,7 @@ const Checkout = ({setSuccess}) => {
                             </div>
                             <div className="py-5 border-t border-gray-200 space-y-3">
                                 <div className="flex justify-between">
-                                    <p className='text-muted'><a href="" class={'underline'}>Chat with us</a> or call 08116848839</p>
+                                    <p className='text-muted'><a href="" class={'underline'}>Chat with us</a> or call <a href="tel:09163326000">0916 332 6000</a></p>
                                 </div>
                             </div>
                         </div>

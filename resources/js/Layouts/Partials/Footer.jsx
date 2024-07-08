@@ -1,8 +1,12 @@
 import React from 'react'
 import { SubscriptionCTA } from './SubscriptionCTA'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
+import Disclose from '@/Components/Display/Disclose'
 
 export const Footer = () => {
+
+    const {props} = usePage()
+
     return (
         <footer className="border-t md:py-10 bg-white z-50">
             <div className="max-w-7xl mx-auto divide-y">
@@ -66,41 +70,54 @@ export const Footer = () => {
                     </p>
 
                     <div className={'flex space-x-3 order-1 md:order-2'}>
-                        <div>
-                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
-                                <img src="/assets/imgs/social/twitter.svg" alt="" />
+                        
+                        <Disclose show={props.social.twitter}>
+                            <div>
+                                <a href={props.social.twitter} target='_blank' className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                                    <img src="/assets/imgs/social/twitter.svg" alt="" />
+                                </a>
                             </div>
-                        </div>
+                        </Disclose>
 
-                        <div>
-                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
-                                <img src="/assets/imgs/social/instagram.svg" alt="" />
+                        <Disclose show={props.social.instagram}>
+                            <div>
+                                <a href={props.social.instagram} target='_blank' className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                                    <img src="/assets/imgs/social/instagram.svg" alt="" />
+                                </a>
                             </div>
-                        </div>
+                        </Disclose>
 
-                        <div>
-                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
-                                <img src="/assets/imgs/social/facebook.svg" alt="" />
+                        <Disclose show={props.social.facebook}>
+                            <div>
+                                <a href={props.social.facebook} target='_blank' className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                                    <img src="/assets/imgs/social/facebook.svg" alt="" />
+                                </a>
                             </div>
-                        </div>
+                        </Disclose>
 
-                        <div>
-                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
-                                <img src="/assets/imgs/social/threads.svg" alt="" />
+                        <Disclose show={props.social.threads} >
+                            <div>
+                                <a href={props.social.threads} target='_blank' className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                                    <img src="/assets/imgs/social/threads.svg" alt="" />
+                                </a>
                             </div>
-                        </div>
+                        </Disclose>
 
-                        <div>
-                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
-                                <img src="/assets/imgs/social/telegram.svg" alt="" />
+                        <Disclose show={props.social.telegram}>
+                            <div>
+                                <a href={props.social.threads} target='_blank' className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                                    <img src="/assets/imgs/social/telegram.svg" alt="" />
+                                </a>
                             </div>
-                        </div>
+                        </Disclose>
 
-                        <div>
-                            <div className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
-                                <img src="/assets/imgs/social/linkedin.svg" alt="" />
+                        <Disclose show={props.social.linkedin}>
+                            <div>
+                                <a href={props.social.linkedin} target='_blank' className="border border-gray-200 w-10 items-center flex justify-center bg-white aspect-square rounded-full shadow">
+                                    <img src="/assets/imgs/social/linkedin.svg" alt="" />
+                                </a>
                             </div>
-                        </div>
+                        </Disclose>
                     </div>
                 </div>
             </div>

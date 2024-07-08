@@ -3,6 +3,7 @@ import { Cta } from '@/Partials/Cta'
 import PackageList from '@/Partials/Packages/PackageList'
 import SinglePackage from '@/Partials/Packages/SinglePackage'
 import { Head, Link } from '@inertiajs/react'
+import Fuse from 'fuse.js'
 import React, { useState } from 'react'
 
 export default function ({categories, tests}) {
@@ -23,6 +24,18 @@ export default function ({categories, tests}) {
         }
 
         setCategory(null)
+    }
+
+    const searchTest = (e) => {
+        const val = e.target.value;
+        if(!val) return reset();
+        
+        const fuse = new Fuse(tests, {
+            keys: ["test_name"]
+        })
+
+        const results = fuse.search(val);
+        setShowing(results.map(item => item.item));
     }
 
     return (
@@ -54,7 +67,7 @@ export default function ({categories, tests}) {
                                         <path d="M17.4999 17.5L13.8749 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#9CA3AF" stroke-width="1.31602" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <input type="text" className={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Doctors, Symptoms e.t.c' />
+                                <input type="text" onChange={searchTest} className={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search medical tests' />
                             </div>
                         </div>
                     </div>
@@ -88,7 +101,7 @@ export default function ({categories, tests}) {
                                 showing.map(test => {
                                     return (
                                         <div>
-                                            <SinglePackage test={test} />
+                                            <SinglePackage key={test.test_id} test={test} />
                                         </div>
                                     )
                                 })

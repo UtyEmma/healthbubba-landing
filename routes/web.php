@@ -15,7 +15,7 @@ Route::get('/download', [PagesController::class, 'download'])->name('download');
 Route::prefix('packages')->group(function(){
     Route::get('/', [PackageController::class, 'index'])->name('packages');
 
-    Route::prefix('{package}')->group(function(){
+    Route::prefix('{package?}')->group(function(){
         Route::get('', [PackageController::class, 'show'])->name('packages.detail');
     });
 });

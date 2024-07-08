@@ -23,7 +23,7 @@ export default function ({testimonials}) {
     }, [active])
 
     const timeout = () => {
-        const id = setTimeout(() => handleNext(), 5000)
+        const id = setTimeout(() => handleNext(), 20000)
         setTimeoutId(id)
     }
 

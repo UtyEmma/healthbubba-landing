@@ -16,8 +16,8 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
             <GuestLayout >
                 <main>
                     <section className="border-b">
-                        <div className="md:max-w-5xl mx-auto md:py-20 px-4">
-                            <div className="text-center space-y-5 md:space-y-10">
+                        <div className="md:max-w-5xl mx-auto px-4">
+                            <div className="text-center space-y-5 ">
                                 <h1 className="md:text-7xl text-[24px] sm:text-[28px] md:text-[64px] leading-tight md:leading-[72px] font-bold">
                                     Healthcare and Prescription.
                                     <span className="block text-primary">All from Home.</span>
@@ -182,6 +182,7 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                     </section>
 
                     <section className="max-w-7xl mx-auto py-10 md:py-20 px-3 sm:px-4">
+                        
                         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-5 md:gap-10">
                             <div>
                                 <div className="border shadow-lg h-full rounded-3xl overflow-hidden flex flex-col justify-between bg-[url(/assets/imgs/media/banners/banner-1.svg)] bg-bottom bg-no-repeat">

@@ -24,6 +24,7 @@
         "@splidejs/react-splide": "^0.7.12",
         "clsx": "^2.1.1",
         "framer-motion": "^11.2.10",
+        "fuse.js": "^7.0.0",
         "react-fast-marquee": "^1.6.4",
         "react-hot-toast": "^2.4.1",
         "react-multi-carousel": "^2.8.5",

@@ -35,6 +35,13 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'social' => [
+                'instagram' => 'https://www.instagram.com/healthbubba?igsh=ZmMyOXJ1a3hpZTZh',
+                'facebook' => 'https://www.facebook.com/profile.php?id=61559440283914&mibextid=ZbWKwL',
+                'linkedin' => 'https://www.linkedin.com/company/healthbubba/',
+                'twitter' => 'https://x.com/Health_Bubba?t=BQIT7mD2BH9H9D1WBYo6vg&s=09',
+                'threads' => 'https://www.threads.net/@healthbubba'
+            ],
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
