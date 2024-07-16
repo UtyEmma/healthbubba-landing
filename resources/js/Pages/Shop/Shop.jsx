@@ -2,7 +2,7 @@ import GuestLayout from '@/Layouts/GuestLayout'
 import { Cta } from '@/Partials/Cta'
 import React, { useState } from 'react'
 import { SingleProduct } from './Partials/SingleProduct'
-import { Head, Link, router } from '@inertiajs/react'
+import { Head, Link } from '@inertiajs/react'
 
 export default function ({categories, products}) {
 
@@ -27,7 +27,6 @@ export default function ({categories, products}) {
                 setMedications(medications)
             })
             .catch(err => {
-                console.log(err)
                 setCategory(prevCategory)
                 setPrevCategory(null)
             })

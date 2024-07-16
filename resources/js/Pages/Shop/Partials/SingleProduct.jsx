@@ -1,16 +1,19 @@
 import { useCart } from '@/Context/CartContext'
 import { toNumber } from '@/Helpers/Utils'
 import CartIcon from '@/Icons/CartIcon'
+import { usePage } from '@inertiajs/react'
 import React from 'react'
 
 export const SingleProduct = ({medication}) => {
 
     const {add} = useCart()
 
+    const {props} = usePage()
+
     return (
         <div class={'p-3 rounded-xl shadow-sm border-2 border-gray-200 h-full'}>
             <div>
-                <img src="/assets/imgs/products/product-img.png" alt="" />
+                <img src={`${props.content}${medication.medication_pic}`} className='aspect-square object-cover object-center' alt="" />
             </div>
 
             <div class={'md:py-3 space-y-5 flex-1 flex flex-col justify-between w-full'}>
