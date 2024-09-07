@@ -6,6 +6,7 @@ use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('/practitioners', [PagesController::class, 'practitioners'])->name('practitioners');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');

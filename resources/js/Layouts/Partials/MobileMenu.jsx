@@ -33,10 +33,10 @@ export const MobileMenu = () => {
                                                     </Disclosure.Button>
 
                                                     <Disclosure.Panel as='div' className={'divide-y divide-white/5 transition-all duration-300'}>
-                                                        <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                        <Link href={route('home')} className='w-full ps-7 p-3 flex justify-between items-center'>
                                                             For Patients
                                                         </Link>
-                                                        <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                        <Link href={route('practitioners')} className='w-full ps-7 p-3 flex justify-between items-center'>
                                                             Health Practitioners
                                                         </Link>
                                                     </Disclosure.Panel>

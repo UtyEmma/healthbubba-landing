@@ -182,7 +182,6 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                     </section>
 
                     <section className="max-w-7xl mx-auto py-10 md:py-20 px-3 sm:px-4">
-                        
                         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-5 md:gap-10">
                             <div>
                                 <div className="border shadow-lg h-full rounded-3xl overflow-hidden flex flex-col justify-between bg-[url(/assets/imgs/media/banners/banner-1.svg)] bg-bottom bg-no-repeat">

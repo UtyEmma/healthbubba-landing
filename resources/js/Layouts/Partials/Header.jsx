@@ -26,7 +26,7 @@ export const Header = () => {
     }
 
     return (
-        <header className='sticky top-0 z-[50]'>
+        <header className='absolute w-full top-0 z-[50]'>
             <div className="hidden lg:grid max-w-3xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
                 <div className="col-span-4">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
@@ -94,7 +94,7 @@ export const Header = () => {
                                     </Menu.Item>
 
                                     <Menu.Item as='div' className="py-2">
-                                        <Link href="#" className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">
+                                        <Link href={route('practitioners')} className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">
                                             Health Practitioners
                                         </Link>
                                     </Menu.Item>
@@ -118,7 +118,7 @@ export const Header = () => {
                 </div>
             </div>
 
-            <div className="lg:hidden p-4 mx-auto flex space-x-3">
+            <div className="lg:hidden p-2 md:p-4 mx-auto flex space-x-3">
                 <div className="flex-1">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
                         <div>

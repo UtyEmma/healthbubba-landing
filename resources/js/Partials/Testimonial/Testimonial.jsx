@@ -85,7 +85,7 @@ export default function ({testimonials}) {
                 </button>
             </div>
 
-            <div className="md:w-4/6 md:overflow-hidden overflow-hidden h-auto">
+            <div className="md:w-4/6 md:min-h-[30rem] h-auto">
                 <div className="md:px-0 md:p-5 md:relative h-auto">
                     <div className={'flex items-center py-10 md:px-5 md:space-x-3 h-auto' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
                         {

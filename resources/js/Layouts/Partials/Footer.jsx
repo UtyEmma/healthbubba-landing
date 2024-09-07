@@ -10,7 +10,7 @@ export const Footer = () => {
     return (
         <footer className="border-t md:py-10 bg-white z-50">
             <div className="max-w-7xl mx-auto divide-y">
-                <div className="grid gap-5 md:grid-cols-2 py-10 px-4">
+                <div className="grid gap-5 md:grid-cols-2 py-10 px-2">
                     <div className="md:w-2/3 space-y-5">
                         <div>
                             <img src="/assets/imgs/logos/logo-long.svg" alt="" />

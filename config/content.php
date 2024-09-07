@@ -87,15 +87,36 @@ return [
         ],
         [
             'name' => 'Jimoh Mubarak Akande (MD)',
-            'message' => "I'm glad you're seeking a doctor's perspective on Health Bubba. As a doctor, I find Health Bubba to be an exceptional platform that streamlines the process of connecting with patients. The platform's user-friendly interface and diverse range of health services make it easier for us to reach and treat patients effectively. The incorporation of telemedicine services is a game-changer, allowing us to provide care remotely and reach individuals who may have difficulty accessing traditional healthcare. Overall, Health Bubba enhances the patient-doctor interaction and facilitates efficient healthcare delivery.",
+            'message' => "I'm glad you're seeking a doctor's perspective on Health Bubba. As a doctor, I find Health Bubba to be an exceptional platform that streamlines the process of connecting with patients. The platform's user-friendly interface and diverse range of health services make it easier for us to reach and treat patients effectively. ",
+            // The incorporation of telemedicine services is a game-changer, allowing us to provide care remotely and reach individuals who may have difficulty accessing traditional healthcare. Overall, Health Bubba enhances the patient-doctor interaction and facilitates efficient healthcare delivery.
             'role' => 'Medical Officer. University of ilorin teaching hospital. (Department of Community Health), Nigeria',
             'avatar' => '/assets/imgs/testimonials/jimoh-mubarak.jpg'
         ],
         [
             'name' => 'Etetim Effiong  (MD)',
-            'message' => "Certainly! Health Bubba, from a doctor's perspective, is a remarkable health and wellness platform that truly prioritizes the user's well-being. The platform's user-friendly interface and personalized health plans make it an exceptional tool for individuals seeking to enhance their health journey. With features like symptom tracking and medication reminders, Health Bubba empowers patients to actively participate in managing their health and achieving their wellness goals. Its provision of reliable health information and focus on patient engagement make it a valuable resource for promoting healthy lifestyles. In summary, Health Bubba is a commendable platform that aligns well with patient-centered care principles and can significantly benefit those striving for improved health outcomes.",
+            'message' => "Certainly! Health Bubba, from a doctor's perspective, is a remarkable health and wellness platform that truly prioritizes the user's well-being. The platform's user-friendly interface and personalized health plans make it an exceptional tool for individuals seeking to enhance their health journey. ",
+            // With features like symptom tracking and medication reminders, Health Bubba empowers patients to actively participate in managing their health and achieving their wellness goals.
+            // Its provision of reliable health information and focus on patient engagement make it a valuable resource for promoting healthy lifestyles. In summary, Health Bubba is a commendable platform that aligns well with patient-centered care principles and can significantly benefit those striving for improved health outcomes.
             'role' => 'Medical officer, Primary health Centre, Uyo ',
             'avatar' => '/assets/imgs/testimonials/etetim-effiong.jpg'
+        ],
+    ],
+
+    'features' => [
+        [
+            'title' => 'Schedule Appointments',
+            'description' => 'Easily manage your calendar and connect with patients at their convenience.',
+            'image' => '/assets/imgs/doctor-on-tablet.png'
+        ],
+        [
+            'title' => 'Secure Communication',
+            'description' => 'HIPAA-compliant messaging and video calls ensure your patients’ privacy.',
+            'image' => '/assets/imgs/video-call-preview.png'
+        ],
+        [
+            'title' => 'Comprehensive Records',
+            'description' => 'Access and update patient records with just a few taps.',
+            'image' => '/assets/imgs/files-documents.png'
         ],
     ]
 ];
