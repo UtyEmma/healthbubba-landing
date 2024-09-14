@@ -1,9 +1,6 @@
-import Button from '@/Components/Button'
 import HandleIcon from '@/Icons/HandleIcon'
 import TargetIcon from '@/Icons/TargetIcon'
 import GuestLayout from '@/Layouts/GuestLayout'
-import { Cta } from '@/Partials/Cta'
-import { FeatureCards } from '@/Partials/Features/FeatureCards'
 import { FeatureCarousel } from '@/Partials/Features/FeatureCarousel'
 import Testimonial from '@/Partials/Testimonial/Testimonial'
 import { PlayIcon } from '@heroicons/react/24/solid'
@@ -16,11 +13,11 @@ export default function Practitioners({ testimonials = [], features = []}) {
         <>
             <Head title='Health Practitioners' />
             <GuestLayout hideGap className="!pt-0" >
-                <div className="h-[97vh] flex items-center justify-center relative bg-no-repeat bg-center bg-cover bg-[url(/assets/imgs/female-doctor-in-office.png)] px-2">
-                    <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b z-0 to-black/70 via-black-50 from-black/5"></div>
-                    <div className='text-center space-y-10 pt-20 z-10'>
-                        <div className="space-y-5 text-white">
-                            <h1 className='md:text-6xl text-2xl font-bold '>Empowering Practitioners, Anywhere.</h1>
+                <div className="h-[70vh] md:h-[100vh] flex items-center justify-center relative bg-no-repeat bg-center bg-cover bg-[url(/assets/imgs/female-doctor-in-office.png)] px-2">
+                    <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b z-0 to-black/90 via-black-70 from-black/20"></div>
+                    <div className='text-center space-y-5 md:space-y-10 pt-20 z-10'>
+                        <div className=" md:space-y-5 space-y-2  text-white">
+                            <h1 className='md:text-6xl text-3xl font-bold '>Empowering Practitioners, Anywhere.</h1>
                             <div className="md:w-2/3 mx-auto">
                                 <p className='md:text-lg'>Download our telemedicine app to provide seamless care to your patients from any location.</p>
                             </div>
@@ -118,10 +115,13 @@ export default function Practitioners({ testimonials = [], features = []}) {
                 <section className="py-10 md:py-20 px-2 max-w-7xl mx-auto ">
                     <div className="bg-primary rounded-2xl md:px-20 px-5 text-white relative md:min-h-96 bg-[url('/assets/imgs/media/banners/curved-bg.svg')] bg-no-repeat md:bg-right-top bg-center bg-origin-content">
                         <div className="md:w-1/2 h-full flex items-center py-5 md:py-20">
-                            <div className="md:space-y-5 space-y-5">
-                                <h2 className="text-3xl md:text-4xl font-semibold">Empower Yourself, Tend to All</h2>
-                                <p className="md:text-lg text-sm text-white">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
-                                <Link href={route('download')} class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></Link>
+                            <div className="md:space-y-5 space-y-1">
+                                <h2 className="text-2xl md:text-4xl font-semibold">Empower Yourself, Tend to All</h2>
+                                <p className="md:text-lg text-white">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
+
+                                <div className="pt-3">
+                                    <Link href={route('download')} class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></Link>
+                                </div>
                             </div>
                         </div>
 
