@@ -15,10 +15,18 @@ export default function () {
                     </div>
 
                     <div>
-                        <PolicyItem title='Introduction'>
-                            <p>Welcome to Healthbubba, a health-focused platform dedicated to providing diagnostic services. Healthbubba is owned and operated by Healthbubba Technologies ("Healthbubba," "we," "us").</p>
-                            <p>By using Healthbubba's services, you agree to the terms outlined in this Privacy Policy.</p>
-                            <p>Your privacy is of utmost importance to us, and we are committed to safeguarding your personal information. This Privacy Policy outlines how we collect, use, share, and protect your personal data in connection with your use of our diagnostic services.</p>
+                        <PolicyItem title='Introduction and Acceptance of Terms'>
+                            <p>Welcome to Health Bubba Limited, a registered and licensed healthcare technology company based in Lagos, Nigeria. You agree that by accessing or using our website https://www.healthbubba.com  you acknowledge that you have read, understood and agree to be bound by all these Terms and Conditions. Please read them carefully before using our services, if you do not agree to all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must cease use instantly.</p>
+                            <p>These Terms and Conditions constitute a legally binding agreement made between you and Health Bubba Limited, outlining your access and use of the website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected.
+                            </p>
+                            <p>Additional Terms and Conditions or documents that may be posted on the Site intermittently are hereby expressly incorporated herein by reference. We reserve the right to modified these terms and conditions at any time and for any reason. Notice of any change will be communicated by updating the “last updated” date and you accept to waive any right to receive this notice in any specific manner.
+                            </p>
+                            <p>It is your responsibility to periodically review these Terms and Conditions to stay informed of updates. You will be subject to and will be deemed to have been made aware of and to have accepted, the changes in any revised Terms and Conditions by your continued use of the Site after the date such revised Terms and Conditions are posted.
+                            </p>
+                            <p>The information provided on the Site is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country.
+                            </p>
+                            <p>Accordingly, those persons who choose to access the Site from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent to which the local laws are applicable
+                            </p>
                         </PolicyItem>
 
                         <PolicyItem title='Consent'>

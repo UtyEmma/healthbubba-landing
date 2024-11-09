@@ -55,8 +55,9 @@ export const Footer = () => {
                                     <Link className='hover:text-black' href={`${route('home')}#faqs`}>FAQ</Link>
                                 </li>
                                 <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki Lagos State</li>
-                                <li>0916 332 6000</li>
-                                <li>0916 322 5000</li>
+                                <li>
+                                    <a href="tel:09163324000">0916 332 4000</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

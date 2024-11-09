@@ -168,12 +168,12 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                                 {/* <div>
                                     <img src="/assets/imgs/brands/smart-pharm.svg" alt="" />
                                 </div> */}
-                                <div>
+                                {/* <div>
                                     <img src="/assets/imgs/brands/graf-base.svg" alt="" />
                                 </div>
                                 <div>
                                     <img src="/assets/imgs/brands/covalent.svg" alt="" />
-                                </div>
+                                </div> */}
                                 <div>
                                     <img src="/assets/imgs/brands/onehealth.svg" alt="" />
                                 </div>
