@@ -24,6 +24,7 @@ Route::prefix('packages')->group(function(){
 Route::get('/privacy-policy', [PagesController::class, 'policy'])->name('privacy-policy');
 
 Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
+Route::get('/cancellation-policy', [PagesController::class, 'cancellationPolicy'])->name('cancellation-policy');
 
 Route::prefix('medications')->group(function(){
     Route::get('', [PagesController::class, 'medications'])->name('shop');

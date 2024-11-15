@@ -46,6 +46,9 @@ export const Footer = () => {
                                 <li>
                                     <Link className='hover:text-black' href={route('privacy-policy')}>Privacy Policy</Link>
                                 </li>
+                                <li>
+                                    <Link className='hover:text-black' href={route('cancellation-policy')}>Cancellation & Rescheduling Policy</Link>
+                                </li>
                             </ul>
                         </div>
                         <div>

@@ -73,4 +73,8 @@ class PagesController extends Controller {
         return Inertia::render('Policy/PrivacyPolicy');
     }
 
+    function cancellationPolicy(){
+        return Inertia::render('Policy/CancellationPolicy');
+    }
+
 }
