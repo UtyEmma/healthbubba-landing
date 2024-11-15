@@ -11,33 +11,33 @@ export default function () {
                 <div className="md:p-20 p-4 bg-white divide-y">
                     <div class={'md:space-y-2'}>
                         <h1 class={'text-2xl md:text-4xl font-semibold'}>Privacy Policy</h1>
-                        <p class={'text-muted'}>Last updated May 25, 2023</p>
+                        <p class={'text-muted'}>This privacy policy was last revised on October 26, 2024.</p>
                     </div>
 
                     <div>
                         <PolicyItem title='Introduction'>
-                            <p>Welcome to Healthbubba, a health-focused platform dedicated to providing diagnostic services. Healthbubba is owned and operated by Healthbubba Technologies ("Healthbubba," "we," "us").</p>
-                            <p>By using Healthbubba's services, you agree to the terms outlined in this Privacy Policy.</p>
-                            <p>Your privacy is of utmost importance to us, and we are committed to safeguarding your personal information. This Privacy Policy outlines how we collect, use, share, and protect your personal data in connection with your use of our diagnostic services.</p>
+                            <p>We at Health Bubba Limited, Lagos, Nigeria and its directors, staff, agents, healthcare providers, and affiliates (“The Company”, “us”, “our”, or “we”) understand that your privacy is important to you. We are highly committed to respecting your privacy and protecting your personal data. This privacy policy describes how we protect your personal data when we collect it through the use of Company’s website, applications, social, services and communications.</p>
+                            <p>By using Health Bubba's services, you agree to the Terms outlined in this Privacy Policy.</p>
+                            <p>Your privacy is of utmost importance to us, and we are committed to safeguarding your personal and health information. This Privacy Policy outlines how we collect, use, share, and protect your personal data in connection with your use of our services.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Consent'>
-                            <p>When processing your personal data, based on consent, we will obtain your explicit agreement at the time of data collection. By accessing our services, you consent to the processing of your personal information. You can withdraw your consent at any time, but this will not affect the lawfulness of data processing based on consent before withdrawal.</p>
+                            <p>The Company collects and processes your data in accordance with the applicable privacy laws of the Federal Republic of Nigeria. By accessing our services, you give consent to the processing of your personal information for optimal provision of our services. You can withdraw your consent at any time, but this will not affect the lawfulness of data processing based on consent before withdrawal.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Age Restriction'>
-                            <p>You confirm that you are over 18 years old and have the right to enter into contractual agreements. Healthbubba's services are intended for users above 18 years, and individuals below this age should have a legal guardian or parent sign up on their behalf.</p>
+                            <p>Health bubba Limited does not intentionally use its Site to collect and maintain personal data from individuals under the age of 18. You confirm that you are over 18 years old and have the right to enter into contractual agreements. Health bubba's services are intended for users above 18 years, and individuals below this age should have the required legal consent from the parent, guardian in accordance with the applicable laws.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Data Protection Policies'>
                             <p>We adhere to the principles outlined in Data Protection Legislation. Personal data must be processed lawfully, fairly, and transparently. It should be accurate, limited to the necessary purpose, kept up to date, and stored securely.</p>
                         </PolicyItem>
 
-                        <PolicyItem title='Information We Collect'>
-                            <p>We collect both non-personal and personal data to provide efficient diagnostic services. Information collected automatically includes domain names, IP addresses, and browsing statistics. Information provided by users includes usernames, passwords, contact information, identity details, test samples, health records, and test results.</p>
+                        <PolicyItem title='Information Collection'>
+                            <p>We collect personal information such as name, email address, phone number, and location to provide efficient diagnostic services. Information collected automatically includes domain names, IP addresses, and browsing statistics. Information provided by users includes usernames, passwords, contact information, identity details, test samples, health records, and test results. We also collect health information during consultations and medical history submissions.</p>
                         </PolicyItem>
 
-                        <PolicyItem title='Using Your Personal Data'>
+                        <PolicyItem title='Personal Data Use'>
                             <p>Your personal data is used to provide diagnostic services, verify identity, fulfill contractual obligations, analyze data for improvement, communicate results, and comply with legal obligations. We do not share personal information without legal basis, and your data is not processed for unrelated reasons.</p>
                         </PolicyItem>
 
@@ -46,7 +46,7 @@ export default function () {
                         </PolicyItem>
 
                         <PolicyItem title='Data Retention'>
-                            <p>We retain personal data for the duration necessary for the purposes it was collected. Health data is retained permanently unless a valid erasure request is received.</p>
+                            <p>The Company keeps your data only as long as necessary for business purposes and will securely delete your personal data promptly afterwards. We retain personal data for the duration necessary for the purposes it was collected. Health data is retained permanently unless a valid erasure request is received.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Data Confidentiality'>
@@ -58,11 +58,11 @@ export default function () {
                         </PolicyItem>
 
                         <PolicyItem title='Transfer of Personal Data'>
-                            <p>We may engage third parties for data processing, ensuring adequate protection. Transfers outside Nigeria adhere to data protection laws.</p>
+                            <p>We may share personal information with healthcare providers for treatment purposes, with third party vendors (e.g. cloud storage providers) who assist in operations, data processing, and ensuring optimal data protection.  Personal data may also be transferred to government bodies and agencies where we are legally required to do so. Transfers outside Nigeria adhere to data protection laws.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Your Rights'>
-                            <p>You have rights under Data Protection Legislation, including notification of data transfers, erasure, rectification, and the right to halt data dissemination.</p>
+                            <p>You have rights in accordance with the Data Protection and Privacy laws applicable in the Federal Republic of Nigeria, they include right to access your data, right to rectify incorrect information, right to withdraw consent, right to lodge a complaint, right to data deletion, notification of data transfers, and the right to halt data dissemination.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Website Security'>
@@ -74,11 +74,11 @@ export default function () {
                         </PolicyItem>
 
                         <PolicyItem title='Data We Retain'>
-                            <p>We retain data as necessary for service provision, legal obligations, and verification with financial institutions.</p>
+                            <p>We retain data as long as necessary for service provision, legal obligations, and verification with financial institutions.</p>
                         </PolicyItem>
 
-                        <PolicyItem title='Data Breach Management Procedure'>
-                            <p>In the event of a data breach, we notify affected parties, investigate, and take remedial actions promptly.</p>
+                        <PolicyItem title='Procedure for Data Breach'>
+                            <p>We generally use accepted standards of technical and operational security to protect your personal data against accidental or unlawful loss, misuse, alteration, or destruction. We require the same level of protection from our staff, agents, healthcare providers, and affiliates. Despite these precautions however, the Company cannot guarantee that unauthorized persons will not obtain access to your personal data and as such we notify affected parties, conduct a thorough investigation into the breach, and take remedial actions promptly.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Limitation of Liability'>
@@ -86,11 +86,11 @@ export default function () {
                         </PolicyItem>
 
                         <PolicyItem title='Changes to this Privacy Policy'>
-                            <p>Any changes to this policy will be notified and take effect immediately.</p>
+                            <p>Users will be notified of any change electronically and the process for updating any change will take effect immediately.</p>
                         </PolicyItem>
 
                         <PolicyItem title='Contact Us'>
-                            <p>For inquiries or comments on this Privacy Policy, contact us at <a href="mailto:support@healthbubba.com">support@healthbubba.com</a>.</p>
+                            <p>For inquiries or comments on this Privacy Policy, contact us at <a href="mailto:support@healthbubba.com" className='text-primary'>support@healthbubba.com</a>.</p>
                         </PolicyItem>
                     </div>
                 </div>

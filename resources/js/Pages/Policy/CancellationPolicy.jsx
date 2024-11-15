@@ -11,7 +11,7 @@ export default function () {
                 <div className="md:p-20 p-4 bg-white divide-y">
                     <div class={'md:space-y-2'}>
                         <h1 class={'text-2xl md:text-4xl font-semibold'}>Cancellation and Rescheduling Policy for Telemedicine Appointments</h1>
-                        <p class={'text-muted'}>Last updated May 25, 2023</p>
+                        {/* <p class={'text-muted'}>Last updated May 25, 2023</p> */}
                     </div>
 
                     <div>
