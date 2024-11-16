@@ -12,6 +12,11 @@ class ApiService {
         $this->api = Http::baseUrl(env('API_URL').'/api');
     }
 
+    function authorize() {
+        $this->api->withToken(session()->get('token'));
+        return $this;
+    }
+
     function resolve($res){
         if(!$res) return [false];
         if(!$data = $res->json()) return [false];
@@ -28,6 +33,17 @@ class ApiService {
 
     function verifyOtp($data) {
         return $this->resolve($this->api->post('verify-otp', $data));
+    }
+
+    function createOrder($data){
+        return $this->authorize()->resolve($this->api->post('cart/add-to-cart', $data));
+    }
+
+    function payOrder($order_id, $amount){
+        return $this->authorize()->resolve($this->api->post('order/pay-order', [
+            'order_id' => $order_id,
+            'order_amount' => $amount
+        ]));
     }
 
     function testCategories(){

@@ -1,9 +1,10 @@
 import { useCart } from '@/Context/CartContext'
 import { toNumber } from '@/Helpers/Utils'
+import useClickOutside from '@/Hooks/useClickOutside'
 import { Dialog, Popover, Transition } from '@headlessui/react'
 import { CheckCircleIcon, PlayIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link, usePage } from '@inertiajs/react'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 export const CartModal = ({show, setShow, item, setItem}) => {
 
@@ -14,15 +15,16 @@ export const CartModal = ({show, setShow, item, setItem}) => {
 
     const { items } = useCart()
 
-    const open = () => setShow(true)
-    const {props} = usePage()
+    const ref = useRef(null)
+
+    useClickOutside(ref, () => setShow(false))
 
     return (
         <>
-            <Dialog as="div" open={show} className="relative z-50 focus:outline-none" onClose={close}>
+            <Dialog as="div"  open={show} className="relative z-50 focus:outline-none" onClose={close}>
                 <div className="fixed inset-0 z-10 w-screen bg-black/25 overflow-y-auto">
                     <div className="flex min-h-full relative items-center justify-center p-4">
-                        <div className="absolute top-3 md:top-10 left-2 md:left-auto right-2 md:right-5 p-5 bg-white rounded-2xl space-y-7 w-auto md:w-2/6">
+                        <div ref={ref} className="absolute top-3 md:top-10 left-2 md:left-auto right-2 md:right-5 p-5 bg-white rounded-2xl space-y-7 w-auto md:w-2/6">
                             <div className="flex justify-between" >
                                 <div className='flex items-center space-x-2'>
                                     <CheckCircleIcon className='w-7 h-7 text-green-600' />
