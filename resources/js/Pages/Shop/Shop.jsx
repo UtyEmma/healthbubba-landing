@@ -3,9 +3,11 @@ import { Cta } from '@/Partials/Cta'
 import React, { useState } from 'react'
 import { SingleProduct } from './Partials/SingleProduct'
 import { Head, Link } from '@inertiajs/react'
+import Fuse from 'fuse.js'
 
 export default function ({categories, products}) {
 
+    const [all, setAll] = useState(products)
     const [medications, setMedications] = useState(products)
     const [category, setCategory] = useState(categories[0])
 
@@ -33,6 +35,20 @@ export default function ({categories, products}) {
             .finally(() => {
                 setLoading(false)
             })
+    }
+
+    const reset = () => setMedications(products)
+
+    const searchMedications = () => {
+        const val = e.target.value;
+        if(!val) return reset();
+        
+        const fuse = new Fuse(all, {
+            keys: ["medication_name"]
+        })
+
+        const results = fuse.search(val);
+        setMedications(results.map(item => item.item));
     }
 
     return (
@@ -65,7 +81,7 @@ export default function ({categories, products}) {
                                     <path d="M17.4999 17.5L13.8749 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#9CA3AF" stroke-width="1.31602" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </span>
-                            <input type="text" class={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Medications' />
+                            <input onChange={searchMedications} type="text" class={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Medications' />
                         </div>
                     </div>
 

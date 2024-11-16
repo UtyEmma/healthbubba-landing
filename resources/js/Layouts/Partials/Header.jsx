@@ -1,19 +1,22 @@
 import CartIcon from '@/Icons/CartIcon'
 import Separator from '@/Icons/Separator'
 import { Menu } from '@headlessui/react'
-import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/solid'
-import { Link } from '@inertiajs/react'
+import { Bars3Icon, ChevronDownIcon, UserIcon } from '@heroicons/react/24/solid'
+import { Link, usePage } from '@inertiajs/react'
 import React, { useContext } from 'react'
 import { DownloadContext } from '../GuestLayout'
 import { CartModal } from './CartModal'
 import { MobileMenu } from './MobileMenu'
 import { useCart } from '@/Context/CartContext'
+import Disclose from '@/Components/Display/Disclose'
 
 export const Header = () => {
 
     const {open} = useContext(DownloadContext)
 
     const {items} = useCart()
+
+    const {props} = usePage()
 
     const scrollTo = (selector) => {
         const elm = document.getElementById(selector)
@@ -27,7 +30,7 @@ export const Header = () => {
 
     return (
         <header className='absolute w-full top-0 z-[50]'>
-            <div className="hidden lg:grid max-w-3xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
+            <div className="hidden lg:grid max-w-4xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
                 <div className="col-span-4">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
                         <div>
@@ -45,7 +48,7 @@ export const Header = () => {
                             <li>
                                 <Menu >
                                     <Menu.Button  className={'flex items-center'}>
-                                    Services <ChevronDownIcon class={'ms-1 w-4 h-4'} />
+                                    Services <ChevronDownIcon className='ms-1 w-4 h-4' />
                                     </Menu.Button>
 
                                     <Menu.Items  as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 p-2 mt-4 divide-y divide-white/5 ' anchor="bottom">
@@ -72,9 +75,29 @@ export const Header = () => {
                             <li>
                                 <button onClick={open} >Download</button>
                             </li>
+                            <Disclose show={!!!props.auth.user} >
+                                <li>
+                                    <a href={`${route('login')}`}>Login</a>
+                                </li>
+                            </Disclose>
                         </ul>
                         <div>
-                            <Link href={route('register')} className="btn btn-white">Sign Up</Link>
+                            <Disclose show={!!!props.auth.user} >
+                                <Link href={route('register')} className="btn btn-white">Sign Up</Link>
+                            </Disclose>
+                            <Disclose show={!!props.auth.user} >
+                                <Menu >
+                                    <Menu.Button className="btn btn-white px-2">
+                                        <UserIcon className='size-5 text-primary'  />
+                                    </Menu.Button>
+
+                                    <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
+                                        <Menu.Item as='div' className="py-2">
+                                            <Link href={route('logout')} className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">Logout</Link>
+                                        </Menu.Item>
+                                    </Menu.Items>
+                                </Menu>
+                            </Disclose>
                         </div>
                     </div>
                 </div>
@@ -83,7 +106,7 @@ export const Header = () => {
                         <div>
                             <Menu>
                                 <Menu.Button className="btn btn-white bg-opacity-10 text-white font-normal">
-                                    For Patients <ChevronDownIcon class={'w-4 h-4'} />
+                                    For Patients <ChevronDownIcon className='w-4 h-4' />
                                 </Menu.Button>
 
                                 <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
@@ -128,8 +151,14 @@ export const Header = () => {
                         </div>
 
                         <div className='flex space-x-2'>
-                            <Link href={route('register')} className="btn btn-white">Sign Up</Link>
-
+                            <Disclose show={!!!props.auth.user} >
+                                <Link href={route('register')} className="btn btn-white">Sign Up</Link>
+                            </Disclose>
+                            <Disclose show={!!props.auth.user} >
+                                <button className="btn btn-white">
+                                    <UserIcon className='size-5 text-primary'  />
+                                </button>
+                            </Disclose>
                             <div>
                                 <Link href={route('cart')} className="btn btn-white w-auto">
                                     <div className="relative">

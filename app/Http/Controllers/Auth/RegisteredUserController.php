@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Library\Toast;
 use App\Models\User;
+use App\Services\ApiService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -15,36 +17,32 @@ use Inertia\Response;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
+
+    function __construct(public ApiService $apiService){
+
+    }
+
     public function create(): Response {
         return Inertia::render('Auth/Register');
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    public function store(Request $request): RedirectResponse {
+        $validated = $request->validate([
+            'email' => 'required|string|lowercase|email|max:255',
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
+            'password' => ['required', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        [$status, $message, $data] = $this->apiService->register($validated);
+        
+        if(!$status) {
+            (new Toast($message))->error();
+            return back();
+        }
 
-        event(new Registered($user));
+        (new Toast($message))->success();
 
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route(name: 'verify-otp', parameters: ['email' => $request->email], absolute: false));
     }
 }

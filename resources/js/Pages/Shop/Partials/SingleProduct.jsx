@@ -12,8 +12,8 @@ export const SingleProduct = ({medication}) => {
 
     return (
         <div class={'p-3 rounded-xl shadow-sm border-2 border-gray-200 h-full'}>
-            <div>
-                <img src={`${props.content}${medication.medication_pic}`} className='aspect-square object-cover object-center' alt="" />
+            <div className='aspect-square overflow-hidden'>
+                <img src={`${props.content}${medication.medication_pic}`} className='aspect-square w-full h-full object-cover object-center' alt="" />
             </div>
 
             <div class={'md:py-3 space-y-5 flex-1 flex flex-col justify-between w-full'}>

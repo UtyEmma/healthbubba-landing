@@ -15,7 +15,19 @@ class ApiService {
     function resolve($res){
         if(!$res) return [false];
         if(!$data = $res->json()) return [false];
-        return [$data['ok'], $data['message'], $data['data']];
+        return [$data['ok'], $data['message'], $data['data'] ?? $data['errors'] ?? ''];
+    }
+
+    function register($data) {
+        return $this->resolve($this->api->post('register', $data));
+    }
+
+    function login($data) {
+        return $this->resolve($this->api->post('login', $data));
+    }
+
+    function verifyOtp($data) {
+        return $this->resolve($this->api->post('verify-otp', $data));
     }
 
     function testCategories(){

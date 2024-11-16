@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\AuthService;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
@@ -30,11 +31,13 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        // $request->session()->get('toast') ? dd($request->session()->get('toast')) : null;
         return [
             ...parent::share($request),
             'auth' => [
-                'user' => $request->user(),
+                'user' => (new AuthService)->user(),
             ],
+            'toast' =>  $request->session()->get('toast'),
             'social' => [
                 'instagram' => 'https://www.instagram.com/healthbubba?igsh=ZmMyOXJ1a3hpZTZh',
                 'facebook' => 'https://www.facebook.com/profile.php?id=61559440283914&mibextid=ZbWKwL',

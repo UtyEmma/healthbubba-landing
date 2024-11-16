@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +12,22 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('/practitioners', [PagesController::class, 'practitioners'])->name('practitioners');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
-Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::prefix('register')->group(function(){
+    Route::get('', [RegisteredUserController::class, 'create'])->name('register');
+    Route::post('', [RegisteredUserController::class, 'store'])->name('register.store');
+});
+
+Route::prefix('verify-otp')->group(function(){
+    Route::get('', [VerifyOtpController::class, 'index'])->name('verify-otp');
+    Route::post('', [VerifyOtpController::class, 'store'])->name('verify-otp.store');
+});
+
+Route::prefix('login')->group(function(){
+    Route::get('', [AuthenticatedSessionController::class, 'create'])->name('login');
+    Route::post('', [AuthenticatedSessionController::class, 'store'])->name('login.store');
+});
+
+Route::get('logout', LogoutController::class)->name('logout');
 
 Route::get('/download', [PagesController::class, 'download'])->name('download');
 

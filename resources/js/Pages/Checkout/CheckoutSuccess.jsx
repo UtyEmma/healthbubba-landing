@@ -1,6 +1,6 @@
 import GuestLayout, { DownloadContext } from '@/Layouts/GuestLayout'
 import { PlayIcon } from '@heroicons/react/24/solid'
-import { Link } from '@inertiajs/react'
+import { Head, Link } from '@inertiajs/react'
 import React, { useContext } from 'react'
 
 export const CheckoutSuccess = () => {
@@ -8,7 +8,7 @@ export const CheckoutSuccess = () => {
     const {open} = useContext(DownloadContext)
 
     return (
-        <div className='max-w-7xl mx-auto py-10 md:py-20 px-4'>
+        <div className='max-w-7xl mx-auto py-10 px-4'>
             <Head title='Order Success' />
             <div className="mx-auto w-1/2 md:w-1/6">
                 <img src="/assets/imgs/flowers.png"   alt="" />

@@ -5,6 +5,7 @@ import DownloadModal from './Partials/DownloadModal';
 import { ScrollToTop } from './Partials/ScrollToTop';
 import CartContext from '@/Context/CartContext';
 import { Toaster } from 'react-hot-toast';
+import Toast from '@/Components/Toast';
 
 export const DownloadContext = createContext({
     status: false,
@@ -17,7 +18,6 @@ export default function ({ children, hideGap = false, ...props }) {
     const [download, setDownload] = useState(false)
 
     return (
-
         <CartContext>
             <DownloadContext.Provider value={{
                 status: download,
@@ -44,6 +44,7 @@ export default function ({ children, hideGap = false, ...props }) {
                     />
                 </div>
             </DownloadContext.Provider>
+            <Toast />
         </CartContext>
     );
 }
