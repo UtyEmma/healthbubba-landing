@@ -59,7 +59,7 @@ export const Footer = () => {
                                 </li>
                                 <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki Lagos State</li>
                                 <li>
-                                    <a href="tel:09163324000">0916 332 4000</a>
+                                    <a href="tel:09163324000">{props.phone}</a>
                                 </li>
                             </ul>
                         </div>

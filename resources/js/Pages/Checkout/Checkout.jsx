@@ -48,7 +48,8 @@ const Checkout = ({setSuccess}) => {
         form.post(route('checkout.purchase'), {
             onSuccess(res) {
                 clear()
-
+                onSuccess()
+                
                 setTimeout(() => {
                     window.location.href = res.props.flash.url;
                 }, 300)

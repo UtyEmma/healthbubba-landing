@@ -39,6 +39,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'toast' =>  $request->session()->get('toast'),
             'flash' => $request->session()->get('flash'),
+            'phone' => env('PHONE_NUMBER'),
             'social' => [
                 'instagram' => 'https://www.instagram.com/healthbubba?igsh=ZmMyOXJ1a3hpZTZh',
                 'facebook' => 'https://www.facebook.com/profile.php?id=61559440283914&mibextid=ZbWKwL',
