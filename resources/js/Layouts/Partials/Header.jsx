@@ -155,9 +155,17 @@ export const Header = () => {
                                 <Link href={route('register')} className="btn btn-white">Sign Up</Link>
                             </Disclose>
                             <Disclose show={!!props.auth.user} >
-                                <button className="btn btn-white">
-                                    <UserIcon className='size-5 text-primary'  />
-                                </button>
+                                <Menu >
+                                    <Menu.Button className="btn btn-white">
+                                        <UserIcon className='size-5 text-primary'  />
+                                    </Menu.Button>
+
+                                    <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
+                                        <Menu.Item as='div' className="py-2">
+                                            <Link href={route('logout')} className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">Logout</Link>
+                                        </Menu.Item>
+                                    </Menu.Items>
+                                </Menu>
                             </Disclose>
                             <div>
                                 <Link href={route('cart')} className="btn btn-white w-auto">
