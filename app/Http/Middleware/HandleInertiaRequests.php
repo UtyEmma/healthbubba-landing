@@ -38,6 +38,7 @@ class HandleInertiaRequests extends Middleware
                 'user' => (new AuthService)->user(),
             ],
             'toast' =>  $request->session()->get('toast'),
+            'flash' => $request->session()->get('flash'),
             'social' => [
                 'instagram' => 'https://www.instagram.com/healthbubba?igsh=ZmMyOXJ1a3hpZTZh',
                 'facebook' => 'https://www.facebook.com/profile.php?id=61559440283914&mibextid=ZbWKwL',

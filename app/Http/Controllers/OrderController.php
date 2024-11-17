@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\ApiService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class OrderController extends Controller {
 
@@ -18,7 +19,7 @@ class OrderController extends Controller {
         $products = collect($request->products)->map(function($product){
             return [
                 'productId' => $product['id'],
-                'productType' => strtoupper($product['type']),
+                'productType' => str($product['type'])->headline(),
                 'productName' => $product['name'],
                 'quantity' => $product['quantity'],
                 'price' => $product['price']
@@ -34,21 +35,43 @@ class OrderController extends Controller {
         ];
 
         [$status, $message, $data] = $this->apiService->createOrder($order); 
-        // [$status, $message, $data] = $this->apiService->addToCart($products->toArray()); 
 
-        dd($message, $data, $status);
         if(!$status) {
             toast($message)->error();
             return back();
         }   
 
-        [$status, $message, $data] = $this->apiService->payOrder($data['order_id'], $products->sum('price'));
-
-        if(!$status) {
-            toast($message)->error();
+        if(!isset($data['order'][0])){
+            toast("No Order set")->error();
             return back();
         }
 
-        return redirect()->away($data['payment']['authorization_url']);
+        $order = $data['order'][0];
+
+        try {
+            [$status, $order] = $this->apiService->payOrder($order, $products->sum('price'));
+    
+            if(!$status) {
+                toast($message)->error();
+                return back();
+            }
+
+            [   
+                'message' => $message,
+                'data' => $order
+            ] = $order;
+
+            toast($message)->success();
+            return back()->with([
+                'flash' => [
+                    'url' => $order['payment']['authorization_url']
+                ]
+            ]);
+        } catch (\Throwable $th) {
+            Log::error("{$th->getCode()} - {$th->getMessage()}");
+            toast("Your order could not be initiated at the moment")->error();
+            return back();
+        }
+        
     }
 }

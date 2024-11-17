@@ -44,6 +44,10 @@ export default function () {
                 <div>
                     <Button class={'btn w-full btn-primary'}>Login</Button>
                 </div>
+
+                <div className="text-center">
+                    <p className='text-sm text-muted'>Don't have an account? <Link className='text-primary' href={route('register')}>Register</Link></p>
+                </div>
             </form>
         </AuthLayout>
     );

@@ -1,6 +1,6 @@
 import GuestLayout from '@/Layouts/GuestLayout'
 import { PlayIcon } from '@heroicons/react/24/solid'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CheckoutSuccess } from './CheckoutSuccess'
 import { useCart } from '@/Context/CartContext'
 import { Head, useForm, usePage } from '@inertiajs/react'
@@ -45,9 +45,15 @@ const Checkout = ({setSuccess}) => {
     const checkout = (event) => {
         event.preventDefault();
 
-        form.post(route('checkout.purchase'))
-        // onSuccess()
-        // clear()
+        form.post(route('checkout.purchase'), {
+            onSuccess(res) {
+                clear()
+
+                setTimeout(() => {
+                    window.location.href = res.props.flash.url;
+                }, 300)
+            }
+        })
     }
 
     return (

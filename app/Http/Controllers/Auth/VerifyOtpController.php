@@ -35,7 +35,7 @@ class VerifyOtpController extends Controller {
         $this->authService->login($data['user'], $data['token']['access_token']);
 
         toast($message)->success();
-        return to_route('home');
+        return redirect()->intended(route('home'));
     }
 
 }

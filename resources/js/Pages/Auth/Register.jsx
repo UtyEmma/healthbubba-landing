@@ -70,6 +70,10 @@ export default function Register() {
                 <div>
                     <Button className={'btn w-full btn-primary'}>Get Started <PlayIcon className={'text-white text-opacity-70 w-6 h-6'} /></Button>
                 </div>
+
+                <div className="text-center">
+                    <p className='text-sm text-muted'>Already have an account? <Link className='text-primary' href={route('login')}>Login</Link></p>
+                </div>
             </form>
         </AuthLayout>
     );

@@ -78,6 +78,9 @@ export const MobileMenu = () => {
                                     <div className='flex justify-between items-center'>
                                         <Link className="p-3 w-full" href={route('about')}>About</Link>
                                     </div>
+                                    <div className='flex justify-between items-center'>
+                                        <Link className="p-3 w-full" href={route('login')}>Login</Link>
+                                    </div>
                                 </div>
                             </Popover.Panel>
                         </>

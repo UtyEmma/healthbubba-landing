@@ -33,10 +33,9 @@ class AuthenticatedSessionController extends Controller {
             return back();
         }
 
-        (new AuthService)->login($data['user'], $data['token']);
         toast($message)->success();
         
-        return redirect()->intended(route('home'));
+        return to_route('verify-otp', ['email' => $request->email]);
     }
 
     public function destroy(Request $request): RedirectResponse
