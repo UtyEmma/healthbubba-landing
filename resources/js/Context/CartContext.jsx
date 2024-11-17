@@ -40,14 +40,10 @@ export default ({children}) => {
 
     const add = (item, qty = 1, update = false) => {
         const existing = items.find(product => product.id == item.id)
-
         if(existing) {
             setItems((prev) => prev.map(product => {
-                if(product.id == item.id) {
-                    item.quantity = update ? qty : item.quantity + qty
-                }
-
-                return item
+                if(product.id == item.id) product.quantity = update ? qty : (product.quantity + qty)
+                return product
             }))
         }else{
             item.quantity = qty;
@@ -60,7 +56,7 @@ export default ({children}) => {
         setTimeout(() => {
             setShow(false)
             setItem({})
-        }, 7000)
+        }, 5000)
 
     }
 
@@ -83,7 +79,6 @@ export default ({children}) => {
             total
         }}>
             {children}
-
             <CartModal {...{item, setItem, show, setShow}} />
         </CartContext.Provider>
     )

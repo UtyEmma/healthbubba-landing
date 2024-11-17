@@ -161,9 +161,11 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                     <section className="bg-secondary overflow-hidden relative py-20 bg-cover bg-no-repeat bg-top" style={{backgroundImage: 'url(/assets/imgs/media/doodle-bg.svg)'}}>
                         <div className="text-center max-w-3xl mx-auto text-white px-4 flex flex-col items-center space-y-5">
                             <p>Trusted by fast-growing Pharmacies and Healthcare companies around the world</p>
-                            <div className="flex md:space-x-7 justify-around gap-2 gap-y-5 sm:gap-y-3 sm:gap-3 flex-wrap">
+                            <div className="flex md:space-x-7 items-center justify-around gap-2 gap-y-5 sm:gap-y-3 sm:gap-3 flex-wrap">
                                 <div>
-                                    <img src="/assets/imgs/brands/synlab.svg" alt="" />
+                                    <a href="#">
+                                        <img src="/assets/imgs/brands/synlab.svg" alt="" />
+                                    </a>
                                 </div>
                                 {/* <div>
                                     <img src="/assets/imgs/brands/smart-pharm.svg" alt="" />
@@ -175,7 +177,15 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                                     <img src="/assets/imgs/brands/covalent.svg" alt="" />
                                 </div> */}
                                 <div>
-                                    <img src="/assets/imgs/brands/onehealth.svg" alt="" />
+                                    <a href="https://www.sinocareintl.com/" target='__blank'>
+                                        <img src="/assets/imgs/brands/sinocare.png" className='h-5 duration-200 hover:filter-none filter hover:invert-0 invert hover:brightness-100 brightness-0' alt="" />
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <a href="#">
+                                        <img src="/assets/imgs/brands/onehealth.svg" alt="" />
+                                    </a>
                                 </div>
                             </div>
                         </div>

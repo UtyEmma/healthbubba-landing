@@ -13,7 +13,7 @@ class ApiService {
     }
 
     function authorize() {
-        $this->api->withToken(session()->get('token'));
+        $this->api->withToken(decrypt(session()->get('token')));
         return $this;
     }
 
@@ -36,6 +36,10 @@ class ApiService {
     }
 
     function createOrder($data){
+        return $this->authorize()->resolve($this->api->post('/order/create-order', $data));
+    }
+
+    function addToCart($data){
         return $this->authorize()->resolve($this->api->post('cart/add-to-cart', $data));
     }
 

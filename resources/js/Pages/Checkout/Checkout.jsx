@@ -3,7 +3,8 @@ import { PlayIcon } from '@heroicons/react/24/solid'
 import React, { useState } from 'react'
 import { CheckoutSuccess } from './CheckoutSuccess'
 import { useCart } from '@/Context/CartContext'
-import { Head } from '@inertiajs/react'
+import { Head, useForm, usePage } from '@inertiajs/react'
+import InputError from '@/Components/Forms/InputError'
 
 export default function () {
 
@@ -21,7 +22,17 @@ export default function () {
 
 const Checkout = ({setSuccess}) => {
 
-    const {total, clear} = useCart()
+    const {props} = usePage()
+
+    const {total, items, clear} = useCart()
+
+    const form = useForm({
+        first_name: props.auth.user.first_name,
+        last_name: props.auth.user.last_name,
+        email: props.auth.user.email,
+        address: props.auth.user.address,
+        products: items
+    })
 
     const onSuccess = () => {
         setSuccess(true);
@@ -33,8 +44,10 @@ const Checkout = ({setSuccess}) => {
 
     const checkout = (event) => {
         event.preventDefault();
-        onSuccess()
-        clear()
+
+        form.post(route('checkout.purchase'))
+        // onSuccess()
+        // clear()
     }
 
     return (
@@ -48,27 +61,30 @@ const Checkout = ({setSuccess}) => {
                     <div className="order-2 md:order-1 md:col-span-3 px-4 md:py-10 space-y-5">
                         <div className="card">
                             <div className="grid grid-cols-12 gap-2 md:gap-5">
+                                <InputError error={form.errors.products} />
                                 <div className='col-span-full'>
                                     <label className="form-label">Email Address</label>
-                                    <input type='email' placeholder='Email Address' className="form-control" />
+                                    <input disabled value={form.data.email} type='email' placeholder='Email Address' className="form-control" />
+                                    <InputError error={form.errors.email} />
                                 </div>
 
                                 <div className='col-span-6'>
                                     <label className="form-label">First name</label>
-                                    <input placeholder='First Name' className="form-control" />
+                                    <input disabled value={form.data.first_name} placeholder='First Name' className="form-control" />
                                 </div>
 
                                 <div className='col-span-6'>
                                     <label className="form-label">Last name</label>
-                                    <input placeholder='Last Name' className="form-control" />
+                                    <input disabled value={form.data.last_name} placeholder='Last Name' className="form-control" />
                                 </div>
 
                                 <div className='col-span-full'>
-                                    <label className="form-label">Street Address</label>
-                                    <input placeholder='Street Address' className="form-control" />
+                                    <label className="form-label">Address</label>
+                                    <input value={form.data.address} onChange={e => form.setData('address', e.target.value)} placeholder='Street Address' className="form-control" />
+                                    <InputError error={form.errors.address} />
                                 </div>
 
-                                <div className='col-span-full'>
+                                {/* <div className='col-span-full'>
                                     <label className="form-label">Apt, Suite, Unit, Building, Floor</label>
                                     <input placeholder='Apt, Suite, Unit, Building, Floor' className="form-control" />
                                 </div>
@@ -86,12 +102,12 @@ const Checkout = ({setSuccess}) => {
                                 <div className='col-span-4'>
                                     <label className="form-label">Postal Code</label>
                                     <input placeholder='Postal Code' className="form-control" />
-                                </div>
+                                </div> */}
 
-                                <div className='col-span-12'>
+                                {/* <div className='col-span-12'>
                                     <label className="form-label">Phone number</label>
                                     <input placeholder='Phone Number' type='tel' className="form-control" />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 

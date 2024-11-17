@@ -4,8 +4,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
@@ -25,6 +27,13 @@ Route::prefix('verify-otp')->group(function(){
 Route::prefix('login')->group(function(){
     Route::get('', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('', [AuthenticatedSessionController::class, 'store'])->name('login.store');
+});
+
+Route::middleware(Authenticate::class)->group(function(){
+    Route::prefix('checkout')->group(function(){
+        Route::get('', [PagesController::class, 'checkout'])->name('checkout');
+        Route::post('purchase', [OrderController::class, 'store'])->name('checkout.purchase');
+    });
 });
 
 Route::get('logout', LogoutController::class)->name('logout');
@@ -49,7 +58,5 @@ Route::prefix('medications')->group(function(){
 });
 
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
-
-Route::get('checkout', [PagesController::class, 'checkout'])->name('checkout');
 
 include_once __DIR__.'/api.php';

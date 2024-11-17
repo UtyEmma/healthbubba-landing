@@ -25,9 +25,6 @@ class AuthenticatedSessionController extends Controller {
         ]);
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
     public function store(LoginRequest $request): RedirectResponse {
         [$status, $message, $data] = $this->apiService->login($request->validated());
 
@@ -39,12 +36,9 @@ class AuthenticatedSessionController extends Controller {
         (new AuthService)->login($data['user'], $data['token']);
         toast($message)->success();
         
-        return to_route('home');
+        return redirect()->intended(route('home'));
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
