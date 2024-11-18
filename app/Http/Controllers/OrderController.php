@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\ApiService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 
 class OrderController extends Controller {
 
@@ -73,5 +74,13 @@ class OrderController extends Controller {
             return back();
         }
         
+    }
+
+    function success(Request $request){
+        return Inertia::render('Checkout/CheckoutSuccess');
+    }
+
+    function cancelled(Request $request){
+        return Inertia::render('Checkout/CheckoutSuccess');
     }
 }

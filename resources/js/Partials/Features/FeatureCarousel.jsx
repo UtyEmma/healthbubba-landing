@@ -27,7 +27,7 @@ export const FeatureCarousel = ({features}) => {
 
     const startAutoplay = () => {
         stopAutoplay();
-        intervalRef.current = setInterval(next, 3000);
+        intervalRef.current = setInterval(next, 10000);
     };
 
     const stopAutoplay = () => {

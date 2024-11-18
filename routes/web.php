@@ -33,6 +33,8 @@ Route::middleware(Authenticate::class)->group(function(){
     Route::prefix('checkout')->group(function(){
         Route::get('', [PagesController::class, 'checkout'])->name('checkout');
         Route::post('purchase', [OrderController::class, 'store'])->name('checkout.purchase');
+        Route::get('success', [OrderController::class, 'success'])->name('checkout.success');
+        Route::get('cancelled', [OrderController::class, 'cancelled'])->name('checkout.cancelled');
     });
 });
 
