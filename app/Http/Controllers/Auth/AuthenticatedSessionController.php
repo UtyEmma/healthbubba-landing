@@ -35,7 +35,14 @@ class AuthenticatedSessionController extends Controller {
 
         toast($message)->success();
         
-        return to_route('verify-otp', ['email' => $request->email]);
+        (new AuthService)->login($data['user'], $data['token']);
+        
+        // if(!$data['user']['email_verified']) {
+        //     toast('Login successful! Please verify your email address')->success();
+        //     return to_route('verify-otp', ['email' => $request->email]);
+        // }
+
+        return to_route('home');
     }
 
     public function destroy(Request $request): RedirectResponse

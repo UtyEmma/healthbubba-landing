@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\VerifiedEmail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
@@ -29,7 +30,7 @@ Route::prefix('login')->group(function(){
     Route::post('', [AuthenticatedSessionController::class, 'store'])->name('login.store');
 });
 
-Route::middleware(Authenticate::class)->group(function(){
+Route::middleware([Authenticate::class])->group(function(){
     Route::prefix('checkout')->group(function(){
         Route::get('', [PagesController::class, 'checkout'])->name('checkout');
         Route::post('purchase', [OrderController::class, 'store'])->name('checkout.purchase');
