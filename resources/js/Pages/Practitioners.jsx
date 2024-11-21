@@ -117,7 +117,7 @@ export default function Practitioners({ testimonials = [], features = []}) {
                         <div className="md:w-1/2 h-full flex items-center py-5 md:py-20">
                             <div className="md:space-y-5 space-y-1">
                                 <h2 className="text-2xl md:text-4xl font-semibold">Empower Yourself, Tend to All</h2>
-                                <p className="md:text-lg text-white">Lorem ipsum dolor sit amet consectetur. Montes posuere non lorem tempus mus. Vitae laoreet ipsum mi sagittis id vehicula semper. Sed enim mollis pulvinar.</p>
+                                <p className="md:text-lg text-white">Download our telemedicine app to provide seamless care to your patients from any location.</p>
 
                                 <div className="pt-3">
                                     <Link href={route('download')} class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></Link>
