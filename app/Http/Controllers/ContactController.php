@@ -19,19 +19,23 @@ class ContactController extends Controller
             'message' => 'required|string'
         ]);
 
-        $emails = ['support@healthbubba.com'];
-
-    notify("Action Required: New Inquiry from {$request->name}")
-        ->greeting("Hello Healthbubba Admin,")
-        ->line('You have received a new inquiry on the Healthbubba website.')
-        ->line('Here are the details:')
-        ->line("**Name:** {$request->name}")
-        ->line("**Email Address:** {$request->email}")
-        ->line("**Phone Number:** {$request->phone}")
-        ->line("**Message:** {$request->message}")
-        ->line('Please review and respond promptly.')
-        ->replyTo($request->email, $request->name)
-        ->mail($emails);
+        $emails = explode(',', env("CONTACT_EMAILS"));
+            
+        try {
+            notify("Action Required: New Inquiry from {$request->name}")
+                ->greeting("Hello Healthbubba Admin,")
+                ->line('You have received a new inquiry on the Healthbubba website.')
+                ->line('Here are the details:')
+                ->line("**Name:** {$request->name}")
+                ->line("**Email Address:** {$request->email}")
+                ->line("**Phone Number:** {$request->phone}")
+                ->line("**Message:** {$request->message}")
+                ->line('Please review and respond promptly.')
+                ->replyTo($request->email, $request->name)
+                ->mail($emails);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
     notify("Thank You for Reaching Out, {$request->name}!")
         ->greeting("Hello {$request->name},")
