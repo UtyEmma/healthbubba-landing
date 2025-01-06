@@ -29,7 +29,7 @@ export const Header = () => {
     }
 
     return (
-        <header className='absolute w-full top-0 z-[50]'>
+        <header className='absolute w-full bg-transparent top-0 z-[50]'>
             <div className="hidden lg:grid max-w-4xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
                 <div className="col-span-4">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">

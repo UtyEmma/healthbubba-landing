@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
@@ -42,6 +43,11 @@ Route::middleware([Authenticate::class])->group(function(){
 Route::get('logout', LogoutController::class)->name('logout');
 
 Route::get('/download', [PagesController::class, 'download'])->name('download');
+
+Route::prefix('contact')->group(function(){
+    Route::get('', [ContactController::class, 'index'])->name('contact');
+    Route::post('send-message', [ContactController::class, 'sendMessage'])->name('send-message');
+});
 
 Route::prefix('packages')->group(function(){
     Route::get('/', [PackageController::class, 'index'])->name('packages');

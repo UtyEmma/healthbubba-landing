@@ -7,6 +7,7 @@ import { Faq } from '@/Partials/FAQs/Faq';
 import { FeatureCards } from '@/Partials/Features/FeatureCards';
 import Marquee from 'react-fast-marquee';
 import { PlayIcon } from '@heroicons/react/24/solid';
+import ContactForm from '@/Partials/Contact/ContactForm';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
@@ -365,6 +366,8 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                     {/* FAQs Start */}
                     <Faq faqs={faqs} />
                     {/* FAQs End */}
+
+                    <ContactForm />
 
                     <section className="py-10 md:py-20 px-4 max-w-7xl mx-auto ">
                         <Cta />
