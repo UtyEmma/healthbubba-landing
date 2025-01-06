@@ -19,7 +19,7 @@ class ContactController extends Controller
             'message' => 'required|string'
         ]);
 
-        $emails = ['support@healthbubba.com', 'utyemma@gmail.com'];
+        $emails = ['support@healthbubba.com'];
 
     notify("Action Required: New Inquiry from {$request->name}")
         ->greeting("Hello Healthbubba Admin,")
