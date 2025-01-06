@@ -33,7 +33,10 @@ export const Footer = () => {
                                     <Link className='hover:text-black' href={route('shop')}>Order Medications</Link>
                                 </li>
                                 <li>
-                                    <Link className='hover:text-black' href="#">Health Professional’s Page</Link>
+                                    <Link className='hover:text-black' href={route('practitioners')}>Health Professional’s Page</Link>
+                                </li>
+                                <li>
+                                    <Link className='hover:text-black' href={route('contact')}>Get In Touch</Link>
                                 </li>
                             </ul>
                         </div>
