@@ -24,7 +24,7 @@ export const SubscriptionCTA = (props) => {
 
                 <div className={'flex w-2/3 items-center space-x-3'}>
                     <div className="p-1 flex-shrink-0 shadow-md inline-block rounded-lg">
-                        <img src="/assets/imgs/qr-code.svg" alt="" />
+                        <img src="/assets/bubba_play.png" className="size-20"  alt="" />
                     </div>
 
                     <div className={'flex-1'}>
