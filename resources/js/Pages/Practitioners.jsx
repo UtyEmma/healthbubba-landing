@@ -4,11 +4,11 @@ import GuestLayout from '@/Layouts/GuestLayout'
 import { FeatureCarousel } from '@/Partials/Features/FeatureCarousel'
 import Testimonial from '@/Partials/Testimonial/Testimonial'
 import { PlayIcon } from '@heroicons/react/24/solid'
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link, usePage } from '@inertiajs/react'
 import React from 'react'
 
 export default function Practitioners({ testimonials = [], features = []}) {
-
+    const {props} = usePage()
     return (
         <>
             <Head title='Health Practitioners' />
@@ -23,7 +23,10 @@ export default function Practitioners({ testimonials = [], features = []}) {
                             </div>
                         </div>
 
-                        <a href='' className="btn btn-primary shadow-[#0000001A]" >Download App <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </a>
+                        <div className="space-x-4">
+                            <Link href={'/download'} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Download <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </Link>
+                            {/* <a href={props.urls.doctors.appstore} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Download on App Store <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </a> */}
+                        </div>
                     </div>
                 </div>
 
@@ -40,8 +43,8 @@ export default function Practitioners({ testimonials = [], features = []}) {
                                         <p className="text-muted md:text-lg text-center">Download our telemedicine app to provide seamless care to your patients from any location.</p>
                                     </div>
                                     <div className="bg-gray-200 p-1 rounded-xl space-x-2 sm:space-x-2">
-                                        <button className="btn btn-white shadow-md text-sm md:text-base">Get on PlayStore</button>
-                                        <button role="button" className="btn btn-white shadow-md text-sm md:text-base">Get on AppStore</button>
+                                        <a href={props.urls.doctors.playstore} target='__blank' className="btn btn-white shadow-md text-sm md:text-base">Get on PlayStore</a>
+                                        <a href={props.urls.doctors.appstore} target='__blank' className="btn btn-white shadow-md text-sm md:text-base">Get on AppStore</a>
                                     </div>
                                 </div>
                                 <div >

@@ -32,7 +32,7 @@ export default function () {
                         <button onClick={close} class="absolute top-5 right-5" >
                             <XMarkIcon className="text-white size-10" />
                         </button>
-                        <div ref={qr} className="absolute z-[999999999] bottom-3 right-0 left-0 px-3 md:flex md:justify-end justify-center duration-200 transition-all">
+                        <div ref={qr} className="absolute z-[999999999] bottom-3 right-0 w-auto left-0 px-3 md:flex md:justify-end justify-center duration-200 transition-all">
                             <div className="w-full sm:w-4/5 md:w-2/6 mx-auto md:mx-0 space-y-5 aspect-square p-3 bg-[#1F1F1F] rounded-[14.51px]">
                                 <Disclose show={provider == 'android'} >
                                     <img src="/assets/bubba_play.png" class="w-full aspect-square"  alt="" />

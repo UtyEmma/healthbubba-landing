@@ -50,7 +50,7 @@ export default function FeatureCarouselItem({title, next, prev, stopAutoplay, de
                 </div>
             </div>
             <div className='flex justify-center py-5'>
-                <Link href='' className='btn btn-primary'>Download App <PlayIcon className='text-white text-opacity-80 w-5 h-5' /></Link>
+                <Link href='/download' className='btn btn-primary'>Download App <PlayIcon className='text-white text-opacity-80 w-5 h-5' /></Link>
             </div>
         </div>
     )

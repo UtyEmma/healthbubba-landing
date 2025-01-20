@@ -32,6 +32,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         // $request->session()->get('toast') ? dd($request->session()->get('toast')) : null;
+
         return [
             ...parent::share($request),
             'auth' => [
@@ -46,6 +47,16 @@ class HandleInertiaRequests extends Middleware
                 'linkedin' => 'https://www.linkedin.com/company/healthbubba/',
                 'twitter' => 'https://x.com/Health_Bubba?t=BQIT7mD2BH9H9D1WBYo6vg&s=09',
                 'threads' => 'https://www.threads.net/@healthbubba'
+            ],
+            'urls' => [
+                'patients' => [
+                    'playstore' => env('PATIENTS_APP_PLAY_URL'),
+                    'appstore' => env('PATIENTS_APP_STORE_URL')
+                ],
+                'doctors' => [
+                    'playstore' => env('DOCTORS_APP_PLAY_URL'),
+                    'appstore' => env('DOCTORS_APP_STORE_URL')
+                ],
             ],
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),

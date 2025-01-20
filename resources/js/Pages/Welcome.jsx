@@ -1,15 +1,22 @@
-import GuestLayout from '@/Layouts/GuestLayout';
+import GuestLayout, { DownloadContext } from '@/Layouts/GuestLayout';
 import { Cta } from '@/Partials/Cta';
 import PackageList from '@/Partials/Packages/PackageList';
 import Testimonial from '@/Partials/Testimonial/Testimonial';
-import { Link, Head } from '@inertiajs/react';
+import { Link, Head, usePage } from '@inertiajs/react';
 import { Faq } from '@/Partials/FAQs/Faq';
 import { FeatureCards } from '@/Partials/Features/FeatureCards';
 import Marquee from 'react-fast-marquee';
 import { PlayIcon } from '@heroicons/react/24/solid';
 import ContactForm from '@/Partials/Contact/ContactForm';
+import { useDownload } from '@/Hooks/useDownload';
+import { useContext } from 'react';
+import Button from '@/Components/Button';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
+
+    const {open} = useContext(DownloadContext)
+
+    const {props} = usePage()
 
     return (
         <>
@@ -25,7 +32,7 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                                 </h1>
                                 <p className="max-w-3xl md:text-lg text-sm text-muted mx-auto">Book an appointment with a verified healthcare professional, order lab tests and manage prescriptions all from the convenience of your home.</p>
                                 <div>
-                                    <a href="#" className="btn btn-primary">Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /></a>
+                                    <Button onClick={open} className="btn btn-primary">Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /></Button>
                                 </div>
                                 <div className="md:px-20 mt-10">
                                     <img src="/assets/imgs/media/banner.png" alt="" />
@@ -205,8 +212,8 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                                             <p className="text-muted md:text-lg text-center">Get the HealthBubba’s Patient App, consult and connect with specialists and healthcare professionals. </p>
                                         </div>
                                         <div className="bg-gray-200 p-1 rounded-xl space-x-2 sm:space-x-2">
-                                            <button className="btn btn-white shadow-md text-sm md:text-base">Get on PlayStore</button>
-                                            <button role="button" className="btn btn-white shadow-md text-sm md:text-base">Get on AppStore</button>
+                                            <a href={props.urls.patients.playstore} target='__blank' className="btn btn-white shadow-md text-sm md:text-base">Get on PlayStore</a>
+                                            <a href={props.urls.patients.appstore} target='__blank' className="btn btn-white shadow-md text-sm md:text-base">Get on AppStore</a>
                                         </div>
                                     </div>
                                     <div >

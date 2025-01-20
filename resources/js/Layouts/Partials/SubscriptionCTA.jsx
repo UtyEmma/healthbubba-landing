@@ -1,6 +1,10 @@
+import { usePage } from '@inertiajs/react'
 import React from 'react'
 
 export const SubscriptionCTA = (props) => {
+
+    const {props: data} = usePage()
+
     return (
         <div {...props}>
             <div className="space-y-5">
@@ -18,8 +22,8 @@ export const SubscriptionCTA = (props) => {
                 </div>
 
                 <div className={'space-y-2'}>
-                    <a href="" className="block underline">Download our Android App</a>
-                    <a href="" className="block underline">Download our iOS App</a>
+                    <a href={data.urls.patients.playstore} target='__blank' className="block underline">Download our Android App</a>
+                    <a href={data.urls.patients.appstore} target='__blank' className="block underline">Download our iOS App</a>
                 </div>
 
                 <div className={'flex w-2/3 items-center space-x-3'}>
