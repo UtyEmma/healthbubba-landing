@@ -68,4 +68,6 @@ Route::prefix('medications')->group(function(){
 
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
 
+Route::view('invite', 'invite');
+
 include_once __DIR__.'/api.php';
