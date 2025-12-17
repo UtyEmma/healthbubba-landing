@@ -1,4 +1,4 @@
-<html>
+{{-- <html>
     <head>
 
 
@@ -24,4 +24,4 @@
     <body>
         
     </body>
-</html>
+</html> --}}
