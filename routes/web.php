@@ -5,15 +5,24 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PractitionersController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\VerifiedEmail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
-Route::get('/practitioners', [PagesController::class, 'practitioners'])->name('practitioners');
+
+Route::prefix('practitioners')->group(function(){
+    Route::get('', [PagesController::class, 'practitioners'])->name('practitioners');
+    Route::get('how-it-works', [PractitionersController::class, 'howItWorks'])->name('practitioners.how-it-works');
+    Route::get('support', [PractitionersController::class, 'support'])->name('practitioners.support');
+});
+
+Route::get('frequently-asked-questions', [FaqController::class, 'index'])->name('faqs');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
 Route::prefix('register')->group(function(){

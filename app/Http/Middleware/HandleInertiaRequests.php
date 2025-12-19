@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Services\AuthService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -58,6 +59,7 @@ class HandleInertiaRequests extends Middleware
                     'appstore' => env('DOCTORS_APP_STORE_URL')
                 ],
             ],
+            'is_practitioner' => request()->routeIs('practitioners*'),
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),

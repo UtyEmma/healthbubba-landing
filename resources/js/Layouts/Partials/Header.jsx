@@ -12,11 +12,19 @@ import Disclose from '@/Components/Display/Disclose'
 
 export const Header = () => {
 
+    
+
+    const {is_practitioner} = usePage().props
+
+    return (
+        is_practitioner ? <PractitionersMenu /> : <PatientsMenu /> 
+    )
+}
+
+const PractitionersMenu = () => {
     const {open} = useContext(DownloadContext)
 
     const {items} = useCart()
-
-    const {props} = usePage()
 
     const scrollTo = (selector) => {
         const elm = document.getElementById(selector)
@@ -24,9 +32,142 @@ export const Header = () => {
             top: elm.offsetTop,
             behavior: 'smooth'
         })
-
-        // onClick={() => scrollTo('about')}
     }
+
+    const {props} = usePage()
+    return (
+        <header className='absolute w-full bg-transparent top-0 z-[50]'>
+            <div className="hidden lg:flex justify-center mx-auto py-4 gap-x-5 text-[14px]">
+                <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex gap-8 items-center justify-between">
+                    <div>
+                        <Link href={route('home')}>
+                            <img src="/assets/imgs/logo.svg" className='size-11' alt="" />
+                        </Link>
+                    </div>
+
+                    <ul className="flex space-x-4 text-white">
+                        <li>
+                            <Link href={`${route('practitioners.how-it-works')}`} >How It Works</Link>
+                        </li>
+                        <li>
+                            <Link href={`${route('faqs')}`}>FAQs</Link>
+                        </li>
+                        <li>
+                            <Link href={`${route('practitioners.support')}`}>Support</Link>
+                        </li>
+                        <li>
+                            <button onClick={open} >Download App</button>
+                        </li>
+                    </ul>
+                    <div>
+                        <Disclose show={!!!props.auth.user} >
+                            <Link href={route('register')} className="btn btn-white !py-3">Get Started</Link>
+                        </Disclose>
+                        <Disclose show={!!props.auth.user} >
+                            <Menu >
+                                <Menu.Button className="btn btn-white px-2">
+                                    <UserIcon className='size-5 text-primary'  />
+                                </Menu.Button>
+
+                                <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
+                                    <Menu.Item as='div' className="py-2">
+                                        <Link href={route('logout')} className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">Logout</Link>
+                                    </Menu.Item>
+                                </Menu.Items>
+                            </Menu>
+                        </Disclose>
+                    </div>
+                </div>
+
+                <div className="shrink-0">
+                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex space-x-2 justify-between items-center relative">
+                        <div>
+                            <Menu>
+                                <Menu.Button className="btn btn-white bg-opacity-10 !py-3 text-white shrink-0 font-normal">
+                                    For Health Prac... <ChevronDownIcon className='w-4 h-4' />
+                                </Menu.Button>
+
+                                <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
+                                    <Menu.Item as='div' className="py-2">
+                                        <Link href="#" className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">
+                                        For Patients
+                                        </Link>
+                                    </Menu.Item>
+
+                                    <Menu.Item as='div' className="py-2">
+                                        <Link href={route('practitioners')} className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">
+                                            For Health Practitioners
+                                        </Link>
+                                    </Menu.Item>
+                                </Menu.Items>
+                            </Menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="lg:hidden p-2 md:p-4 mx-auto flex space-x-3">
+                <div className="flex-1">
+                    <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
+                        <div>
+                            <Link href={route('home')}>
+                                <img src="/assets/imgs/logo.svg" alt="" />
+                            </Link>
+                        </div>
+
+                        <div className='flex space-x-2'>
+                            <Disclose show={!!!props.auth.user} >
+                                <Link href={route('register')} className="btn btn-white">Sign Up</Link>
+                            </Disclose>
+                            <Disclose show={!!props.auth.user} >
+                                <Menu >
+                                    <Menu.Button className="btn btn-white">
+                                        <UserIcon className='size-5 text-primary'  />
+                                    </Menu.Button>
+
+                                    <Menu.Items as='div' className='absolute bg-[#2F2F2F] z-50 border-2 border-[#505050] border-solid rounded-2xl shadow-lg min-w-52 px-2 mt-3 divide-y divide-[#505050]' anchor="bottom">
+                                        <Menu.Item as='div' className="py-2">
+                                            <Link href={route('logout')} className="block py-2 px-3 bg-white bg-opacity-10 font-medium text-white rounded-lg">Logout</Link>
+                                        </Menu.Item>
+                                    </Menu.Items>
+                                </Menu>
+                            </Disclose>
+                            <div>
+                                <Link href={route('cart')} className="btn btn-white w-auto">
+                                    <div className="relative">
+                                        <CartIcon className="w-6 h-6 stroke-black" />
+                                        {
+                                            items.length > 0 && <div className="h-4 w-4 rounded-full bg-primary text-white text-xs flex items-center justify-center absolute -bottom-1 -right-1">{items.length}</div>
+                                        }
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="shrink-0">
+                    <MobileMenu />
+                </div>
+            </div>
+        </header>
+    )
+}
+
+const PatientsMenu = () => {
+    const {open} = useContext(DownloadContext)
+
+    const {items} = useCart()
+
+    const scrollTo = (selector) => {
+        const elm = document.getElementById(selector)
+        window.scrollTo({
+            top: elm.offsetTop,
+            behavior: 'smooth'
+        })
+    }
+
+    const {props} = usePage()
 
     return (
         <header className='absolute w-full bg-transparent top-0 z-[50]'>
@@ -40,10 +181,10 @@ export const Header = () => {
                         </div>
                         <ul className="flex space-x-4 text-white">
                             <li>
-                                <a href={`${route('about')}`} >About Us</a>
+                                <Link href={`${route('about')}`} >About Us</Link>
                             </li>
                             <li>
-                                <a href={`${route('home')}#faqs`}>FAQ</a>
+                                <Link href={`${route('faqs')}`}>FAQs</Link>
                             </li>
                             <li>
                                 <Menu >

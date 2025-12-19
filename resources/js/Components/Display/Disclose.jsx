@@ -1,9 +1,29 @@
 import React from 'react'
 
-export default function ({show, children}) {
+export default function Disclose({show, children, as: Element, fallback: Fallback, ...props}) {
     return (
+        show 
+        
+        ?
+
         <>
-            {show ? children : <></>}
+            {
+                Element
+
+                ?
+
+                <Element {...props}>
+                    {children}
+                </Element>
+
+                :
+
+                children 
+            }
         </>
+
+        :
+
+        Fallback ?? null
     )
 }

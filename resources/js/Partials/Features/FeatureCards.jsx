@@ -33,7 +33,7 @@ export const FeatureCards = () => {
                     <div className="col-span-3">
                         <div className="border-t border-t-[#0470D1] space-y-7 pt-7 bg-white min-h-full flex flex-col justify-between shadow">
                             <div className="md:px-7 px-4">
-                                <h3 className="text-[16px] mb-[12px] font-semibold">Easy appointment booking</h3>
+                                <h3 className="text-[16px] mb-[12px] font-semibold">Easy Consultation booking</h3>
                                 <p className="text-muted text-[14px]">View your consultation timings and book Consultations for clinic or online consultations without having to make phone calls. They also receive automated alerts about the status of their Consultation requests.</p>
                             </div>
                             <div className="px-10">

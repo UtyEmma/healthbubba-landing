@@ -2,6 +2,7 @@ import HandleIcon from '@/Icons/HandleIcon'
 import TargetIcon from '@/Icons/TargetIcon'
 import GuestLayout from '@/Layouts/GuestLayout'
 import { FeatureCarousel } from '@/Partials/Features/FeatureCarousel'
+import HowItWorks from '@/Partials/Practitioners/HowItWorks'
 import Testimonial from '@/Partials/Testimonial/Testimonial'
 import { PlayIcon } from '@heroicons/react/24/solid'
 import { Head, Link, usePage } from '@inertiajs/react'
@@ -14,23 +15,34 @@ export default function Practitioners({ testimonials = [], features = []}) {
             <Head title='Health Practitioners' />
             <GuestLayout hideGap className="!pt-0" >
                 <div className="h-[70vh] md:h-[100vh] flex items-center justify-center relative bg-no-repeat bg-center bg-cover bg-[url(/assets/imgs/female-doctor-in-office.png)] px-2">
-                    <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b z-0 to-black/90 via-black-70 from-black/20"></div>
-                    <div className='text-center space-y-5 md:space-y-10 pt-20 z-10'>
+                    <div className="absolute top-0  bottom-0 right-0 left-0 bg-gradient-to-b z-0 to-black/90 via-black-70 from-black/20"></div>
+                    <div className='text-center max-w-6xl mx-auto space-y-5 md:space-y-10 pt-20 z-10'>
                         <div className=" md:space-y-5 space-y-2  text-white">
-                            <h1 className='md:text-6xl text-3xl font-bold '>Empowering Practitioners, Anywhere.</h1>
-                            <div className="md:w-2/3 mx-auto">
-                                <p className='md:text-lg'>Download our telemedicine app to provide seamless care to your patients from any location.</p>
+                            <h1 className='md:text-7xl text-3xl font-bold '>Flexible, Convenient Healthcare at Your Fingertips</h1>
+                            <div className="md:w-4/6 mx-auto">
+                                <p className='md:text-lg'>Reach more patients, manage video and in-person consultations, and streamline your payments—all on one compliant platform.</p>
                             </div>
                         </div>
 
                         <div className="space-x-4">
-                            <Link href={'/download'} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Download <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </Link>
-                            {/* <a href={props.urls.doctors.appstore} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Download on App Store <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </a> */}
+                            <Link href={'/download'} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </Link>
+                            <a href={'#'} target='__blank' className="btn bg-white shadow-[#0000001A]" >See How It Works</a>
                         </div>
                     </div>
                 </div>
 
-                <section className="max-w-7xl mx-auto py-10 md:py-20 px-2">
+                <section className="max-w-7xl mx-auto py-10 px-2 text-center">
+                    <div className="font-medium text-secondary mx-auto inline-block px-3 text-center py-1 text-sm md:text-base">Join 500+ Verified Practitioners Providing Care across Nigeria</div>
+                    <div className='relative'>
+                        <img src="/assets/imgs/healthbubba-doctors-wheel.png" className="h-48 object-contain mx-auto -mb-10 fade" alt="" />
+                    </div>
+                    <div className="shadow-sm shadow-gray-100 border-2 rounded-[50px] inline-flex items-center gap-3 text-secondary mx-auto w-auto px-8 text-center py-1 text-sm">
+                        <p>HIPAA-Compliant Platform</p>
+                        <div className="border-x-[1.5px] h-4"></div>
+                        <p>Secure & Timely Payments</p>
+                    </div>
+                </section>
+                {/* <section className="max-w-7xl mx-auto py-10 md:py-20 px-2">
                     <div className="grid grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-5 md:gap-10">
                         <div>
                             <div className="border shadow-lg h-full rounded-xl overflow-hidden flex flex-col justify-between bg-[url(/assets/imgs/media/banners/banner-1.svg)] bg-bottom bg-no-repeat">
@@ -73,19 +85,19 @@ export default function Practitioners({ testimonials = [], features = []}) {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 <section className="md:py-20 py-10 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
                     <div className="max-w-7xl mx-auto px-2">
                         <div className="flex items-center justify-center">
                             <div className="space-y-5 md:space-y-10 flex flex-col items-center">
-                                <div className="mx-auto inline-flex border shadow text-sm bg-white items-center space-x-1 p-2 px-3 rounded-[50px]">
+                                <div className="mx-auto inline-flex border gap-1 shadow text-sm bg-white items-center space-x-1 p-1.5 px-3 rounded-[50px]">
                                     <TargetIcon className="size-5" />
                                     <span className='font-medium'>Key Features</span>
                                 </div>
                                 <div className="text-center md:w-5/6 px-2 mx-auto md:mb-20 space-y-3">
-                                    <h2 className="text-2xl md:text-3xl leading-none font-semibold">It’s as easy as <br /> waving a magic wand</h2>
-                                    <p className="text-muted text-sm md:text-base mx-auto">Here's how HealthBubba simplifies the process of connecting with Patients everywhere</p>
+                                    <h2 className="text-2xl md:text-3xl leading-none font-semibold">A Platform Built for Your Convenience and Professional Growth</h2>
+                                    <p className="text-muted text-sm md:text-base mx-auto">Designed to simplify your health journey and strengthen your professional path, Healthbubba brings convenience and growth together.</p>
                                 </div>
                             </div>
                         </div>
@@ -94,20 +106,22 @@ export default function Practitioners({ testimonials = [], features = []}) {
                     </div>
                 </section>
 
+                <HowItWorks />
+
                 {/* Testimonials Start */}
                 <section className="bg-gray-100 relative bg-cover bg-center py-20" style={{backgroundImage: "url('/assets/imgs/media/banners/banner-2.svg')"}}>
-                    <div className="flex items-center justify-center px-2">
-                        <div className="space-y-5 md:space-y-10 flex flex-col items-center">
-                            <div className="mx-auto inline-flex border shadow text-sm bg-white items-center space-x-1 p-2 px-3 rounded-[50px]">
+                    <div className=" px-2">
+                        <h2 className="text-3xl text-center md:text-4xl font-semibold">Trusted by Your Peers</h2>
+                        <div className="space-y-5 flex flex-col items-center">
+                            {/* <div className="mx-auto inline-flex border shadow text-sm bg-white items-center space-x-1 p-2 px-3 rounded-[50px]">
                                 <TargetIcon className="size-5" />
                                 <span>People say this about us</span>
-                            </div>
-                            <div className="text-center md:w-4/6 mx-auto md:mb-20 space-y-4">
-                                <h2 className="text-3xl md:text-4xl font-medium">Wall of Love</h2>
-                                <p className="text-muted text-sm md:text-base md:w-4/5 mx-auto">Listen to the buzz about us and discover why Health Bubba is making waves in the health tech world. Our innovative approach to healthcare is revolutionizing how people access medical services..</p>
-                            </div>
+                            </div> */}
+                            {/* <div className="text-center md:w-4/6 mx-auto space-y-4"> */}
+                                {/* <p className="text-muted text-sm md:text-base md:w-4/5 mx-auto">Listen to the buzz about us and discover why Health Bubba is making waves in the health tech world. Our innovative approach to healthcare is revolutionizing how people access medical services..</p> */}
+                            {/* </div> */}
 
-                            <div className="md:max-w-7xl mx-auto md:py-20 md:pb-10">
+                            <div className="md:max-w-7xl mx-auto">
                                 <Testimonial testimonials={testimonials} />
                             </div>
                         </div>
@@ -119,11 +133,11 @@ export default function Practitioners({ testimonials = [], features = []}) {
                     <div className="bg-primary rounded-2xl md:px-20 px-5 text-white relative md:min-h-96 bg-[url('/assets/imgs/media/banners/curved-bg.svg')] bg-no-repeat md:bg-right-top bg-center bg-origin-content">
                         <div className="md:w-1/2 h-full flex items-center py-5 md:py-20">
                             <div className="md:space-y-5 space-y-1">
-                                <h2 className="text-2xl md:text-4xl font-semibold">Empower Yourself, Tend to All</h2>
-                                <p className="md:text-lg text-white">Download our telemedicine app to provide seamless care to your patients from any location.</p>
+                                <h2 className="text-2xl md:text-4xl font-semibold">Ready to Re-invent Your Practice?</h2>
+                                <p className="md:text-lg text-white">Join our network of forward-thinking practitioners today.</p>
 
                                 <div className="pt-3">
-                                    <Link href={route('download')} class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></Link>
+                                    <Link href={route('download')} class="btn btn-secondary">Start Your Application <PlayIcon class={'text-white w-6 h-6'} /></Link>
                                 </div>
                             </div>
                         </div>

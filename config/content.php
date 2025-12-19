@@ -104,19 +104,89 @@ return [
 
     'features' => [
         [
-            'title' => 'Schedule Appointments',
-            'description' => 'Easily manage your calendar and connect with patients at their convenience.',
-            'image' => '/assets/imgs/doctor-on-tablet.png'
+            'title' => 'Offer Flexible Care',
+            'description' => 'Manage both secure Video Consultations and In-Person Appointments from one calendar. You set your schedule and location.',
+            'image' => '/assets/imgs/healthbubba-doctor-on-a-call.png'
         ],
         [
-            'title' => 'Secure Communication',
-            'description' => 'HIPAA-compliant messaging and video calls ensure your patients’ privacy.',
-            'image' => '/assets/imgs/video-call-preview.png'
+            'title' => 'Streamline Your Administration',
+            'description' => 'Effortless patient scheduling, health history access, automated reminders, and simple in-app case notes mean you spend less time on admin and more time on care.',
+            'image' => '/assets/imgs/healthbubba-doctor-smiling.png'
         ],
         [
-            'title' => 'Comprehensive Records',
-            'description' => 'Access and update patient records with just a few taps.',
-            'image' => '/assets/imgs/files-documents.png'
+            'title' => 'Get Paid, Simplified',
+            'description' => 'A transparent settlement wallet shows your pending and settled earnings. Withdraw directly to your bank account with ease.',
+            'image' => '/assets/imgs/healthbubba-doctor-waving.png'
         ],
-    ]
+    ],
+
+
+    'hospitals' => [
+        [
+            'name' => 'Strategic Insight Healthcare',
+            'logo' => '/assets/imgs/hospitals/strategic-insight-healthcare.jpg'
+        ],
+        [
+            'name' => 'Skipper Eye-Q Specialist Hospital',
+            'logo' => '/assets/imgs/hospitals/skipper-eye-q.jpg'
+        ],
+        [
+            'name' => 'Zhahir Hospital and Diagnostic Center',
+            'logo' => '/assets/imgs/hospitals/zhahir.jpg'
+        ],
+        [
+            'name' => 'Emabal Hospitals limited',
+            'logo' => '/assets/imgs/hospitals/emabal-hospital.jpg'
+        ],
+        [
+            'name' => 'Disney Medicals',
+            'logo' => '/assets/imgs/hospitals/disney-medicals.jpg'
+        ],
+        [
+            'name' => 'United Heart Hospital & Clinics',
+            'logo' => '/assets/imgs/hospitals/united-heart-hospital.jpg'
+        ],
+        [
+            'name' => 'Cline Health',
+            'logo' => '/assets/imgs/hospitals/cline.jpg'
+        ],
+        [
+            'name' => 'Dyme Hospitals',
+            'logo' => null
+        ],
+        [
+            'name' => 'Trinity Hospital',
+            'logo' => '/assets/imgs/hospitals/trinity-hospital.jpg'
+        ],
+        [
+            'name' => 'Christian Miracle Hospital',
+            'logo' => null
+        ],
+        [
+            'name' => 'Omega Fortune Clinic',
+            'logo' => '/assets/imgs/hospitals/omega-fortune.jpg'
+        ],
+        [
+            'name' => 'TorDominion Hospital',
+            'logo' => null
+        ],
+        [
+            'name' => 'Midas Hospital',
+            'logo' => '/assets/imgs/hospitals/midas-hospital.jpg'
+        ],
+        [
+            'name' => 'Greenville Olive Specialist Hospital',
+            'logo' => '/assets/imgs/hospitals/greenville-olive-specialist.jpg'
+        ],
+        [
+            'name' => 'Cityview Hospital',
+            'logo' => '/assets/imgs/hospitals/cityview-hospital.jpg'
+        ],
+        [
+            'name' => 'Healthtracka',
+            'logo' => '/assets/imgs/hospitals/healthtracka.jpg'
+        ],
+    ],
+
+    
 ];
