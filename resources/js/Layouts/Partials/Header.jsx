@@ -50,7 +50,7 @@ const PractitionersMenu = () => {
                             <Link href={`${route('practitioners.how-it-works')}`} >How It Works</Link>
                         </li>
                         <li>
-                            <Link href={`${route('faqs')}`}>FAQs</Link>
+                            <Link href={`${route('practitioners.faqs')}`}>FAQs</Link>
                         </li>
                         <li>
                             <Link href={`${route('practitioners.support')}`}>Support</Link>

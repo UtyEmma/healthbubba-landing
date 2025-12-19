@@ -19,6 +19,7 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::prefix('practitioners')->group(function(){
     Route::get('', [PagesController::class, 'practitioners'])->name('practitioners');
     Route::get('how-it-works', [PractitionersController::class, 'howItWorks'])->name('practitioners.how-it-works');
+    Route::get('faqs', [FaqController::class, 'index'])->name('practitioners.faqs');
     Route::get('support', [PractitionersController::class, 'support'])->name('practitioners.support');
 });
 
