@@ -6,7 +6,7 @@ export default function HeroArea() {
     return (
         <section className="md:max-w-7xl mx-auto px-4">
             <div className="text-center space-y-5 ">
-                <h1 className="md:text-7xl text-[24px] sm:text-[28px] md:text-[64px] leading-tight md:leading-[72px] font-bold">Accessible, Affordable, and Reliable Healthcare. At Your Fingertips.
+                <h1 className="md:text-7xl text-4xl md:text-[64px] leading-tight md:leading-[72px] font-bold">Accessible, Affordable, and Reliable Healthcare. At Your Fingertips.
                     {/* <span className="block text-primary">All from Home.</span> */}
                 </h1>
                 <p className="max-w-3xl md:text-lg text-sm text-muted mx-auto">Connect with verified doctors, get lab tests, and manage prescriptions, all from the comfort of your home.</p>

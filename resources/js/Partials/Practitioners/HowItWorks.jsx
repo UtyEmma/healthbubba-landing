@@ -5,12 +5,12 @@ export default function HowItWorks () {
     return (
         <section className="py-20">
             <div className="md:max-w-7xl mx-auto space-y-5 md:space-y-10">
-                <div className="text-center md:w-2/4 mx-auto mb-20 px-4">
+                <div className="text-center md:w-2/4 mx-auto md:mb-20 px-4">
                     <h2 className="text-2xl font-semibold">How It Works</h2>
                     <p className="text-muted text-sm md:text-base">A simple 3-step process to get started</p>
                 </div>
                 <div className="md:w-5/6 mx-auto px-4">
-                    <div className="md:flex md:space-x-20 items-center">
+                    <div className="flex flex-col md:flex-row gap-10 items-center">
                         <div className="md:w-1/2">
                             <div className="border-t-2 shadow border-t-primary bg-gray-100">
                                 <div className="p-5 flex items-start bg-white space-x-3 ">
@@ -46,7 +46,7 @@ export default function HowItWorks () {
                             </div>
                         </div>
 
-                        <div className="md:w-1/2">
+                        <div className="md:w-1/2 mx-auto">
                             <img src="/assets/imgs/healthbubba-doctor-on-notepad.png" alt="" />
                         </div>
                     </div>

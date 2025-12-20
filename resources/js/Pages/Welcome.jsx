@@ -47,7 +47,7 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
                     {/* <ContactForm /> */}
 
-                    <section className="py-10 md:py-20 px-4 max-w-7xl mx-auto ">
+                    <section className="py-10 md:py-20 px-2 max-w-7xl mx-auto ">
                         <Cta />
                     </section>
                 </main>

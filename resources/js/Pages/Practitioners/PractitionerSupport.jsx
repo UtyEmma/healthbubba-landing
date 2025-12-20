@@ -16,12 +16,12 @@ export default function PractitionerSupport() {
             <div className="space-y-10">
                 <section className="md:max-w-6xl mx-auto px-4 space-y-5">
                     <div className="text-center space-y-5 ">
-                        <h1 className="md:text-6xl text-[24px] sm:text-[28px] leading-tight md:leading-[72px] font-bold">Practitioner Support</h1>
-                        <p className="text-gray-500 text-lg">We're here to help. Whether you have a question about your application or need technical assistance, our team is ready.</p>
+                        <h1 className="md:text-6xl text-3xl sm:text-[28px] leading-tight md:leading-[72px] font-bold">Practitioner Support</h1>
+                        <p className="text-gray-500 md:text-lg">We're here to help. Whether you have a question about your application or need technical assistance, our team is ready.</p>
                     </div>
                 </section>
 
-                <section className='max-w-7xl mx-auto  grid md:grid-cols-3 gap-10' >
+                <section className='max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-5 md:gap-10' >
                     <div className="border-2 shadow-sm p-5 space-y-5">
                         <div className="size-12 flex items-center border-2 justify-center shadow rounded-full ">
                             <EnvelopeIcon className='size-6' />

@@ -78,7 +78,7 @@ export const FeatureCarousel = ({features}) => {
             </div>
 
 
-            <div className='space-x-2 flex justify-center md:hidden py-10' >
+            <div className='space-x-2 flex justify-center md:hidden py-20' >
                 <button onClick={prev} className="rounded-full p-3 bg-white shadow border">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>

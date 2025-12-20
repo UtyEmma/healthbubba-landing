@@ -1,12 +1,15 @@
 import { Disclosure, Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import React, { useContext } from 'react'
 import { DownloadContext } from '../GuestLayout'
+import Disclose from '@/Components/Display/Disclose'
 
 export const MobileMenu = () => {
 
     const {open: openDownload} = useContext(DownloadContext)
+
+    const {is_practitioner} = usePage().props
 
     return (
         <>
@@ -28,7 +31,7 @@ export const MobileMenu = () => {
                                             ({open}) => (
                                                 <>
                                                     <Disclosure.Button className='w-full group p-3 flex justify-between items-center'>
-                                                        <p>For {open ? '' : 'Patients'}</p>
+                                                        <p>For {open ? '' : is_practitioner ? 'Health Practitioners' : 'Patients'}</p>
                                                         <ChevronRightIcon className='w-5 transition-all duration-300 group-data-[headlessui-state=open]:rotate-90' />
                                                     </Disclosure.Button>
 
@@ -44,43 +47,63 @@ export const MobileMenu = () => {
                                             )
                                         }
                                     </Disclosure>
+                                    
+                                    <Disclose show={!is_practitioner}>
+                                        <Disclosure >
+                                            <Disclosure.Button className='w-full group p-3 flex justify-between items-center'>
+                                                <p>Services</p>
+                                                <ChevronRightIcon className='w-5 transition-all duration-300 group-data-[headlessui-state=open]:rotate-90' />
+                                            </Disclosure.Button>
 
-                                    <Disclosure >
-                                        <Disclosure.Button className='w-full group p-3 flex justify-between items-center'>
-                                            <p>Services</p>
-                                            <ChevronRightIcon className='w-5 transition-all duration-300 group-data-[headlessui-state=open]:rotate-90' />
-                                        </Disclosure.Button>
+                                            <Disclosure.Panel as='div' className={'divide-y divide-white/5 transition-all duration-300'}>
+                                                <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                    Virtual Consultation
+                                                </Link>
 
-                                        <Disclosure.Panel as='div' className={'divide-y divide-white/5 transition-all duration-300'}>
-                                            <Link href='' className='w-full ps-7 p-3 flex justify-between items-center'>
-                                                Virtual Consultation
-                                            </Link>
+                                                <Link href={route('packages')} className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                    Order a Lab test
+                                                </Link>
 
-                                            <Link href={route('packages')} className='w-full ps-7 p-3 flex justify-between items-center'>
-                                                Order a Lab test
-                                            </Link>
+                                                <Link href={route('shop')} className='w-full ps-7 p-3 flex justify-between items-center'>
+                                                    Order Medications
+                                                </Link>
+                                            </Disclosure.Panel>
+                                        </Disclosure>
 
-                                            <Link href={route('shop')} className='w-full ps-7 p-3 flex justify-between items-center'>
-                                                Order Medications
-                                            </Link>
-                                        </Disclosure.Panel>
-                                    </Disclosure>
+                                        <div role='button' onClick={() => {
+                                            close();
+                                            openDownload();
+                                        }} className='p-3 w-full'>
+                                            Download
+                                        </div>
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={`${route(`faqs`)}`}>FAQ</Link>
+                                        </div>
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={route('about')}>About</Link>
+                                        </div>
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={route('login')}>Login</Link>
+                                        </div>
+                                    </Disclose>
 
-                                    <div role='button' onClick={() => {
-                                        close();
-                                        openDownload();
-                                    }} className='p-3 w-full'>
-                                        Download
-                                    </div>
-                                    <div className='flex justify-between items-center'>
-                                        <Link className="p-3 w-full" href={`${route(`home`)}#faqs`}>FAQ</Link>
-                                    </div>
-                                    <div className='flex justify-between items-center'>
-                                        <Link className="p-3 w-full" href={route('about')}>About</Link>
-                                    </div>
-                                    <div className='flex justify-between items-center'>
-                                        <Link className="p-3 w-full" href={route('login')}>Login</Link>
-                                    </div>
+                                    <Disclose show={is_practitioner} >
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={route(`practitioners.how-it-works`)}>How it Works</Link>
+                                        </div>
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={route(`practitioners.faqs`)}>FAQs</Link>
+                                        </div>
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={route(`practitioners.support`)}>Support</Link>
+                                        </div>
+                                        <div role='button' onClick={() => {
+                                            close();
+                                            openDownload();
+                                        }} className='p-3 w-full'>
+                                            Download
+                                        </div>
+                                    </Disclose>
                                 </div>
                             </Popover.Panel>
                         </>

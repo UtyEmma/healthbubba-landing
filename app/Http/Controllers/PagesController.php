@@ -21,13 +21,6 @@ class PagesController extends Controller {
         return Inertia::render('Welcome', compact(['faqs', 'hospitals', 'testimonials']));
     }
 
-    function practitioners(){
-        $testimonials = config('content.testimonials');
-        $features = config('content.features');
-
-        return Inertia::render('Practitioners', compact('testimonials', 'features'));
-    }
-
     function about(){
         $testimonials = config('content.testimonials');
         return Inertia::render('About', compact('testimonials'));

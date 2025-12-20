@@ -21,10 +21,10 @@ Accordion.Panel = ({children, className = '', ...props}) => {
 
 Accordion.Button = ({children, className = '', ...props}) => {
     return (
-        <Disclosure.Button className={`group border-none focus:border-none flex p-2 w-full justify-between items-center gap-2 ${className}`} {...props}>
-            <span className='font-medium'>{children}</span>
+        <Disclosure.Button className={`group border-none focus:border-none flex p-2 w-full justify-between !text-left items-center gap-2 ${className}`} {...props}>
+            <p className='font-medium text-left'>{children}</p>
 
-            <PlusIcon className="w-5 text-black group-data-open:rotate-180" />
+            <PlusIcon className="w-5 shrink-0 text-black group-data-open:rotate-180" />
         </Disclosure.Button>
     )
 }

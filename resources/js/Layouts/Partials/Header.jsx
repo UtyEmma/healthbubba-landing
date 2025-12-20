@@ -34,7 +34,7 @@ const PractitionersMenu = () => {
         })
     }
 
-    const {props} = usePage()
+    const {props: {is_practitioner, ...props}} = usePage()
     return (
         <header className='absolute w-full bg-transparent top-0 z-[50]'>
             <div className="hidden lg:flex justify-center mx-auto py-4 gap-x-5 text-[14px]">
@@ -116,9 +116,14 @@ const PractitionersMenu = () => {
                         </div>
 
                         <div className='flex space-x-2'>
-                            <Disclose show={!!!props.auth.user} >
+                            <Disclose show={!!!props.auth.user && !is_practitioner} >
                                 <Link href={route('register')} className="btn btn-white">Sign Up</Link>
                             </Disclose>
+
+                            <Disclose show={is_practitioner} >
+                                <Link href={'#'} className="btn btn-white">Get Started</Link>
+                            </Disclose>
+
                             <Disclose show={!!props.auth.user} >
                                 <Menu >
                                     <Menu.Button className="btn btn-white">
@@ -132,7 +137,7 @@ const PractitionersMenu = () => {
                                     </Menu.Items>
                                 </Menu>
                             </Disclose>
-                            <div>
+                            <Disclose as="div" show={!is_practitioner} >
                                 <Link href={route('cart')} className="btn btn-white w-auto">
                                     <div className="relative">
                                         <CartIcon className="w-6 h-6 stroke-black" />
@@ -141,7 +146,7 @@ const PractitionersMenu = () => {
                                         }
                                     </div>
                                 </Link>
-                            </div>
+                            </Disclose>
                         </div>
                     </div>
                 </div>
