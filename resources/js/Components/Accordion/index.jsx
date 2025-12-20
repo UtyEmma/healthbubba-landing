@@ -1,4 +1,4 @@
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, Transition } from '@headlessui/react'
 import { PlusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 import Card from '../Card'
@@ -32,13 +32,22 @@ Accordion.Button = ({children, className = '', ...props}) => {
 Accordion.Content = ({children, className = '', ...props}) => {
     return (
         // <div className="overflow-hidden">
+        <Transition
+            enter="duration-200 ease-out"
+            enterFrom="opacity-0 -translate-y-6"
+            enterTo="opacity-100 translate-y-0"
+            leave="duration-300 ease-out"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 -translate-y-6"
+        >
             <Disclosure.Panel 
                 transition
-                className={`origin-top transition text-gray-500 px-2 pb-2 duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0 ${className}`} 
+                className={`origin-top transition overflow-hidden text-gray-500 px-2 pb-2 duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0 ${className}`} 
                 {...props} 
             >
                 {children}
             </Disclosure.Panel >
+        </Transition>
         // </div>
     )
 }
