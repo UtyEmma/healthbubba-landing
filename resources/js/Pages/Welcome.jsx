@@ -9,6 +9,8 @@ import PartnerPharmacies from '@/Partials/Home/PartnerPharmacies';
 import { ClientReview } from '@/Partials/Home/ClientReview';
 import AboutSection from '@/Partials/Home/AboutSection';
 import OrderTestSection from '@/Partials/Home/OrderTestSection';
+import Testimonial from '@/Partials/Testimonial/Testimonial';
+import TestimonialSection from '@/Partials/Home/TestimonialSection';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
@@ -33,12 +35,12 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                     <OrderTestSection />
 
                     {/* Client Start */}
-                    <ClientReview />
+                    {/* <ClientReview /> */}
                     {/* Client End */}
 
 
                     {/* Testimonials Start */}
-                    
+                    <TestimonialSection  />
                     {/* Testimonials End */}
 
                     {/* FAQs Start */}

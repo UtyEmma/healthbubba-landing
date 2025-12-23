@@ -78,15 +78,15 @@ export default function ({testimonials}) {
 
 
     return (
-        <div className="flex flex-col md:flex-row md:space-x-20 mt-10 md:mt-0 justify-center items-center md:px-4">
+        <div className="flex flex-col md:flex-row md:space-x-20 overflow-hidden justify-center items-center md:px-4">
             <div>
                 <button onClick={prevItem} className="hidden md:block rounded-full p-3 bg-white shadow border">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>
             </div>
 
-            <div className="md:w-4/6 md:min-h-[30rem] overflow-hidden flex items-center h-auto">
-                <div className="md:px-0 md:p-5 md:relative h-auto">
+            <div className="md:w-4/6 min-h-[20rem] md:min-h-[30rem] overflow-hidden flex items-center h-auto">
+                <div className="md:px-0 md:p-5 relative h-auto">
                     <div className={'flex items-center md:px-5 md:space-x-3 h-auto ' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
                         {
                             items.map((item, index) => (
@@ -161,7 +161,7 @@ export default function ({testimonials}) {
                 </button>
             </div>
 
-            <div className="md:hidden flex justify-center space-x-10 mt-10">
+            <div className="md:hidden flex justify-center space-x-10">
                 <button onClick={prevItem} className="block md:hidden rounded-full p-3 bg-white shadow border">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>

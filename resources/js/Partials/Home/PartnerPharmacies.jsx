@@ -13,7 +13,7 @@ export default function PartnerPharmacies() {
 					</div>
 					<div>
 						<a href="https://www.sinocareintl.com/" target='__blank'>
-							<img src="/assets/imgs/brands/smart-pharm.svg" className='h-6' alt="" />
+							<img src="/assets/imgs/brands/sinocare.png" className='h-6 filter brightness-0 invert-[1]' alt="" />
 						</a>
 					</div>
 					<div>
