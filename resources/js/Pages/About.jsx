@@ -63,7 +63,7 @@ export default ({faqs, testimonials}) => {
                 </div>
             </section>
 
-            <section className="bg-gray-100 relative bg-cover bg-center pt-20" style={{
+            <section className="bg-gray-100 relative bg-cover bg-center py-20" style={{
                     backgroundImage: "url('/assets/imgs/media/banners/banner-2.svg')"
                 }}>
                      <div className="flex items-center justify-center px-4">
@@ -79,7 +79,7 @@ export default ({faqs, testimonials}) => {
                             <p className="text-muted text-sm md:text-base md:w-4/5 mx-auto">Listen to the buzz about us and discover why Health Bubba is making waves in the health tech world. Our innovative approach to healthcare is revolutionizing how people access medical services.</p>
                         </div>
 
-                        <div className="md:max-w-7xl mx-auto py-10 md:py-20">
+                        <div className="md:max-w-7xl mx-auto">
                             <Testimonial testimonials={testimonials} />
                         </div>
                     </div>

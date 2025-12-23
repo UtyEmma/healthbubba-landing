@@ -137,7 +137,7 @@ export default function Practitioners({ testimonials = [], features = []}) {
                                 <p className="md:text-lg text-white">Join our network of forward-thinking practitioners today.</p>
 
                                 <div className="pt-3">
-                                    <Link href={route('download')} class="btn btn-secondary">Start Your Application <PlayIcon class={'text-white w-6 h-6'} /></Link>
+                                    <Link href={route('download')} class="btn btn-secondary">Start Your Application <PlayIcon class={'text-white/80 w-6 h-6'} /></Link>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,5 @@
 import PlayIcon from '@/Icons/PlayIcon'
+import { Link } from '@inertiajs/react'
 import React from 'react'
 
 export default function HowItWorks () {
@@ -42,7 +43,7 @@ export default function HowItWorks () {
                                 </div>
                             </div>
                             <div className="mt-5">
-                                <a href="#" className="btn border shadow-sm py-2">View the Full Process <PlayIcon className={'text-gray-500 size-3 ms-1'} /></a>
+                                <Link href={route('practitioners.how-it-works')} className="btn border shadow-sm py-2">View the Full Process <PlayIcon className={'text-gray-500 size-3 ms-1'} /></Link>
                             </div>
                         </div>
 

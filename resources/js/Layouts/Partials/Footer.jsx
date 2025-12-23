@@ -58,7 +58,7 @@ export const Footer = () => {
                             <p className="text-gray-400 mb-3 font-medium" >Need help?</p>
                             <ul className="text-neutral-700 text-sm space-y-2  font-medium">
                                 <li>
-                                    <Link className='hover:text-black' href={`${route('home')}#faqs`}>FAQ</Link>
+                                    <Link className='hover:text-black' href={route('faqs')}>FAQ</Link>
                                 </li>
                                 <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki Lagos State</li>
                                 <li>
