@@ -12,7 +12,7 @@ import React from 'react'
 export default function PractitionerSupport() {
     return (
         <GuestLayout>
-            <Head title='Practitioner Support' />
+            <Head title='Support' />
             <div className="space-y-10">
                 <section className="md:max-w-6xl mx-auto px-4 space-y-5">
                     <div className="text-center space-y-5 ">

@@ -2,7 +2,7 @@ import Button from '@/Components/Button'
 import Card from '@/Components/Card'
 import InputError from '@/Components/Forms/InputError'
 import { useForm } from '@inertiajs/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import toast, { useToaster } from 'react-hot-toast'
 
 export default function ({className = 'bg-gradient-to-br from-primary-100 to-primary-50'}) {
@@ -18,12 +18,12 @@ export default function ({className = 'bg-gradient-to-br from-primary-100 to-pri
         e.preventDefault()
         form.post(route('send-message'), {
             preserveScroll: true,
-            preserveState: false,
             onSuccess(){
                 form.reset()
             },
         })
     }
+
 
     return (
         <div className={`relative ${className} `}>
