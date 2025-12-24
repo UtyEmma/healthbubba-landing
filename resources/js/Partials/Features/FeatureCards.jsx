@@ -33,7 +33,7 @@ export const FeatureCards = () => {
                     <div className="col-span-3">
                         <div className="border-t border-t-[#0470D1] space-y-7 pt-7 bg-white min-h-full flex flex-col justify-between shadow">
                             <div className="md:px-7 px-4">
-                                <h3 className="text-[16px] mb-[12px] font-semibold">Easy Consultation booking</h3>
+                                <h3 className="text-[16px] mb-[12px] font-semibold">Easy Consultation Booking</h3>
                                 <p className="text-muted text-[14px]">View your consultation timings and book Consultations for clinic or online consultations without having to make phone calls. They also receive automated alerts about the status of their Consultation requests.</p>
                             </div>
                             <div className="px-10">
@@ -55,7 +55,7 @@ export const FeatureCards = () => {
                     <div className="col-span-2">
                         <div className="border-t border-t-[#C728FF] shadow-md space-y-7 py-7">
                         <div className="md:px-7 px-4">
-                            <h3 className="text-[16px] mb-[12px] font-semibold">Prescriptions on the go</h3>
+                            <h3 className="text-[16px] mb-[12px] font-semibold">Prescriptions On The Go</h3>
                             <p className="text-muted text-[14px]">Get accurate and legal prescriptions from medical experts with an accurate track record of your past prescriptions and sound analysis of your current health.</p>
                         </div>
                         <div className='md:px-4 px-4'>
