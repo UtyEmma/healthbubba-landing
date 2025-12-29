@@ -1,1 +1,0 @@
-import{j as e}from"./app-CzIAZ6Iw.js";function a({children:r,className:s=""}){return e.jsx("div",{className:`md:p-10 p-5 shadow-xl border bg-white rounded-2xl space-y-5 ${s}`,children:r})}export{a as C};
