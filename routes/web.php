@@ -71,6 +71,7 @@ Route::get('/privacy-policy', [PagesController::class, 'policy'])->name('privacy
 
 Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 Route::get('/cancellation-policy', [PagesController::class, 'cancellationPolicy'])->name('cancellation-policy');
+Route::get('/data-deletion', [PagesController::class, 'dataDeletion'])->name('data-deletion');
 
 Route::prefix('medications')->group(function(){
     Route::get('', [PagesController::class, 'medications'])->name('shop');
