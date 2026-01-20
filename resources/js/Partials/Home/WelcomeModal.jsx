@@ -2,7 +2,7 @@ import Button from "@/Components/Button";
 import { Dialog } from "@headlessui/react";
 import { PlayIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { router } from "@inertiajs/react";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 export default function WelcomeModal() {
     const [isOpen, setIsOpen] = useState(true);
@@ -12,9 +12,10 @@ export default function WelcomeModal() {
     };
 
 	const [type, setType] = useState('')
-	const open = useMemo(() => {
-		return !window.sessionStorage.getItem('VISITOR_TYPE')
-	})
+
+    useEffect(() => {
+        if(!window.sessionStorage.getItem('VISITOR_TYPE')) setIsOpen(true)
+    }, [])
 
 	const visit = () => {
 		window.sessionStorage.setItem('VISITOR_TYPE', type)
