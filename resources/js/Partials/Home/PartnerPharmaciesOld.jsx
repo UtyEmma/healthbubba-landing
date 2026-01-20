@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PartnerPharmacies() {
     return (
-		<section className="bg-secondary overflow-hidden relative py-16 bg-left bg-no-repeat bg-contain bg-top" style={{backgroundImage: 'url(/assets/imgs/media/doodle-bg.svg)'}}>
+		<section className="bg-secondary overflow-hidden relative py-16 bg-left-top bg-no-repeat bg-contain" style={{backgroundImage: 'url(/assets/imgs/media/doodle-bg.svg)'}}>
 			<div className="text-center max-w-3xl mx-auto text-white px-4 flex flex-col items-center space-y-5">
 				<p>Trusted by fast-growing Pharmacies and Healthcare companies around the world</p>
 
