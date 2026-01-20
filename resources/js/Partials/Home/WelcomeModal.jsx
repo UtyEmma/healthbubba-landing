@@ -28,7 +28,6 @@ export default function WelcomeModal() {
     return (
         <Dialog
             open={isOpen}
-			defaultValue={open}
             onClose={() => setIsOpen(false)}
             className="relative z-50"
         >
