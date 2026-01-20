@@ -5,12 +5,13 @@ import { FeatureCards } from '@/Partials/Features/FeatureCards';
 import { useContext } from 'react';
 import HospitalLogosDisplay from '@/Partials/Home/HospitalLogosDisplay';
 import HeroArea from '@/Partials/Home/HeroArea';
-import PartnerPharmacies from '@/Partials/Home/PartnerPharmacies';
+import PartnerPharmacies from '@/Partials/Home/PartnerPharmaciesOld';
 import { ClientReview } from '@/Partials/Home/ClientReview';
 import AboutSection from '@/Partials/Home/AboutSection';
 import OrderTestSection from '@/Partials/Home/OrderTestSection';
 import Testimonial from '@/Partials/Testimonial/Testimonial';
 import TestimonialSection from '@/Partials/Home/TestimonialSection';
+import KeyAreas from '@/Partials/Home/KeyAreas';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
@@ -24,6 +25,9 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
             <GuestLayout >
                 <main>
                     <HeroArea />
+
+                    <KeyAreas />
+
                     <HospitalLogosDisplay />
 
                     <PartnerPharmacies />
