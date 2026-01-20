@@ -5,7 +5,7 @@ import { router } from "@inertiajs/react";
 import React, { useEffect, useMemo, useState } from "react";
 
 export default function WelcomeModal() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const close = () => {
         setIsOpen(false);
