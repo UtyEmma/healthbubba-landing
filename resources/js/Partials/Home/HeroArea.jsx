@@ -6,7 +6,7 @@ export default function HeroArea() {
     return (
         <section className="md:max-w-7xl mx-auto md:px-4 px-2">
             <div className="text-center space-y-5 ">
-                <h1 className="md:text-7xl text-[27px] tracking-tight md:text-[64px] leading-tight md:leading-[72px] font-bold">
+                <h1 className="md:text-7xl text-[25px] tracking-tight md:text-[64px] leading-tight md:leading-[72px] font-bold">
                     <span className='text-nowrap' >Healthcare and Prescription.</span>
                       <br /> 
                     <span className='text-primary'>At Your Fingertips</span></h1>
