@@ -31,8 +31,8 @@ export default function WelcomeModal() {
             onClose={() => setIsOpen(false)}
             className="relative z-50"
         >
-            <div className="fixed inset-0 flex w-screen bg-black/25 items-center justify-center p-4">
-                <Dialog.Panel className="max-w-xl space-y-4 border rounded-2xl bg-white p-5 md:p-8">
+            <div className="fixed inset-0 flex w-screen bg-black/25 items-center justify-center p-2 md:p-4">
+                <Dialog.Panel className="max-w-xl space-y-0 md:space-y-4 border rounded-2xl bg-white p-5 md:p-8">
                     <div className="flex justify-between relative">
                         <div>
                             <Dialog.Title className="font-semibold md:text-lg">
@@ -51,7 +51,7 @@ export default function WelcomeModal() {
                         </div>
                     </div>
 
-                    <div className="md:py-5 py-3 space-y-5">
+                    <div className="md:py-5 py-3 space-y-2 md:space-y-5">
                         <ItemSelect 
 							value={'practitioner'} 
 							setType={setType} type={type} 
@@ -80,14 +80,14 @@ const ItemSelect = ({value, type, setType, title, description}) => {
 	const isChecked = useMemo(() => type == value, [type, value])
 
 	return (
-		<label className="flex border items-center px-3 md:px-5 py-3.5 gap-3 md:gap-4 rounded-2xl">
+		<label className="flex border items-center px-3 md:px-5 py-2 md:py-3.5 gap-3 md:gap-4 rounded-2xl">
 			<div>
 				<input type="radio" checked={type == value} onChange={() => setType(value)}  
 					className={`size-5 border-gray-300 outline-none ring-0 ${isChecked ? 'text-primary' : ''}`} 
 				/>
 			</div>
 			<div>
-				<p className="font-medium">{title}</p>
+				<p className="font-medium text-sm">{title}</p>
 				<p className="text-sm text-gray-500">{description}</p>
 			</div>
 		</label>
