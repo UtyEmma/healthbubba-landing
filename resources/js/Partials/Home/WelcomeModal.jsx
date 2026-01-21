@@ -33,19 +33,19 @@ export default function WelcomeModal() {
         >
             <div className="fixed inset-0 flex w-screen bg-black/25 items-center justify-center p-4">
                 <Dialog.Panel className="max-w-xl space-y-4 border rounded-2xl bg-white p-5 md:p-8">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between relative">
                         <div>
-                            <Dialog.Title className="font-semibold text-lg">
+                            <Dialog.Title className="font-semibold md:text-lg">
                                 Welcome to healthbubba!
                             </Dialog.Title>
-                            <Dialog.Description className="text-gray-500">
+                            <Dialog.Description className="text-gray-500 text-sm md:text-base tracking-tight">
                                 We provide healthcare and prescriptions all from
                                 home
                             </Dialog.Description>
                         </div>
 
                         <div>
-                            <button onClick={close}>
+                            <button onClick={close} className="absolute right-0 top-0">
                                 <XMarkIcon className="size-5" />
                             </button>
                         </div>

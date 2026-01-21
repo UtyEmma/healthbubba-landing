@@ -6,11 +6,7 @@ export default function HospitalLogosDisplay() {
 
     const {hospitals} = usePage().props
     return (
-        <div className='py-10 space-y-7 px-2 max-w-6xl mx-auto'>
-            <div>
-                <h3 className='font-semibold text-2xl md:text-3xl text-center' >Trusted by Leading Hospitals</h3>
-            </div>
-
+        <div className='py-10 px-2 max-w-6xl mx-auto'>
             <Marquee >
                 { hospitals.map(hospital => <HospitalItem hospital={hospital} /> ) }
             </Marquee>

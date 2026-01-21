@@ -29,9 +29,9 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
                     <KeyAreas />
 
-                    <HospitalLogosDisplay />
 
                     <PartnerPharmacies />
+                    <HospitalLogosDisplay />
 
                     <AboutSection />
 
