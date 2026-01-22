@@ -32,15 +32,14 @@ export default function WelcomeModal() {
             className="relative z-50"
         >
             <div className="fixed inset-0 flex w-screen bg-black/25 items-center justify-center p-2 md:p-4">
-                <Dialog.Panel className="max-w-xl space-y-0 md:space-y-4 border rounded-2xl bg-white p-5 md:p-8">
+                <Dialog.Panel className="max-w-xl space-y-0 md:space-y-0 border rounded-2xl bg-white p-3 md:p-8">
                     <div className="flex justify-between relative">
                         <div>
                             <Dialog.Title className="font-semibold md:text-lg">
                                 Welcome to healthbubba!
                             </Dialog.Title>
-                            <Dialog.Description className="text-gray-500 text-sm md:text-base tracking-tight">
-                                We provide healthcare and prescriptions all from
-                                home
+                            <Dialog.Description className="text-gray-500 text-[13px] md:text-base tracking-tight">
+                                We provide healthcare and prescriptions all from home
                             </Dialog.Description>
                         </div>
 
@@ -51,7 +50,7 @@ export default function WelcomeModal() {
                         </div>
                     </div>
 
-                    <div className="md:py-5 py-3 space-y-2 md:space-y-5">
+                    <div className="md:py-5 py-3 space-y-2 md:space-y-3">
                         <ItemSelect 
 							value={'practitioner'} 
 							setType={setType} type={type} 
@@ -66,8 +65,9 @@ export default function WelcomeModal() {
 							description='Find trusted professionals and get the care you need, when you need it.' 
 						/>
                     </div>
+
                     <div className="flex justify-end gap-4">
-                        <Button className="btn btn-primary py-2" onClick={visit}>Continue <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /></Button>
+                        <Button className="btn btn-primary py-2 text-sm" onClick={visit}>Continue <PlayIcon class={'text-white text-opacity-80 w-4 h-4'} /></Button>
                     </div>
                 </Dialog.Panel>
             </div>
@@ -82,13 +82,11 @@ const ItemSelect = ({value, type, setType, title, description}) => {
 	return (
 		<label className="flex border items-center px-3 md:px-5 py-2 md:py-3.5 gap-3 md:gap-4 rounded-2xl">
 			<div>
-				<input type="radio" checked={type == value} onChange={() => setType(value)}  
-					className={`size-5 border-gray-300 outline-none ring-0 ${isChecked ? 'text-primary' : ''}`} 
-				/>
+				<input type="radio" checked={type == value} onChange={() => setType(value)} className={`size-5 border-gray-300 outline-none ring-0 ${isChecked ? 'text-primary' : ''}`} />
 			</div>
 			<div>
-				<p className="font-medium text-sm">{title}</p>
-				<p className="text-sm text-gray-500">{description}</p>
+				<p className="font-medium md:text-base text-[13px]">{title}</p>
+				<p className="md:text-base text-[13px] text-gray-500">{description}</p>
 			</div>
 		</label>
 	)
