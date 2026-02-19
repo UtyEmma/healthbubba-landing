@@ -1,9 +1,16 @@
+import Disclose from '@/Components/Display/Disclose'
 import { usePage } from '@inertiajs/react'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 export const SubscriptionCTA = (props) => {
 
     const {props: data} = usePage()
+
+    const url = window.location.href
+
+    const user = useMemo(() => {
+        
+    })
 
     return (
         <div {...props}>
@@ -21,10 +28,26 @@ export const SubscriptionCTA = (props) => {
                     </div>
                 </div>
 
-                <div className={'space-y-2'}>
-                    <a href={data.urls.patients.playstore} target='__blank' className="block underline">Download our Android App</a>
-                    <a href={data.urls.patients.appstore} target='__blank' className="block underline">Download our iOS App</a>
-                </div>
+                <>
+                    {
+                        window.location.href.includes('practitioner')
+
+                        ?
+                        
+                        <div className={'space-y-2'}>
+                            <a href={data.urls.doctors.playstore} target='__blank' className="block underline">Download our Android App</a>
+                            <a href={data.urls.doctors.appstore} target='__blank' className="block underline">Download our iOS App</a>
+                        </div>
+
+                        :
+
+                        <div className={'space-y-2'}>
+                            <a href={data.urls.patients.playstore} target='__blank' className="block underline">Download our Android App</a>
+                            <a href={data.urls.patients.appstore} target='__blank' className="block underline">Download our iOS App</a>
+                        </div>
+                        
+                    }
+                </>
 
                 <div className={'flex w-2/3 items-center space-x-3'}>
                     <div className="p-1 flex-shrink-0 shadow-md inline-block rounded-lg">
