@@ -17,6 +17,7 @@
 
         <link rel="shortcut icon" href="{{asset('assets/imgs/logo.svg')}}" type="image/x-icon">
 
+        @include('partials.head')
         <!-- Scripts -->
         @routes
         @viteReactRefresh
@@ -24,8 +25,10 @@
         @inertiaHead
     </head>
     <body class="scroll-smooth" >
+        @include('partials.body')
         @inertia
 
+        @include('partials.scripts')
         <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
     </body>
 </html>
