@@ -221,6 +221,9 @@ const PatientsMenu = () => {
                             <li>
                                 <button onClick={open} >Download</button>
                             </li>
+                            <li>
+                                <Link href={`${route('blog')}`}>Blog</Link>
+                            </li>
                             <Disclose show={!!!props.auth.user} >
                                 <li>
                                     <a href={`${route('login')}`}>Login</a>

@@ -4,8 +4,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PagesController;
@@ -77,9 +79,18 @@ Route::prefix('medications')->group(function(){
     Route::get('', [PagesController::class, 'medications'])->name('shop');
 });
 
+Route::prefix('blog')->group(function(){
+    Route::get('', [BlogController::class, 'index'])->name('blog');
+    Route::prefix('{post:slug}')->group(function(){
+        Route::get('', [BlogController::class, 'show'])->name('blog.show');
+    });
+});
+
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
 
 Route::view('invite', 'invite');
 Route::view('profile/{doctorId}', 'profile');
+
+// Route::get('{path}', FileController::class)->name('file');
 
 include_once __DIR__.'/api.php';
