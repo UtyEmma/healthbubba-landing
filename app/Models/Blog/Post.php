@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 class Post extends Model {
     use HasUuids, SoftDeletes, HasScopes, HasFaqs;
 
-    protected $fillable = ['title', 'slug', 'category_id', 'image', 'author_id', 'content', 'excerpt', 'visits', 'unique_visits', 'meta_keywords', 'meta_description', 'published_at', 'is_featured', 'status', 'videos'];
+    protected $fillable = ['title', 'slug', 'category_id', 'image', 'author_id', 'content', 'excerpt', 'visits', 'unique_visits', 'meta_keywords', 'meta_description', 'published_at', 'is_featured', 'faq_title', 'reviewer_id', 'status', 'videos'];
 
     protected $casts = [
         'status' => PostStatus::class,
@@ -58,6 +58,10 @@ class Post extends Model {
 
     function category(){
         return $this->belongsTo(PostCategory::class, 'category_id');
+    }
+
+    function reviewer(){
+        return $this->belongsTo(PostReviewer::class, 'reviewer_id');
     }
 
     function author(){

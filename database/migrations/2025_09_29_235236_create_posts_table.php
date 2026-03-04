@@ -25,7 +25,9 @@ return new class extends Migration
             $table->integer('unique_visits')->default(0);
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
+            $table->string('reviewer_id')->nullable();
             $table->string('published_at')->nullable();
+            $table->string('faq_title')->nullable();
             $table->boolean('is_featured')->default(true);
             $table->string('status');
             $table->softDeletes();

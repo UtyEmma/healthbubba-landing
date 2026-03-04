@@ -25,6 +25,8 @@ class PostsTable
                     ->searchable(),
                 TextColumn::make('author.name')
                     ->searchable(),
+                TextColumn::make('reviewer.name')
+                    ->searchable(),
                 TextColumn::make('visits')
                     ->numeric()
                     ->sortable(),

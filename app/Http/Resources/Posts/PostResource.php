@@ -19,11 +19,12 @@ class PostResource extends JsonResource {
                 ->except(['id', 'category_id', 'author_id'])
                 ->merge([
                     'featured_image' => $this->featured_image,
-                    'author' => new UserResource($this->author),
-                    'category' => new PostCategoryResource($this->category),
+                    'author' => $this->author ? new UserResource($this->author) : null,
+                    'category' => $this->category ? new PostCategoryResource($this->category) : null,
                     'tags' => $this->tags->map(fn($tag) => $tag->tag),
                     'faqs' => FaqResource::collection($this->faqs),
-                    'date' => Date::parse($this->published_at)->format('jS F Y, h:m A')
+                    'date' => Date::parse($this->published_at)->format('jS F Y'),
+                    'reviewer' => $this->reviewer ? new PostReviewerResource($this->reviewer) : null
                 ])
                 ->toArray();
     }

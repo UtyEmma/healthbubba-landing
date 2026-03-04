@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('post_reviewers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->string('specialty');
             $table->text('description')->nullable();
             $table->timestamps();

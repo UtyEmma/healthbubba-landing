@@ -4,6 +4,7 @@ import React from 'react'
 import PostItem from './Partials/PostItem'
 import { Cta } from '@/Partials/Cta'
 import pluralize from 'pluralize'
+import { ChevronRightIcon } from '@heroicons/react/24/solid'
 
 export default function Index({posts}) {
     console.log(posts)
@@ -13,26 +14,22 @@ export default function Index({posts}) {
     }
 
     return (
-        <GuestLayout>
+        <GuestLayout hideGap>
             <Head title='Blog' />
 
             <div className={''}>
-                <div className={'max-w-7xl mx-auto mb-5 px-4'}>
-                    <ul className={'flex font-medium text-muted text-[14px] space-x-1 items-center'}>
-                        <li>
-                            <Link className=' hover:text-primary' href={route('home')}>Home</Link>
-                        </li>
-                        <li>/</li>
-                        <li>Blog</li>
-                    </ul>
-
-                    <h2 className={'text-2xl md:text-4xl font-medium'}>Our Blog</h2>
-                </div>
 
                 <div className="py-3 border-y border-gray-200 ">
                     <div className='max-w-7xl mx-auto px-4 flex justify-between items-center'>
-                        <div className='md:block hidden'>
-                            <p className="text-muted">{posts.from} - {posts.to} of {posts.total} {pluralize('result', posts.total)}</p>
+                        <div className={''}>
+                            <h2 className={'text-2xl md:text-4xl font-medium'}>Our Blog</h2>
+                            <ul className={'flex font-medium text-muted text-[14px] space-x-1 items-center'}>
+                                <li>
+                                    <Link className=' hover:text-primary' href={route('home')}>Home</Link>
+                                </li>
+                                <li><ChevronRightIcon className='size-3' /></li>
+                                <li>Blog</li>
+                            </ul>
                         </div>
 
                         <div className={'w-full md:w-2/5'}>
