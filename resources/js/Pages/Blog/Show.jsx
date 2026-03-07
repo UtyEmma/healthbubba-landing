@@ -6,6 +6,7 @@ import { Head, Link } from '@inertiajs/react'
 import React from 'react'
 import PostItem from './Partials/PostItem'
 
+
 export default function Show({post, posts}) {
     return (
         <GuestLayout hideGap>
@@ -36,7 +37,7 @@ export default function Show({post, posts}) {
                     <div className="text-[13px] p-2 rounded inline-flex bg-primary-100 text-primary-500 font-medium py-1">
                         {post.category.name}
                     </div>
-                    <h2 className='text-2xl md:text-3xl font-semibold' >{post.title}</h2>
+                    <h1 className='text-2xl md:text-3xl font-semibold' >{post.title}</h1>
                     <div className="flex prose items-center gap-2 text-sm font-medium text-gray-600">
                         <div className="gap-1.5 flex items-center">
                             <UserIcon className='size-5 text-primary' />

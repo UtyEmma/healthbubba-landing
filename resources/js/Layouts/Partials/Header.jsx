@@ -56,6 +56,9 @@ const PractitionersMenu = () => {
                             <Link href={`${route('practitioners.support')}`}>Support</Link>
                         </li>
                         <li>
+                            <Link href={`${route('blog')}`}>Blog</Link>
+                        </li>
+                        <li>
                             <button onClick={open} >Download App</button>
                         </li>
                     </ul>

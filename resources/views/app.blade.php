@@ -18,6 +18,36 @@
         <link rel="shortcut icon" href="{{asset('assets/imgs/logo.svg')}}" type="image/x-icon">
 
         @include('partials.head')
+
+        @if(request()->routeIs('blog.show'))
+            @include('partials.blog-schema', ['post' => $page['props']['post']])
+        @endif
+
+        <!-- MedicalOrganization (site-wide) -->
+        <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'MedicalOrganization',
+            'name' => 'HealthBubba',
+            'url' => config('app.url'),
+            'logo' => asset('assets/imgs/logo.svg'),
+            'description' => 'HealthBubba is a digital health platform connecting patients with healthcare providers and services.',
+            'medicalSpecialty' => 'General Medicine',
+            'sameAs' => [
+                'https://www.instagram.com/healthbubba',
+                'https://www.facebook.com/profile.php?id=61559440283914',
+                'https://www.linkedin.com/company/healthbubba/',
+                'https://x.com/Health_Bubba',
+                'https://www.threads.net/@healthbubba',
+            ],
+            'contactPoint' => [
+                '@type' => 'ContactPoint',
+                'contactType' => 'customer service',
+                'availableLanguage' => 'English',
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+        </script>
+
         <!-- Scripts -->
         @routes
         @viteReactRefresh
