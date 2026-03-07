@@ -42,6 +42,7 @@ class PostCategoryForm
                             ])
                     ]),
                 Grid::make(1)
+                    ->columnSpan(1)
                     ->schema([
                         Section::make('Settings')
                             ->schema([
