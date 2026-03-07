@@ -22,7 +22,7 @@ class PostCategoryForm
                     ->columnSpan(2)
                     ->schema([
                         Section::make('Category Details')
-                            ->components([
+                            ->schema([
                                 TextInput::make('name')
                                     ->unique(ignoreRecord: true)
                                     ->required(),
@@ -32,7 +32,7 @@ class PostCategoryForm
                                 FileUpload::make('thumbnail'),
                             ]),
                         Section::make('SEO Information')
-                            ->components([
+                            ->schema([
                                 TextInput::make('meta_keywords')
                                     ->default(null)
                                     ->columnSpanFull(),
@@ -44,7 +44,7 @@ class PostCategoryForm
                 Grid::make(1)
                     ->schema([
                         Section::make('Settings')
-                            ->components([
+                            ->schema([
                                 Select::make('category')
                                     ->relationship('category', 'name')
                                     ->preload()
