@@ -8,6 +8,7 @@
         "php": "^8.2",
         "filament/filament": "^3.3",
         "inertiajs/inertia-laravel": "^1.0",
+        "jeffgreco13/filament-breezy": "^2.6",
         "laravel/breeze": "^2.0",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
