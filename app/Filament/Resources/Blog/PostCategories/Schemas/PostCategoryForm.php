@@ -29,17 +29,17 @@ class PostCategoryForm
                                 Textarea::make('description')
                                     ->default(null)
                                     ->columnSpanFull(),
-                                FileUpload::make('thumbnail'),
+                                // FileUpload::make('thumbnail'),
                             ]),
-                        Section::make('SEO Information')
-                            ->schema([
-                                TextInput::make('meta_keywords')
-                                    ->default(null)
-                                    ->columnSpanFull(),
-                                Textarea::make('meta_description')
-                                    ->default(null)
-                                    ->columnSpanFull(),
-                            ])
+                        // Section::make('SEO Information')
+                        //     ->schema([
+                        //         TextInput::make('meta_keywords')
+                        //             ->default(null)
+                        //             ->columnSpanFull(),
+                        //         Textarea::make('meta_description')
+                        //             ->default(null)
+                        //             ->columnSpanFull(),
+                        //     ])
                     ]),
                 Grid::make(1)
                     ->columnSpan(1)
