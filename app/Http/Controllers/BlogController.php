@@ -10,8 +10,16 @@ use Inertia\Inertia;
 
 class BlogController extends Controller {
     
-    function index(){
-        $posts = PostResource::collection(Post::published()->latest()->paginate());
+    function index(Request $request){
+        $posts = Post::published()
+            ->when($request->search, function($query, $search) {
+                $query->where('title', 'LIKE', "%{$search}%");
+            })
+            ->latest()
+            ->paginate()
+            ->withQueryString();
+
+        $posts = PostResource::collection($posts);
         return Inertia::render('Blog/Index', compact('posts'));
     }
         

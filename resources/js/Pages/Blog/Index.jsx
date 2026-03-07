@@ -1,17 +1,30 @@
 import GuestLayout from '@/Layouts/GuestLayout'
-import { Head, Link } from '@inertiajs/react'
-import React from 'react'
+import { Head, Link, router } from '@inertiajs/react'
+import React, { useCallback, useEffect, useState } from 'react'
 import PostItem from './Partials/PostItem'
 import { Cta } from '@/Partials/Cta'
 import pluralize from 'pluralize'
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
+import { debounce } from 'lodash'
 
 export default function Index({posts}) {
-    console.log(posts)
 
-    const search = () => {
-        
-    }
+    const [keyword, setKeyword] = useState('')
+
+    const debouncedSearch = useCallback(
+        debounce((value) => {
+            router.reload({
+                data: { search: value || undefined },
+                preserveState: true,
+            })
+        }, 500),
+        []
+    )
+
+    useEffect(() => {
+        debouncedSearch(keyword)
+        return () => debouncedSearch.cancel()
+    }, [keyword])
 
     return (
         <GuestLayout hideGap>
@@ -39,7 +52,7 @@ export default function Index({posts}) {
                                         <path d="M17.4999 17.5L13.8749 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#9CA3AF" stroke-width="1.31602" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <input type="text" onChange={search} className={'pl-10 w-full border border-primary rounded-md shadow'} placeholder='Search Posts' />
+                                <input type="text" onChange={(e) => setKeyword(e.currentTarget.value)} value={keyword} className={'pl-10 w-full border border-primary focus:border-primary focus:ring-primary rounded-md shadow'} placeholder='Search Posts' />
                             </div>
                         </div>
                     </div>
