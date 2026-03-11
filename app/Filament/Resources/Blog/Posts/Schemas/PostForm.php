@@ -52,11 +52,11 @@ class PostForm
                                 RichEditor::make('content')
                                     ->required()
                                     ->columnSpanFull(),
-                                FileUpload::make('videos')
-                                    ->label('Videos')
-                                    ->acceptedFileTypes(['video/mp4', 'video/ogg', 'video/webm'])
-                                    ->multiple()
-                                    ->visibility('public')
+                                // FileUpload::make('videos')
+                                //     ->label('Videos')
+                                //     ->acceptedFileTypes(['video/mp4', 'video/ogg', 'video/webm'])
+                                //     ->multiple()
+                                //     ->visibility('public')
                                     // ->directory('storage')
                             ]),
                         Section::make('Meta Information')

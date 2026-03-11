@@ -11,9 +11,9 @@
             const isIPhone = navigator.userAgent.match(/iPhone/i); 
 
             if(isIPhone) {
-                window.location.href = '{{ env("DOCTORS_APP_STORE_URL") }}'
+                window.location.href = '{{ env("PATIENTS_APP_STORE_URL") }}'
             }else {
-                window.location.href = '{{ env("DOCTORS_APP_PLAY_URL") }}'
+                window.location.href = '{{ env("PATIENTS_APP_PLAY_URL") }}'
             }
         </script>
     </head>
