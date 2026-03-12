@@ -11,7 +11,10 @@ export default function ({test, packages = [], categories, faqs}) {
     const {props} = usePage()
     return (
         <GuestLayout>
-            <Head title={test.test_name} />
+            <Head title={test.test_name}>
+                <meta head-key="robots" name="robots" content="noindex, nofollow" />
+                <meta head-key="googlebot" name="googlebot" content="noindex, nofollow" />
+            </Head>
             <div className="border-gray-200 border-solid border-b pb-5 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div class={'space-y-1'}>
@@ -37,7 +40,7 @@ export default function ({test, packages = [], categories, faqs}) {
                     <div className="grid md:grid-cols-12 gap-5">
                         <div className="md:col-span-8 space-y-5 md:space-y-10">
                             <div className="rounded-2xl overflow-hidden md:h-96">
-                                <img src={`${props.content}${test.test_pic}`} class='object-cover min-w-full min-h-full' alt="" />
+                                <img src={`${props.content}${test.test_pic}`} class='object-cover min-w-full min-h-full' alt={test.test_name} loading="lazy" decoding="async" />
                             </div>
 
                             <div>

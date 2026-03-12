@@ -2,6 +2,7 @@
 
 namespace App\Models\Blog;
 
+use App\Services\ImageOptimizationService;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,6 +22,15 @@ class PostCategory extends Model {
     protected $attributes = [
         'is_active' => true
     ];
+
+    protected static function booted(): void
+    {
+        static::saving(function (self $category): void {
+            if ($category->isDirty('thumbnail') && $category->thumbnail) {
+                $category->thumbnail = app(ImageOptimizationService::class)->optimizePublicImage($category->thumbnail);
+            }
+        });
+    }
 
     function posts(){
         return $this->hasMany(Post::class, 'category_id');

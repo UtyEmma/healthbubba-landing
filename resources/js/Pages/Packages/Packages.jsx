@@ -40,7 +40,10 @@ export default function ({categories, tests}) {
 
     return (
         <GuestLayout>
-            <Head title='Test Packages' />
+            <Head title='Test Packages'>
+                <meta head-key="robots" name="robots" content="noindex, nofollow" />
+                <meta head-key="googlebot" name="googlebot" content="noindex, nofollow" />
+            </Head>
             <div className={''}>
                 <div className={'max-w-7xl mx-auto mb-5 px-4'}>
                     <ul className={'flex font-medium text-muted text-[14px] space-x-1 items-center'}>

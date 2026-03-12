@@ -8,9 +8,27 @@ import PostItem from './Partials/PostItem'
 
 
 export default function Show({post, posts}) {
+    const canonicalUrl = post.canonical_url ?? route('blog.show', { post })
+    const metaDescription = post.meta_description || post.excerpt || 'Read this HealthBubba blog post.'
+
     return (
         <GuestLayout hideGap>
-            <Head title={post.title} />
+            <Head title={post.title}>
+                <meta head-key="description" name="description" content={metaDescription} />
+                <meta head-key="keywords" name="keywords" content={post.meta_keywords || ''} />
+                <link head-key="canonical" rel="canonical" href={canonicalUrl} />
+                <meta head-key="og:type" property="og:type" content="article" />
+                <meta head-key="og:site_name" property="og:site_name" content="HealthBubba" />
+                <meta head-key="og:title" property="og:title" content={post.title} />
+                <meta head-key="og:description" property="og:description" content={metaDescription} />
+                <meta head-key="og:url" property="og:url" content={canonicalUrl} />
+                <meta head-key="og:image" property="og:image" content={post.featured_image} />
+                <meta head-key="og:image:alt" property="og:image:alt" content={post.image_alt || post.title} />
+                <meta head-key="twitter:card" name="twitter:card" content="summary_large_image" />
+                <meta head-key="twitter:title" name="twitter:title" content={post.title} />
+                <meta head-key="twitter:description" name="twitter:description" content={metaDescription} />
+                <meta head-key="twitter:image" name="twitter:image" content={post.featured_image} />
+            </Head>
             <div className=' border-y  py-5 mb-5 md:mb-10'>
                 <div className={'max-w-7xl px-2 md:px-0 space-y-2 mx-auto'}>
                     <h2 className='text-2xl md:text-3xl font-semibold' >{post.title}</h2>
@@ -30,7 +48,13 @@ export default function Show({post, posts}) {
 
             <div className="max-w-5xl mx-auto px-2 pb-5 md:px-0 space-y-5">
                 <div className='rounded-xl'>
-                    <img src={post.featured_image} className='aspect-video object-cover rounded-xl md:rounded-3xl' alt="" />
+                    <img
+                        src={post.featured_image}
+                        className='aspect-video object-cover rounded-xl md:rounded-3xl'
+                        alt={post.image_alt || post.title}
+                        loading="lazy"
+                        decoding="async"
+                    />
                 </div>
 
                 <div className="space-y-2">
@@ -90,7 +114,7 @@ export default function Show({post, posts}) {
                     <div className="flex items-center gap-4">
                         <div>
                             <div className="size-20">
-                                <img src={post.reviewer.image} className='rounded-lg' alt="" />
+                                <img src={post.reviewer.image} className='rounded-lg' alt={post.reviewer.name} loading="lazy" decoding="async" />
                             </div>
                         </div>
                         <div className='py-2 flex-1'>
@@ -116,7 +140,7 @@ export default function Show({post, posts}) {
                     <p className='font-semibold'>Tags:</p>
                     {
                         post.tags.map(tag => (
-                            <div className='inline-flex items-center font-medium bg-primary-50 border-2 py-1 border-primary-200 text-primary-600 px-3 text-sm rounded'>
+                            <div key={tag} className='inline-flex items-center font-medium bg-primary-50 border-2 py-1 border-primary-200 text-primary-600 px-3 text-sm rounded'>
                                 {tag}
                             </div>
                         ))

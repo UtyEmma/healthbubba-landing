@@ -41,7 +41,11 @@ class PostForm
                                             ->visibility('public')
                                             // ->directory('storage')
                                             ->imageEditor()
-                                            ->imagePreviewHeight('150')
+                                            ->imagePreviewHeight('150'),
+                                        TextInput::make('image_alt')
+                                            ->label('Featured Image ALT Text')
+                                            ->placeholder('Describe the image for accessibility and SEO')
+                                            ->maxLength(255),
                                     ]),
                                 TextInput::make('title')
                                     ->live(true)
@@ -126,7 +130,8 @@ class PostForm
                                     ->searchable(['name'])
                                     ->preload()
                                     ->createOptionForm([
-                                        FileUpload::make('thumbnail'),
+                                        FileUpload::make('thumbnail')
+                                            ->visibility('public'),
                                         TextInput::make('name')
                                             ->unique(ignoreRecord: true)
                                             ->required(),

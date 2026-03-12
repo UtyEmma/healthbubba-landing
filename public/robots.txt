@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /verify-otp
+Disallow: /checkout
+Disallow: /cart
+Disallow: /logout
+Sitemap: https://healthbubba.com/sitemap.xml

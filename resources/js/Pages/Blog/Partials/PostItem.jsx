@@ -6,7 +6,7 @@ export default function PostItem({post, className}) {
     return (
         <div className={`p-1 rounded-2xl min-h-full md:hover:shadow-xl border border-gray-200 transition-all duration-150 ${className}`}>
             <Link href={route('blog.show', {post})} className='block rounded-xl relative overflow-hidden aspect-[4/3]'>
-                <img src={post.featured_image} className='object-cover size-full' alt={post.title} />
+                <img src={post.featured_image} className='object-cover size-full' alt={post.image_alt || post.title} loading="lazy" decoding="async" />
                 <div className="text-[13px] p-2 rounded inline-flex absolute bottom-2 right-2 bg-primary-100 text-primary-500 font-medium py-1">
                     {post.category.name}
                 </div>

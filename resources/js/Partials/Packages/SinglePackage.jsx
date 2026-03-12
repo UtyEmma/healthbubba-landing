@@ -9,7 +9,7 @@ export default function ({test, className}) {
     return (
         <div className={`p-1 rounded-2xl min-h-full flex flex-col md:hover:shadow-xl border border-gray-200 transition-all duration-150 ${className}`}>
             <div className='rounded-xl overflow-hidden h-40'>
-                <img src={`${props.content}${test.test_pic}`} className='object-cover h-full w-full' alt="" />
+                <img src={`${props.content}${test.test_pic}`} className='object-cover h-full w-full' alt={test.test_name} loading="lazy" decoding="async" />
             </div>
             <div className="p-3 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">

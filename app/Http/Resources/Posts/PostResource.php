@@ -19,6 +19,8 @@ class PostResource extends JsonResource {
                 ->except(['id', 'category_id', 'author_id'])
                 ->merge([
                     'featured_image' => $this->featured_image,
+                    'image_alt' => $this->image_alt ?: $this->title,
+                    'canonical_url' => route('blog.show', ['post' => $this->slug]),
                     'author' => $this->author ? new UserResource($this->author) : null,
                     'category' => $this->category ? new PostCategoryResource($this->category) : null,
                     'tags' => $this->tags->map(fn($tag) => $tag->tag),

@@ -8,6 +8,7 @@ import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import { debounce } from 'lodash'
 
 export default function Index({posts}) {
+    const blogUrl = route('blog', {}, true)
 
     const [keyword, setKeyword] = useState('')
 
@@ -28,7 +29,15 @@ export default function Index({posts}) {
 
     return (
         <GuestLayout hideGap>
-            <Head title='Blog' />
+            <Head title='Blog'>
+                <meta head-key="description" name="description" content="Health insights, wellness tips, and care guidance from HealthBubba." />
+                <link head-key="canonical" rel="canonical" href={blogUrl} />
+                <meta head-key="og:type" property="og:type" content="website" />
+                <meta head-key="og:site_name" property="og:site_name" content="HealthBubba" />
+                <meta head-key="og:title" property="og:title" content="HealthBubba Blog" />
+                <meta head-key="og:description" property="og:description" content="Health insights, wellness tips, and care guidance from HealthBubba." />
+                <meta head-key="og:url" property="og:url" content={blogUrl} />
+            </Head>
 
             <div className={''}>
 

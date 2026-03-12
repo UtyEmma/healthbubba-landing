@@ -35,7 +35,8 @@ class PostReviewerResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->visibility('public'),
             ]);
     }
 
