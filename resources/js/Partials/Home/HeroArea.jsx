@@ -1,8 +1,11 @@
 import Button from '@/Components/Button'
 import PlayIcon from '@/Icons/PlayIcon'
-import React from 'react'
+import { DownloadContext } from '@/Layouts/GuestLayout'
+import React, { useContext } from 'react'
 
 export default function HeroArea() {
+    const {open} = useContext(DownloadContext)
+
     return (
         <section className="md:max-w-7xl mx-auto md:px-4 px-2">
             <div className="text-center space-y-5 ">

@@ -16,7 +16,6 @@ import WelcomeModal from '@/Partials/Home/WelcomeModal';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
-    const {open} = useContext(DownloadContext)
 
     const {props} = usePage()
 

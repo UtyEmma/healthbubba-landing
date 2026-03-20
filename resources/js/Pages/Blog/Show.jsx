@@ -58,15 +58,15 @@ export default function Show({post, posts}) {
                 </div>
 
                 <div className="space-y-2">
-                    <div className="text-[13px] p-2 rounded inline-flex bg-primary-100 text-primary-500 font-medium py-1">
-                        {post.category.name}
-                    </div>
+                    <Disclose as={'div'} show={!!post.category} className="text-[13px] p-2 rounded inline-flex bg-primary-100 text-primary-500 font-medium py-1">
+                        {post.category?.name}
+                    </Disclose>
                     <h1 className='text-2xl md:text-3xl font-semibold' >{post.title}</h1>
                     <div className="flex prose items-center gap-2 text-sm font-medium text-gray-600">
-                        <div className="gap-1.5 flex items-center">
+                        <Disclose as={'div'} show={!!post.author} className="gap-1.5 flex items-center">
                             <UserIcon className='size-5 text-primary' />
-                            {post.author.name}
-                        </div>
+                            {post.author?.name}
+                        </Disclose>
                         <div className="gap-1.5 flex items-center">
                             <CalendarDaysIcon className='size-5 text-primary' />
                             {post.date}
@@ -107,33 +107,33 @@ export default function Show({post, posts}) {
                     </div>
                 </Disclose>
 
-                <Disclose show={!!post.reviewer} as={'div'} className="bg-primary-50 rounded-xl p-3 px-5 space-y-2" >
+                <Disclose show={!!post.reviewer} as={'div'} className="bg-primary-50 rounded-xl p-3 px-5 space-y-4" >
                     <div>
                         <h5 className='font-semibold text-lg'>Reviewed By</h5>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="md:flex items-center gap-4">
                         <div>
-                            <div className="size-20">
+                            <div className="size-16 md:size-20">
                                 <img src={post.reviewer.image} className='rounded-lg' alt={post.reviewer.name} loading="lazy" decoding="async" />
                             </div>
                         </div>
                         <div className='py-2 flex-1'>
                             <div className="flex items-center gap-1">
-                                <h4 className='text-lg leading-none font-semibold' >{post.reviewer.name}</h4>
+                                <h4 className='md:text-lg leading-none font-semibold' >{post.reviewer.name}</h4>
                                 -
-                                <p className="leading-none text-muted  font-medium">{post.reviewer.specialty}</p>
+                                <p className="text-sm md:text-base  leading-none text-muted  font-medium">{post.reviewer.specialty}</p>
                             </div>
 
                             <div className="">
-                                <p className='text-gray-500'>{post.reviewer.description}</p>
+                                <p className='text-sm md:text-base text-gray-500'>{post.reviewer.description}</p>
                             </div>
                         </div>
                     </div>
                 </Disclose>
 
-                <div className="bg-amber-50 border border-amber-100 px-4 py-2 rounded-lg items-center gap-2 flex">
-                    <InformationCircleIcon className='text-amber-500 size-6' />
-                    <p className="text-amber-500">This article is for informational purposes only and is not a substitute for professional medical advice.</p>
+                <div className="bg-amber-50 border border-amber-100 px-3 py-2 rounded-lg items-center gap-2 flex">
+                    <InformationCircleIcon className='text-amber-500 size-6 shrink-0' />
+                    <p className="text-sm md:text-base text-amber-500">This article is for informational purposes only and is not a substitute for professional medical advice.</p>
                 </div>
 
                 <div className='flex py-3 border-y items-center gap-2'>

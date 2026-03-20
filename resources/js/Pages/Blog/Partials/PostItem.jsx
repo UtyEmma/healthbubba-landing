@@ -1,3 +1,4 @@
+import Disclose from '@/Components/Display/Disclose'
 import { ArrowRightIcon, CalendarDaysIcon, UserIcon } from '@heroicons/react/24/solid'
 import { Link } from '@inertiajs/react'
 import React from 'react'
@@ -7,19 +8,19 @@ export default function PostItem({post, className}) {
         <div className={`p-1 rounded-2xl min-h-full md:hover:shadow-xl border border-gray-200 transition-all duration-150 ${className}`}>
             <Link href={route('blog.show', {post})} className='block rounded-xl relative overflow-hidden aspect-[4/3]'>
                 <img src={post.featured_image} className='object-cover size-full' alt={post.image_alt || post.title} loading="lazy" decoding="async" />
-                <div className="text-[13px] p-2 rounded inline-flex absolute bottom-2 right-2 bg-primary-100 text-primary-500 font-medium py-1">
+                <Disclose as={'div'} show={!!post.author} className="text-[13px] p-2 rounded inline-flex absolute bottom-2 right-2 bg-primary-100 text-primary-500 font-medium py-1">
                     {post.category.name}
-                </div>
+                </Disclose>
             </Link>
             <div className="p-3 space-y-4 flex-1 flex flex-col justify-between">
                 <div>
 
                     <div className="space-y-2">
                         <div className="flex prose items-center gap-2 text-sm font-medium text-gray-600">
-                            <div className="gap-1.5 flex items-center">
+                            <Disclose as={'div'} show={!!post.author} className="gap-1.5 flex items-center">
                                 <UserIcon className='size-5 text-primary' />
-                                {post.author.name}
-                            </div>
+                                {post.author?.name}
+                            </Disclose>
                             <div className="gap-1.5 flex items-center">
                                 <CalendarDaysIcon className='size-5 text-primary' />
                                 {post.date}
