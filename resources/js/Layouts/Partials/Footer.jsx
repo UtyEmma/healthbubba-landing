@@ -2,6 +2,7 @@ import React from 'react'
 import { SubscriptionCTA } from './SubscriptionCTA'
 import { Link, usePage } from '@inertiajs/react'
 import Disclose from '@/Components/Display/Disclose'
+import ZohoCampaigns from '@/Partials/zoho-campaigns'
 
 export const Footer = () => {
 
@@ -10,68 +11,75 @@ export const Footer = () => {
     return (
         <footer className="border-t md:py-10 bg-white z-50">
             <div className="max-w-7xl mx-auto divide-y">
-                <div className="grid gap-5 md:grid-cols-2 py-10 px-2">
-                    <div className="md:w-2/3 space-y-5">
+                <div className="grid gap-5 md:flex py-10 px-2">
+                    <div className="md:w-1/3 space-y-5">
                         <div>
                             <img src="/assets/imgs/logos/logo-long.svg" alt="" />
                         </div>
 
                         <SubscriptionCTA className='hidden md:block' />
+                        <div>
+                            {/* <ZohoCampaigns /> */}
+                        </div>
                     </div>
 
-                    <div className="grid gap-5 md:grid-cols-3">
-                        <div>
-                            <p className="text-gray-400 mb-3 font-medium">Company</p>
-                            <ul className="text-neutral-700 text-sm space-y-2  font-medium ">
-                                <li>
-                                    <Link className='hover:text-black' href={`${route('home')}#about`}>About</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('packages')}>Order a Lab test</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('shop')}>Order Medications</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('practitioners')}>Health Professional’s Page</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('blog')}>Blog</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('contact')}>Get In Touch</Link>
-                                </li>
-                            </ul>
+                    <div className="flex-1 space-y-6" >
+                        <div className="grid gap-5 md:grid-cols-2">
+                            {/* <div>
+                                <p className="text-gray-400 mb-3 font-medium">Company</p>
+                                <ul className="text-neutral-700 text-sm space-y-2  font-medium ">
+                                    <li>
+                                        <Link className='hover:text-black' href={`${route('home')}#about`}>About</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('packages')}>Order a Lab test</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('shop')}>Order Medications</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('practitioners')}>Health Professional’s Page</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('blog')}>Blog</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('contact')}>Get In Touch</Link>
+                                    </li>
+                                </ul>
+                            </div> */}
+                            <div>
+                                <p className="text-gray-400 mb-3 font-medium">Legal</p>
+                                <ul className="text-neutral-700 text-sm space-y-2  font-medium">
+                                    <li>
+                                        <Link className='hover:text-black' href={route('terms')}>Terms and Conditions</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('privacy-policy')}>Privacy Policy</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('cancellation-policy')}>Cancellation & Rescheduling Policy</Link>
+                                    </li>
+                                    <li>
+                                        <Link className='hover:text-black' href={route('data-deletion')}>Data Deletion</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 mb-3 font-medium" >Need help?</p>
+                                <ul className="text-neutral-700 text-sm space-y-2  font-medium">
+                                    <li>
+                                        <Link className='hover:text-black' href={route('faqs')}>FAQ</Link>
+                                    </li>
+                                    <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki Lagos State</li>
+                                    <li>
+                                        <a href="tel:09163324000">{props.phone}</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <p className="text-gray-400 mb-3 font-medium">Legal</p>
-                            <ul className="text-neutral-700 text-sm space-y-2  font-medium">
-                                <li>
-                                    <Link className='hover:text-black' href={route('terms')}>Terms and Conditions</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('privacy-policy')}>Privacy Policy</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('cancellation-policy')}>Cancellation & Rescheduling Policy</Link>
-                                </li>
-                                <li>
-                                    <Link className='hover:text-black' href={route('data-deletion')}>Data Deletion</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p className="text-gray-400 mb-3 font-medium" >Need help?</p>
-                            <ul className="text-neutral-700 text-sm space-y-2  font-medium">
-                                <li>
-                                    <Link className='hover:text-black' href={route('faqs')}>FAQ</Link>
-                                </li>
-                                <li>Visit Us: G24/25 Triangle Business Place beside Circle Mall, Osapa Lekki Lagos State</li>
-                                <li>
-                                    <a href="tel:09163324000">{props.phone}</a>
-                                </li>
-                            </ul>
-                        </div>
+
+                        <p className="text-gray-500">HealthBubba provides access to health information and connects users with licensed healthcare professionals. Any consultations, treatments, or prescriptions are carried out by qualified professionals in accordance with applicable regulations.</p>
                     </div>
 
                     <SubscriptionCTA className='md:hidden block' />

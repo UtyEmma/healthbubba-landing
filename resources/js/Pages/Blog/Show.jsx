@@ -107,7 +107,7 @@ export default function Show({post, posts}) {
                     </div>
                 </Disclose>
 
-                <Disclose show={!!post.reviewer} as={'div'} className="bg-primary-50 rounded-xl p-3 px-5 space-y-4" >
+                {/* <Disclose show={!!post.reviewer} as={'div'} className="bg-primary-50 rounded-xl p-3 px-5 space-y-4" >
                     <div>
                         <h5 className='font-semibold text-lg'>Reviewed By</h5>
                     </div>
@@ -129,7 +129,7 @@ export default function Show({post, posts}) {
                             </div>
                         </div>
                     </div>
-                </Disclose>
+                </Disclose> */}
 
                 <div className="bg-amber-50 border border-amber-100 px-3 py-2 rounded-lg items-center gap-2 flex">
                     <InformationCircleIcon className='text-amber-500 size-6 shrink-0' />

@@ -1,4 +1,5 @@
 import GuestLayout, { DownloadContext } from '@/Layouts/GuestLayout'
+import ZohoCampaigns from '@/Partials/zoho-campaigns'
 import { PlayIcon } from '@heroicons/react/24/solid'
 import { Head } from '@inertiajs/react'
 import React, { useContext } from 'react'
@@ -24,8 +25,8 @@ const View = () => {
                     </div>
 
                     <div className='space-y-3'>
-                        <h2 class={'md:text-4xl text-xl font-bold'}>Book appointment, Order a Lab Test and Manage your Medications.</h2>
-                        <p className="md:text-lg text-sm"> Discover a new era of personalized wellness – welcome to a platform that truly transforms healthcare.</p>
+                        <h2 class={'md:text-4xl text-xl font-bold'}>Start Taking Control of Your Health Today. Right From Your Phone.</h2>
+                        <p className="md:text-lg text-sm">Access trusted health guidance, track your wellbeing, and stay informed, anytime, anywhere.</p>
                     </div>
 
                     <button onClick={open} class="btn btn-secondary">Download <PlayIcon class={'text-white text-opacity-70 w-6 h-6'} /></button>
@@ -37,7 +38,7 @@ const View = () => {
                         </div>
 
                         <div>
-                            <h2 class={'md:text-2xl text-xl text-white font-semibold'}>Scan to download <br /> the app</h2>
+                            <h2 class={'md:text-2xl text-xl text-white font-semibold'}>Take the First Step Toward Better Health Today</h2>
                         </div>
                     </div>
 
