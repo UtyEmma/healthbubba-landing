@@ -17,9 +17,9 @@ export const Footer = () => {
                             <img src="/assets/imgs/logos/logo-long.svg" alt="" />
                         </div>
 
-                        <SubscriptionCTA className='hidden md:block' />
-                        <div>
-                            {/* <ZohoCampaigns /> */}
+                        <div className='hidden md:block'>
+                            {/* <SubscriptionCTA  /> */}
+                            <ZohoCampaigns />
                         </div>
                     </div>
 
@@ -82,8 +82,12 @@ export const Footer = () => {
                         <p className="text-gray-500">HealthBubba provides access to health information and connects users with licensed healthcare professionals. Any consultations, treatments, or prescriptions are carried out by qualified professionals in accordance with applicable regulations.</p>
                         {/* <p className="text-gray-500">Services are provided by licensed healthcare professionals in Nigeria. HealthBubba does not replace in-person medical care. Always consult your doctor for personalized advice.</p> */}
                     </div>
+                    
+                    <div className='md:hidden block'>   
+                        {/* <SubscriptionCTA  /> */}
+                        <ZohoCampaigns />
+                    </div>
 
-                    <SubscriptionCTA className='md:hidden block' />
                 </div>
 
                 <div className={'pt-5 pb-5 md:pb-0 flex flex-col md:flex-row gap-y-5 justify-between items-center'}>
