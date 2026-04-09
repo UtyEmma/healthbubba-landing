@@ -1,4 +1,6 @@
 import Button from '@/Components/Button'
+import AppStoreButton from '@/Components/Buttons/AppStoreButton'
+import PlaystoreButton from '@/Components/Buttons/PlaystoreButton'
 import PlayIcon from '@/Icons/PlayIcon'
 import { DownloadContext } from '@/Layouts/GuestLayout'
 import React, { useContext } from 'react'
@@ -9,14 +11,17 @@ export default function HeroArea() {
     return (
         <section className="md:max-w-7xl mx-auto md:px-4 px-2">
             <div className="text-center space-y-5 ">
-                <h1 className="md:text-7xl text-[25px] tracking-tight md:text-[64px] leading-tight md:leading-[72px] font-bold">
+                {/* <h1 className="md:text-7xl text-[25px] tracking-tight md:text-[64px] leading-tight md:leading-[72px] font-bold">
                     <span className='text-nowrap' >Healthcare and Prescription.</span>
                       <br /> 
-                    <span className='text-primary'>At Your Fingertips</span></h1>
+                    <span className='text-primary'>At Your Fingertips</span></h1> */}
+                <h1 className="md:text-7xl text-[25px] tracking-tight md:text-[64px] leading-tight md:leading-[72px] font-bold">Begin your wellness journey</h1>
                 {/* <p className="max-w-3xl md:text-lg text-sm text-muted mx-auto">Connect with verified doctors, get lab tests, and manage prescriptions, all from the comfort of your home.</p> */}
-                <p className="max-w-3xl md:text-lg text-sm text-muted mx-auto">Book a Consultation with a verified healthcare professional, order lab tests and manage prescription all from the convenience of your home.</p>
-                <div>
-                    <Button onClick={open} className="btn btn-primary">Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /></Button>
+                <p className="max-w-3xl md:text-lg text-sm text-muted mx-auto">HealthBubba connects you with licensed healthcare professionals, keeps you informed, and helps you manage your health conveniently, anytime, anywhere.</p>
+                <div className='flex justify-center gap-5'>
+                    <PlaystoreButton />
+                    <AppStoreButton />
+                    {/* <Button onClick={open} className="btn btn-primary">Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /></Button> */}
                 </div>
             </div>
 

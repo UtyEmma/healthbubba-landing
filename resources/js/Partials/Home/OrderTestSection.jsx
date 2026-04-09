@@ -9,12 +9,12 @@ export default function OrderTestSection() {
                 <div className="flex justify-center">
                     <div className="mx-auto inline-flex border shadow text-sm items-center space-x-1 p-2 px-3 rounded-[50px]">
                         <TargetIcon className="size-6" />
-                        <span>Order a Lab Test</span>
+                        <span>Book a Lab appointment</span>
                     </div>
                 </div>
                 <div className="text-center md:w-2/4 mx-auto mb-20 px-4">
-                    <h2 className="text-2xl font-semibold">Order a Lab Test</h2>
-                    <p className="text-muted text-sm md:text-base">Book your lab tests, doctors' consultations, medication delivery, and vaccinations all from your home.</p>
+                    <h2 className="text-2xl font-semibold">Book a Lab appointment</h2>
+                    <p className="text-muted text-sm md:text-base">Book lab appointments, health consultations, and essential services, all from the comfort of your home.</p>
                 </div>
                 <div className="md:w-5/6 mx-auto px-4">
                     <div className="md:flex md:space-x-10 items-center">

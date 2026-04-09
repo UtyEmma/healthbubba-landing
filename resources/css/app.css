@@ -6,6 +6,10 @@
     html {
         font-family: "Inter", sans-serif;
     }
+
+    *:focus {
+        outline: 0;
+    }
 }
 
 @layer components {

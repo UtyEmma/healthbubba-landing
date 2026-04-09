@@ -40,19 +40,17 @@ export default function AboutSection() {
                         <div className="bg-[url('/assets/imgs/media/banners/hand-holding-phone.png')] absolute right-0 bottom-0 top-0 left-0 md:left-32 bg-contain bg-no-repeat z-0" />
                         <div className="text-white space-y-4 md:p-10 p-5 pt-20 absolute bottom-0 left-0 right-0 rounded-b-xl bg-gradient-to-t from-[#10B26F] via-[#57EF9F] to-transparent">
                         <h5 className="text-lg font-bold">Easy to Use</h5>
-                        <p>With simplified navigation and clear instructions, patients can easily connect with doctors, receive prescriptions, and monitor their health with confidence and convenience.</p>
+                        <p>With simplified navigation and clear instructions, patients can easily connect with doctors, monitor their health progress, and get the support they need with confidence and convenience.</p>
                         </div>
                     </div>
-                <div>
-                    <div className="border shadow-lg flex flex-col items-center rounded-3xl space-y-2">
-                        <div className="p-2">
-                            <img src="/assets/imgs/media/banners/doctor-with-mobile-phone.png" alt="" />
-                        </div>
-                        <div className="shadow border-2 rounded-[50px] font-medium text-secondary mx-auto inline-block px-3 text-center py-1 text-sm md:text-base">500+ Online Healthcare Practitioners</div>
-                        <div className='relative'>
-                            <img src="/assets/imgs/media/banners/image-wheel.png" className="h-32 -mt-5 object-contain mx-auto fade" alt="" />
-                            <div className="absolute inset-0 bg-gradient-to-l from-white via-transparent  to-white" />
-                        </div>
+                <div  className="border shadow-lg flex flex-col overflow-hidden items-center rounded-3xl space-y-2">
+                    <div className="p-2">
+                        <img src="/assets/imgs/media/banners/doctor-with-mobile-phone.png" className='rounded-2xl' alt="" />
+                    </div>
+                    <div className="shadow border-2 rounded-[50px] font-medium text-secondary mx-auto inline-block px-5 text-center py-1 text-sm">500+ Licensed Healthcare Professionals</div>
+                    <div className='relative'>
+                        <img src="/assets/imgs/media/banners/image-wheel.png" className="h-32 -mt-5 object-contain mx-auto fade" alt="" />
+                        <div className="absolute inset-0 bg-gradient-to-l from-white via-transparent  to-white" />
                     </div>
                 </div>
                 </div>

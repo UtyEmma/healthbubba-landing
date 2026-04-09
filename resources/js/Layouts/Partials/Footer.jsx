@@ -80,6 +80,7 @@ export const Footer = () => {
                         </div>
 
                         <p className="text-gray-500">HealthBubba provides access to health information and connects users with licensed healthcare professionals. Any consultations, treatments, or prescriptions are carried out by qualified professionals in accordance with applicable regulations.</p>
+                        {/* <p className="text-gray-500">Services are provided by licensed healthcare professionals in Nigeria. HealthBubba does not replace in-person medical care. Always consult your doctor for personalized advice.</p> */}
                     </div>
 
                     <SubscriptionCTA className='md:hidden block' />
