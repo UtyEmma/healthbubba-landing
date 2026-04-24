@@ -48,6 +48,8 @@
         ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
         </script>
 
+        @include('pixel')
+
         <!-- Scripts -->
         @routes
         @viteReactRefresh
