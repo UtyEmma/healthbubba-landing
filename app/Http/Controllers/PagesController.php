@@ -27,7 +27,8 @@ class PagesController extends Controller {
     }
 
     function download(){
-        return Inertia::render('Download');
+        $testimonials = config('content.testimonials');
+        return Inertia::render('Download', compact('testimonials'));
     }
 
     function medications(){

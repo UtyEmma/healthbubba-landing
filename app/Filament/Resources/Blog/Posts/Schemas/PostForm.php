@@ -152,13 +152,13 @@ class PostForm
                                     ->native(false)
                                     ->label('Author')
                                     ->default(Auth::id()),
-                                Select::make('reviewer_id')
-                                    ->required()
-                                    ->relationship('reviewer', 'name')
-                                    ->searchable()
-                                    ->preload()
-                                    ->native(false)
-                                    ->label('Reviewer'),
+                                // Select::make('reviewer_id')
+                                //     ->required()
+                                //     ->relationship('reviewer', 'name')
+                                //     ->searchable()
+                                //     ->preload()
+                                //     ->native(false)
+                                //     ->label('Reviewer'),
                                 DateTimePicker::make('published_at')
                                     ->default(now()),
                                 Select::make('status')

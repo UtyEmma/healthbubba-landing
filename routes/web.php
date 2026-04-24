@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EmailSubscriptionController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\OrderController;
@@ -87,6 +88,8 @@ Route::prefix('blog')->group(function(){
 });
 
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
+
+Route::post('subscribe', [EmailSubscriptionController::class, 'subscribe'])->name('email.subscribe');
 
 Route::view('invite', 'invite');
 Route::view('profile/{doctorId}', 'profile');

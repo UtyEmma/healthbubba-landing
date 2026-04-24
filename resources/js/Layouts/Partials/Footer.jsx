@@ -11,15 +11,15 @@ export const Footer = () => {
     return (
         <footer className="border-t md:py-10 bg-white z-50">
             <div className="max-w-7xl mx-auto divide-y">
-                <div className="grid gap-5 md:flex py-10 px-2">
+                <div className="grid gap-10 md:flex py-10 px-2">
                     <div className="md:w-1/3 space-y-5">
                         <div>
                             <img src="/assets/imgs/logos/logo-long.svg" alt="" />
                         </div>
 
                         <div className='hidden md:block'>
-                            {/* <SubscriptionCTA  /> */}
-                            <ZohoCampaigns />
+                            <SubscriptionCTA  />
+                            {/* <ZohoCampaigns /> */}
                         </div>
                     </div>
 
@@ -84,8 +84,8 @@ export const Footer = () => {
                     </div>
                     
                     <div className='md:hidden block'>   
-                        {/* <SubscriptionCTA  /> */}
-                        <ZohoCampaigns />
+                        <SubscriptionCTA  />
+                        {/* <ZohoCampaigns /> */}
                     </div>
 
                 </div>

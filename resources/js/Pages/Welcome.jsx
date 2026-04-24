@@ -13,6 +13,7 @@ import Testimonial from '@/Partials/Testimonial/Testimonial';
 import TestimonialSection from '@/Partials/Home/TestimonialSection';
 import KeyAreas from '@/Partials/Home/KeyAreas';
 import WelcomeModal from '@/Partials/Home/WelcomeModal';
+import ContactForm from '@/Partials/Contact/ContactForm';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
@@ -51,7 +52,7 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                     {/* <Faq faqs={faqs} /> */}
                     {/* FAQs End */}
 
-                    {/* <ContactForm /> */}
+                    <ContactForm />
 
                     <section className="py-10 md:py-20 px-2 max-w-7xl mx-auto ">
                         <Cta />
