@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "egulias/email-validator": "*",
         "filament/filament": "^3.3",
         "inertiajs/inertia-laravel": "^1.0",
         "joaopaulolndev/filament-edit-profile": "1.0",
@@ -13,8 +14,10 @@
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "spatie/laravel-honeypot": "^4.7",
         "spatie/laravel-sitemap": "^7.4",
         "tightenco/ziggy": "^2.0",
+        "timehunter/laravel-google-recaptcha-v3": "^2.5",
         "utyemma/laranotice": "^1.0"
     },
     "require-dev": {

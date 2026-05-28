@@ -5,7 +5,7 @@ export const FeatureCards = () => {
     return (
         <section className="bg-[#F7F7F8] py-20 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] border-y-2 border-gray-200">
             <div className="max-w-7xl mx-auto px-4">
-                <div class="space-y-5 mb-10">
+                <div className="space-y-5 mb-10">
                     <div className="flex justify-center">
                         <div className="mx-auto inline-flex border bg-white shadow font-medium text-sm items-center gap-2 p-2 px-3 rounded-[50px]">
                             <TargetIcon className="size-5"  />
@@ -69,7 +69,7 @@ export const FeatureCards = () => {
                             <h3 className="text-[16px] mb-[12px] font-semibold">Secure Mobile Payments</h3>
                             <p className="text-muted text-[14px]">Make payments for consultations and lab appointments right from the app – simple, fast, and secure.</p>
                         </div>
-                        <div className>
+                        <div>
                             <img src="/assets/imgs/media/mobile-payment.png" className="w-full" alt="" />
                         </div>
                         </div>

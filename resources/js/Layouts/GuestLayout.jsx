@@ -40,7 +40,7 @@ export default function ({ children, hideGap = false, ...props }) {
 
                     <Toaster
                         position='top-right'
-                        class='flex w-auto'
+                        className='flex w-auto'
                     />
                 </div>
             </DownloadContext.Provider>

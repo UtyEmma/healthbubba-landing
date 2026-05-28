@@ -22,7 +22,7 @@ export const ScrollToTop = () => {
 
     return (
         <Disclose show={show}>
-            <button onClick={scrollUp} className="btn ring-0 fixed bottom-3 right-3 rounded-full p-2 bg-primary hover:bg-primary-500 text-white">
+            <button onClick={scrollUp} className="btn ring-0 fixed bottom-24 right-10 transition-all duration-300 rounded-full p-2 bg-primary hover:bg-primary-500 text-white">
                 <ChevronUpIcon className='w-6 h-6' />
             </button>
         </Disclose>

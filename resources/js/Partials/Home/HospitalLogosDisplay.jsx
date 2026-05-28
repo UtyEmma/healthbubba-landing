@@ -8,7 +8,7 @@ export default function HospitalLogosDisplay() {
     return (
         <div className='py-10 px-2 max-w-6xl mx-auto'>
             <Marquee >
-                { hospitals.map(hospital => <HospitalItem hospital={hospital} /> ) }
+                { hospitals.map((hospital, index) => <HospitalItem key={hospital.name + index} hospital={hospital} /> ) }
             </Marquee>
         </div>
     )

@@ -57,7 +57,7 @@ export default function OrderTestSection() {
                                 </div>
                                 </div>
                                 <div className="p-5 mb-5">
-                                    <a href="#" className="btn btn-primary">Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /></a>
+                                    <a href="#" className="btn btn-primary">Get Started <PlayIcon className={'text-white text-opacity-80 w-5 h-5'} /></a>
                                 </div>
                             </div>
                         </div>

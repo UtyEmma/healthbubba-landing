@@ -22,7 +22,7 @@ export default function AboutSection() {
 
                             <div className="p-2 border shadow-md w-1/4 mx-auto rounded-lg">
                                 <div className="overflow-hidden border rounded-lg">
-                                    <img src="/assets/bubba_play.png" class="w-full aspect-square"  alt="" />
+                                    <img src="/assets/bubba_play.png" className="w-full aspect-square"  alt="" />
                                 </div>
                             </div>
                             {/* <div className="bg-gray-200 p-1 rounded-xl space-x-2 sm:space-x-2">
@@ -39,8 +39,8 @@ export default function AboutSection() {
                     <div className="shadow-lg relative border border-primary  rounded-3xl bg-gradient-to-t from-[#57EF9F] to-[#57EF9F] p-4">
                         <div className="bg-[url('/assets/imgs/media/banners/hand-holding-phone.png')] absolute right-0 bottom-0 top-0 left-0 md:left-32 bg-contain bg-no-repeat z-0" />
                         <div className="text-white space-y-4 md:p-10 p-5 pt-20 absolute bottom-0 left-0 right-0 rounded-b-xl bg-gradient-to-t from-[#10B26F] via-[#57EF9F] to-transparent">
-                        <h5 className="text-lg font-bold">Easy to Use</h5>
-                        <p>With simplified navigation and clear instructions, patients can easily connect with doctors, monitor their health progress, and get the support they need with confidence and convenience.</p>
+                            <h5 className="text-lg font-bold">Easy to Use</h5>
+                            <p>With simplified navigation and clear instructions, patients can easily connect with doctors, monitor their health progress, and get the support they need with confidence and convenience.</p>
                         </div>
                     </div>
                 <div  className="border shadow-lg flex flex-col overflow-hidden items-center rounded-3xl space-y-2">

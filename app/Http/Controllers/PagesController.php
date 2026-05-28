@@ -8,17 +8,17 @@ use Inertia\Inertia;
 class PagesController extends Controller {
 
 
-    function index(){
+    function index(\Spatie\Honeypot\Honeypot $honeypot){
         // [$status, $message, ['categories' => $categories]] = (new ApiService)->allTests();
 
         $faqs = config('content.faqs');
 
         $testimonials = config('content.testimonials');
         $hospitals = collect(config('content.hospitals'))->whereNotNull('logo')->values()->toArray();
-
+        
         // $activeItems = explode(',', env('ACTIVE_PACKAGES'));
         // $categories = array_values(collect($categories)->whereIn('category_name', $activeItems)->toArray());
-        return Inertia::render('Welcome', compact(['faqs', 'hospitals', 'testimonials']));
+        return Inertia::render('Welcome', compact(['faqs', 'hospitals', 'honeypot', 'testimonials']));
     }
 
     function about(){

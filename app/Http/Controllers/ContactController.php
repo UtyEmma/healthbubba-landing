@@ -2,21 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\ValidateEmail;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
+use TimeHunter\LaravelGoogleReCaptchaV3\Facades\GoogleReCaptchaV3;
 
 class ContactController extends Controller
 {
-    function index() {
-        return Inertia::render('Contact');
+    private const RECAPTCHA_ACTION = 'contact_us';
+
+    private const RECAPTCHA_SCORE_THRESHOLD = 0.5;
+
+    function index(\Spatie\Honeypot\Honeypot $honeypot) {
+        return Inertia::render('Contact', compact('honeypot'));
     }
     
-    function sendMessage(Request $request) {
+    function sendMessage(Request $request, ) {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'email' => ['required', 'email', new ValidateEmail],
             'phone' => 'required|numeric',
-            'message' => 'required|string'
+            'message' => 'required|string',
+            'g-recaptcha-response' => [
+                'required',
+                'string',
+                function ($attribute, $value, $fail) use ($request) {
+                    $response = GoogleReCaptchaV3::setScore(self::RECAPTCHA_SCORE_THRESHOLD)
+                        ->setAction(self::RECAPTCHA_ACTION)
+                        ->verifyResponse($value, $request->getClientIp());
+
+                    if (! $response->isSuccess()) {
+                        $fail('We could not verify that you are human. Please try again.');
+                    }
+                },
+            ],
         ]);
 
         $emails = explode(',', env("CONTACT_EMAILS"));

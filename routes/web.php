@@ -16,6 +16,7 @@ use App\Http\Controllers\PractitionersController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\VerifiedEmail;
 use Illuminate\Support\Facades\Route;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
 
@@ -59,7 +60,9 @@ Route::get('/download', [PagesController::class, 'download'])->name('download');
 
 Route::prefix('contact')->group(function(){
     Route::get('', [ContactController::class, 'index'])->name('contact');
-    Route::post('send-message', [ContactController::class, 'sendMessage'])->name('send-message');
+    Route::post('send-message', [ContactController::class, 'sendMessage'])
+        ->middleware(ProtectAgainstSpam::class)
+        ->name('send-message');
 });
 
 Route::prefix('packages')->group(function(){
