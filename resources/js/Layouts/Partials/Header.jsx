@@ -179,8 +179,8 @@ const PatientsMenu = () => {
 
     return (
         <header className='absolute w-full bg-transparent top-0 z-[50]'>
-            <div className="hidden lg:grid max-w-4xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
-                <div className="col-span-4">
+            <div className="hidden lg:flex max-w-4xl mx-auto py-4 gap-x-5 grid-cols-6 text-[14px]">
+                <div className="flex-1">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex items-center justify-between">
                         <div>
                             <Link href={route('home')}>
@@ -253,7 +253,7 @@ const PatientsMenu = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-2">
+                <div className="">
                     <div className="rounded-2xl bg-secondary p-1 shadow-xl shadow-[#0000001A] flex space-x-2 justify-between items-center relative">
                         <div>
                             <Menu>
