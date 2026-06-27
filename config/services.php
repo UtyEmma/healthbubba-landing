@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'facebook' => [
+        'pixel_id' => env('FACEBOOK_PIXEL_ID'),
+    ],
+
+    'twitter' => [
+        'pixel_id' => env('TWITTER_PIXEL_ID'),
+    ],
+
 ];

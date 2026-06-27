@@ -65,13 +65,13 @@ Route::prefix('contact')->group(function(){
         ->name('send-message');
 });
 
-Route::prefix('packages')->group(function(){
-    Route::get('/', [PackageController::class, 'index'])->name('packages');
+// Route::prefix('packages')->group(function(){
+//     Route::get('/', [PackageController::class, 'index'])->name('packages');
 
-    Route::prefix('{package?}')->group(function(){
-        Route::get('', [PackageController::class, 'show'])->name('packages.detail');
-    });
-});
+//     Route::prefix('{package?}')->group(function(){
+//         Route::get('', [PackageController::class, 'show'])->name('packages.detail');
+//     });
+// });
 
 Route::get('/privacy-policy', [PagesController::class, 'policy'])->name('privacy-policy');
 
@@ -79,9 +79,9 @@ Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 Route::get('/cancellation-policy', [PagesController::class, 'cancellationPolicy'])->name('cancellation-policy');
 Route::get('/data-deletion', [PagesController::class, 'dataDeletion'])->name('data-deletion');
 
-Route::prefix('medications')->group(function(){
-    Route::get('', [PagesController::class, 'medications'])->name('shop');
-});
+// Route::prefix('medications')->group(function(){
+//     Route::get('', [PagesController::class, 'medications'])->name('shop');
+// });
 
 Route::prefix('blog')->group(function(){
     Route::get('', [BlogController::class, 'index'])->name('blog');
@@ -89,7 +89,7 @@ Route::prefix('blog')->group(function(){
         Route::get('', [BlogController::class, 'show'])->name('blog.show');
     });
 });
-
+    
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
 
 Route::post('subscribe', [EmailSubscriptionController::class, 'subscribe'])->name('email.subscribe');

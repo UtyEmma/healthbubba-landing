@@ -49,6 +49,7 @@
         </script>
 
         @include('pixel')
+        @include('twitter-tracking')
 
         
         <script src="https://www.google.com/recaptcha/api.js?render={{ config('googlerecaptchav3.site_key') }}"></script>

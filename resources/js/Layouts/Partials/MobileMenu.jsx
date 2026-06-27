@@ -49,7 +49,7 @@ export const MobileMenu = () => {
                                     </Disclosure>
                                     
                                     <Disclose show={!is_practitioner}>
-                                        <Disclosure >
+                                        {/* <Disclosure >
                                             <Disclosure.Button className='w-full group p-3 flex justify-between items-center'>
                                                 <p>Services</p>
                                                 <ChevronRightIcon className='w-5 transition-all duration-300 group-data-[headlessui-state=open]:rotate-90' />
@@ -68,7 +68,7 @@ export const MobileMenu = () => {
                                                     Order Medications
                                                 </Link>
                                             </Disclosure.Panel>
-                                        </Disclosure>
+                                        </Disclosure> */}
 
                                         <div role='button' onClick={() => {
                                             close();

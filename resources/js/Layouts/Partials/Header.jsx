@@ -194,7 +194,7 @@ const PatientsMenu = () => {
                             <li>
                                 <Link href={`${route('faqs')}`}>FAQs</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Menu >
                                     <Menu.Button  className={'flex items-center'}>
                                     Services <ChevronDownIcon className='ms-1 w-4 h-4' />
@@ -220,7 +220,7 @@ const PatientsMenu = () => {
                                         </Menu.Item>
                                     </Menu.Items>
                                 </Menu>
-                            </li>
+                            </li> */}
                             <li>
                                 <button onClick={open} >Download</button>
                             </li>
@@ -277,7 +277,7 @@ const PatientsMenu = () => {
                             </Menu>
                         </div>
 
-                        <Separator className='w-2 h-auto' />
+                        {/* <Separator className='w-2 h-auto' />
 
                         <div>
                             <Link href={route('cart')} className="btn btn-white w-auto relative">
@@ -288,7 +288,7 @@ const PatientsMenu = () => {
                                     }
                                 </div>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

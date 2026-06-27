@@ -89,14 +89,14 @@ export default function ({className = 'bg-gradient-to-br from-primary-100 to-pri
                     <Card >
                         <form className='space-y-5' onSubmit={submit}>
                             <div className='space-y-1'>
-                                <label class={'font-medium'}>Name</label>
-                                <input class={'form-control'} value={form.data.name} onChange={(event) => form.setData('name', event.currentTarget.value)}  placeholder='Name' />
+                                <label className={'font-medium'}>Name</label>
+                                <input className={'form-control'} value={form.data.name} onChange={(event) => form.setData('name', event.currentTarget.value)}  placeholder='Name' />
                                 <InputError error={form.errors.name} />
                             </div>
 
                             <div className='space-y-1'>
-                                <label class={'font-medium'}>Email Address</label>
-                                <input type="email" class={'form-control'} value={form.data.email} onChange={(event) => form.setData('email', event.currentTarget.value)} placeholder='Email Address' />
+                                <label className={'font-medium'}>Email Address</label>
+                                <input type="email" className={'form-control'} value={form.data.email} onChange={(event) => form.setData('email', event.currentTarget.value)} placeholder='Email Address' />
                                 <InputError error={form.errors.email} />
                             </div>
 
@@ -118,13 +118,13 @@ export default function ({className = 'bg-gradient-to-br from-primary-100 to-pri
                             </Disclose>
 
                             <div className='space-y-1'>
-                                <label class={'font-medium'}>Phone Number</label>
-                                <input type="tel" class={'form-control'} value={form.data.phone} onChange={(event) => form.setData('phone', event.currentTarget.value)} placeholder='Phone Number' />
+                                <label className={'font-medium'}>Phone Number</label>
+                                <input type="tel" className={'form-control'} value={form.data.phone} onChange={(event) => form.setData('phone', event.currentTarget.value)} placeholder='Phone Number' />
                                 <InputError error={form.errors.phone} />
                             </div>
 
                             <div className='space-y-1'>
-                                <label class={'font-medium'}>Message</label>
+                                <label className={'font-medium'}>Message</label>
                                 <textarea className={'form-control resize-none'} value={form.data.message} onChange={(event) => form.setData('message', event.currentTarget.value)} rows={4} placeholder='Your Message' />
                                 <InputError error={form.errors.message} />
                             </div>

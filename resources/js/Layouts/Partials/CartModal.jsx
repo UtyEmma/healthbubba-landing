@@ -44,15 +44,15 @@ export const CartModal = ({show, setShow, item, setItem}) => {
                                 </div> */}
                                 <div className="flex-1 space-y-1">
                                     <h3 className='font-semibold'>{item.name}</h3>
-                                    <div class="h-7 px-2.5 py-1 bg-white border-2 border-gray-200 rounded-[99px] shadow-sm justify-center items-center gap-2.5 inline-flex font-medium">
-                                    <div class="text-neutral-900 text-sm font-normal font-['Inter'] leading-tight">NGN {toNumber(item.price).toLocaleString()}</div>
+                                    <div className="h-7 px-2.5 py-1 bg-white border-2 border-gray-200 rounded-[99px] shadow-sm justify-center items-center gap-2.5 inline-flex font-medium">
+                                    <div className="text-neutral-900 text-sm font-normal font-['Inter'] leading-tight">NGN {toNumber(item.price).toLocaleString()}</div>
                                     </div>
                                 </div>
                             </div>
 
                             <div className='flex items-center space-x-4'>
                                 <Link href={route('cart')} onClick={close} className='btn btn-light shadow-none text-sm'>View Cart ({items.length})</Link>
-                                <Link href={route('checkout')} onClick={close} className='btn btn-primary shadow-none text-sm'>Checkout <PlayIcon class={'text-white text-opacity-70 w-5 h-5'} /></Link>
+                                <Link href={route('checkout')} onClick={close} className='btn btn-primary shadow-none text-sm'>Checkout <PlayIcon className={'text-white text-opacity-70 w-5 h-5'} /></Link>
                             </div>
                         </div>
                     </div>

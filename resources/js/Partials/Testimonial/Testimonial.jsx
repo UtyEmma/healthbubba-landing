@@ -88,69 +88,7 @@ export default function ({testimonials}) {
             <div className="md:w-4/6 min-h-[20rem] md:min-h-[30rem] overflow-hidden flex items-center h-auto">
                 <div className="md:px-0 md:p-5 relative h-auto">
                     <div className={'flex items-center md:px-5 md:space-x-3 h-auto ' + `${isLastItem ? 'justify-start' : 'justify-end'}`}>
-                        {
-                            items.map((item, index) => (
-                                <>
-                                    <Transition as='div' 
-                                        className={'duration-1000'} 
-                                        show={index == prev}  
-                                        enterFrom='translate-x-full'
-                                        enterTo='translate-x-0'
-                                        leaveFrom='translate-x-0'
-                                        leaveTo={forward ? 'scale-110 -translate-x-40' : 'translate-x-full'}
-                                        leave='absolute z-50 hidden'
-                                        key={`item-prev-${index}`}
-                                    >
-                                        <TestimonialItem 
-                                            {...item}
-                                            classes={{
-                                                message: 'line-clamp-1'
-                                            }}
-                                            index={index}
-                                            next={next}
-                                            prev={prev}
-                                            label={index == prev ? 'prev' : 'next'}
-                                            active={false}
-                                        />
-                                    </Transition>
-                                
-                                    <Transition as='div' className={'duration-1000'} 
-                                        enterFrom='translate-x-full'
-                                        enterTo='translate-x-0'
-                                        leaveFrom='translate-x-0'
-                                        leaveTo='scale-110 -translate-x-40'
-                                        leave='absolute z-50 hidden'
-                                        show={index == next} 
-                                        key={`item-next-${index}`}
-                                         >
-                                        <TestimonialItem 
-                                            {...item}
-                                            classes={{
-                                                message: 'line-clamp-1'
-                                            }}
-                                            index={index}
-                                            next={next}
-                                            prev={prev}
-                                            label={index == next ? 'next' : 'prev'}
-                                            active={false}
-                                        />
-                                    </Transition>
-                                
-                                    <Transition 
-                                        show={index == active} 
-                                        as='div'  
-                                        className={`absolute left-10 right-10 md:left-16 md:right-16 z-10 duration-1000 py-5`}
-                                        enterFrom={`${forward ? 'translate-x-full' : '-translate-x-full'} scale-0`}
-                                        enterTo='scale-100 translate-0'
-                                        leaveFrom='scale-100 translate-0'
-                                        leaveTo={`top-0 bottom-0 left-0 right-0 scale-0 ${forward ? '-translate-x-full' : ' translate-x-full'}`}
-                                        key={`item-active-${index}`}
-                                    >
-                                        <TestimonialItem {...item} active={index == active} />
-                                    </Transition>
-                                </>
-                            ))
-                        }
+                        { items.map((item, index) => <Item item={item} active={active} forward={forward} next={next} prev={prev} index={index} key={index} />) }
                     </div>
                 </div>
             </div>
@@ -170,5 +108,69 @@ export default function ({testimonials}) {
                 </button>
             </div>
         </div>
+    )
+}
+
+const Item = ({item, index, prev, next, active, forward}) => {
+    return  (
+        <>
+            <Transition as='div' 
+                className={'duration-1000'} 
+                show={index == prev}  
+                enterFrom='translate-x-full'
+                enterTo='translate-x-0'
+                leaveFrom='translate-x-0'
+                leaveTo={forward ? 'scale-110 -translate-x-40' : 'translate-x-full'}
+                leave='absolute z-50 hidden'
+                key={`item-prev-${index}`}
+            >
+                <TestimonialItem 
+                    {...item}
+                    classes={{
+                        message: 'line-clamp-1'
+                    }}
+                    index={index}
+                    next={next}
+                    prev={prev}
+                    label={index == prev ? 'prev' : 'next'}
+                    active={false}
+                />
+            </Transition>
+        
+            <Transition as='div' className={'duration-1000'} 
+                enterFrom='translate-x-full'
+                enterTo='translate-x-0'
+                leaveFrom='translate-x-0'
+                leaveTo='scale-110 -translate-x-40'
+                leave='absolute z-50 hidden'
+                show={index == next} 
+                key={`item-next-${index}`}
+                    >
+                <TestimonialItem 
+                    {...item}
+                    classes={{
+                        message: 'line-clamp-1'
+                    }}
+                    index={index}
+                    next={next}
+                    prev={prev}
+                    label={index == next ? 'next' : 'prev'}
+                    active={false}
+                />
+            </Transition>
+        
+            <Transition 
+                show={index == active} 
+                as='div'  
+                className={`absolute left-10 right-10 md:left-16 md:right-16 z-10 duration-1000 py-5`}
+                enterFrom={`${forward ? 'translate-x-full' : '-translate-x-full'} scale-0`}
+                enterTo='scale-100 translate-0'
+                leaveFrom='scale-100 translate-0'
+                leaveTo={`top-0 bottom-0 left-0 right-0 scale-0 ${forward ? '-translate-x-full' : ' translate-x-full'}`}
+                key={`item-active-${index}`}
+            >
+                <TestimonialItem {...item} active={index == active} />
+            </Transition>
+        </>
     )
 }
