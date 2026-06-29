@@ -59,6 +59,8 @@
         @viteReactRefresh
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
         @inertiaHead
+
+        {!! app(\App\Settings\GeneralSettings::class)->header_scripts !!}
     </head>
     <body class="scroll-smooth" >
         @include('partials.body')
@@ -71,5 +73,7 @@
         <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 
         {!!  GoogleReCaptchaV3::init() !!}
+
+        {!! app(\App\Settings\GeneralSettings::class)->footer_scripts !!}
     </body>
 </html>

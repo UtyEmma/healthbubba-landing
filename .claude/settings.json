@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan *)",
+      "Bash(php -l app/Filament/Pages/Settings/ScriptsSettings.php)",
+      "Bash(php -l app/Settings/GeneralSettings.php)",
+      "Bash(php -l database/settings/2026_06_29_142632_create_general_settings.php)",
+      "Bash(php artisan tinker '--execute= *)"
+    ]
+  }
+}
