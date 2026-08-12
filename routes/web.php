@@ -30,18 +30,18 @@ Route::prefix('practitioners')->group(function(){
 Route::get('frequently-asked-questions', [FaqController::class, 'index'])->name('faqs');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
-Route::prefix('register')->group(function(){
-    Route::get('', [RegisteredUserController::class, 'create'])->name('register');
-    Route::post('', [RegisteredUserController::class, 'store'])->name('register.store');
-});
+// Route::prefix('register')->group(function(){
+//     Route::get('', [RegisteredUserController::class, 'create'])->name('register');
+//     Route::post('', [RegisteredUserController::class, 'store'])->name('register.store');
+// });
 
-Route::prefix('verify-otp')->group(function(){
-    Route::get('', [VerifyOtpController::class, 'index'])->name('verify-otp');
-    Route::post('', [VerifyOtpController::class, 'store'])->name('verify-otp.store');
-});
+// Route::prefix('verify-otp')->group(function(){
+//     Route::get('', [VerifyOtpController::class, 'index'])->name('verify-otp');
+//     Route::post('', [VerifyOtpController::class, 'store'])->name('verify-otp.store');
+// });
 
 Route::prefix('login')->group(function(){
-    Route::get('', [AuthenticatedSessionController::class, 'create'])->name('login');
+    Route::permanentRedirect('', env('WEB_APP_URL'))->name('login');
     Route::post('', [AuthenticatedSessionController::class, 'store'])->name('login.store');
 });
 

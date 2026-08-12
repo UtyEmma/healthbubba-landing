@@ -1,8 +1,11 @@
 import PlayIcon from '@/Icons/PlayIcon'
 import TargetIcon from '@/Icons/TargetIcon'
+import { usePage } from '@inertiajs/react'
 import React from 'react'
 
 export default function OrderTestSection() {
+
+    const {urls} = usePage().props
     return (
         <section className="py-20">
             <div className="md:max-w-7xl mx-auto space-y-5 md:space-y-10">
@@ -57,7 +60,7 @@ export default function OrderTestSection() {
                                 </div>
                                 </div>
                                 <div className="p-5 mb-5">
-                                    <a href="#" className="btn btn-primary">Get Started <PlayIcon className={'text-white text-opacity-80 w-5 h-5'} /></a>
+                                    <a href={urls.web.login} className="btn btn-primary">Get Started <PlayIcon className={'text-white text-opacity-80 w-5 h-5'} /></a>
                                 </div>
                             </div>
                         </div>

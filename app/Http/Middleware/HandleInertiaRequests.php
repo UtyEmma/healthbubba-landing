@@ -33,7 +33,8 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         // $request->session()->get('toast') ? dd($request->session()->get('toast')) : null;
-    
+        $web_url = env('WEB_APP_URL');
+
         return [
             ...parent::share($request),
             'auth' => [
@@ -62,6 +63,11 @@ class HandleInertiaRequests extends Middleware
                     'playstore' => env('DOCTORS_APP_PLAY_URL'),
                     'appstore' => env('DOCTORS_APP_STORE_URL')
                 ],
+                'web' => [
+                    'home' => $web_url,
+                    'login' => "{$web_url}/login",
+                    'register' => "{$web_url}/register",
+                ]
             ],
             'is_practitioner' => request()->routeIs('practitioners*'),
             'ziggy' => fn () => [

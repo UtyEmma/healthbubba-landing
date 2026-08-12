@@ -9,7 +9,7 @@ export const MobileMenu = () => {
 
     const {open: openDownload} = useContext(DownloadContext)
 
-    const {is_practitioner} = usePage().props
+    const {is_practitioner, urls} = usePage().props
 
     return (
         <>
@@ -86,7 +86,7 @@ export const MobileMenu = () => {
                                             <Link className="p-3 w-full" href={`${route('blog')}`}>Blog</Link>
                                         </div>
                                         <div className='flex justify-between items-center'>
-                                            <Link className="p-3 w-full" href={route('login')}>Login</Link>
+                                            <Link className="p-3 w-full" href={urls.web.login}>Login</Link>
                                         </div>
                                     </Disclose>
 
