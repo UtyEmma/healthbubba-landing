@@ -63,7 +63,7 @@ const PractitionersMenu = () => {
                         </li>
                     </ul>
                     <div>
-                        <Link href={urls.web.home} className="btn btn-white !py-3">Get Started</Link>
+                        <a href={urls.web.home} className="btn btn-white !py-3">Get Started</a>
                         
                         <Disclose show={!!props.auth.user} >
                             <Menu >
@@ -119,11 +119,11 @@ const PractitionersMenu = () => {
 
                         <div className='flex space-x-2'>
                             <Disclose show={!!!props.auth.user && !is_practitioner} >
-                                <Link href={urls.web.register} className="btn btn-white">Sign Up</Link>
+                                <a href={urls.web.register} className="btn btn-white">Sign Up</a>
                             </Disclose>
 
                             <Disclose show={is_practitioner} >
-                                <Link href={urls.web.register} className="btn btn-white">Get Started</Link>
+                                <a href={urls.web.register} className="btn btn-white">Get Started</a>
                             </Disclose>
 
                             <Disclose show={!!props.auth.user} >
@@ -140,14 +140,14 @@ const PractitionersMenu = () => {
                                 </Menu>
                             </Disclose>
                             <Disclose as="div" show={!is_practitioner} >
-                                <Link href={urls.web.login} className="btn btn-white w-auto">
+                                <a href={urls.web.login} className="btn btn-white w-auto">
                                     <div className="relative">
                                         <CartIcon className="w-6 h-6 stroke-black" />
                                         {
                                             items.length > 0 && <div className="h-4 w-4 rounded-full bg-primary text-white text-xs flex items-center justify-center absolute -bottom-1 -right-1">{items.length}</div>
                                         }
                                     </div>
-                                </Link>
+                                </a>
                             </Disclose>
                         </div>
                     </div>
@@ -234,7 +234,7 @@ const PatientsMenu = () => {
                         </ul>
                         <div>
                             <Disclose show={!!!props.auth.user} >
-                                <Link href={props.urls.web.register} className="btn btn-white">Sign Up</Link>
+                                <a href={props.urls.web.register} className="btn btn-white">Sign Up</a>
                             </Disclose>
                             <Disclose show={!!props.auth.user} >
                                 <Menu >
@@ -302,7 +302,7 @@ const PatientsMenu = () => {
                         </div>
 
                         <div className='flex space-x-2'>
-                            <Link href={props.urls.web.register} className="btn btn-white">Sign Up</Link>
+                            <a href={props.urls.web.register} className="btn btn-white">Sign Up</a>
 
                             <Disclose show={!!props.auth.user} >
                                 <Menu >
@@ -318,14 +318,14 @@ const PatientsMenu = () => {
                                 </Menu>
                             </Disclose>
                             <div>
-                                <Link href={props.urls.web.login} className="btn btn-white w-auto">
+                                <a href={props.urls.web.login} className="btn btn-white w-auto">
                                     <div className="relative">
                                         <CartIcon className="w-6 h-6 stroke-black" />
                                         {
                                             items.length > 0 && <div className="h-4 w-4 rounded-full bg-primary text-white text-xs flex items-center justify-center absolute -bottom-1 -right-1">{items.length}</div>
                                         }
                                     </div>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>
