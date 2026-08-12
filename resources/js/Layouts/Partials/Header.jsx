@@ -63,9 +63,8 @@ const PractitionersMenu = () => {
                         </li>
                     </ul>
                     <div>
-                        <Disclose show={!!!props.auth.user} >
-                            <Link href={route('register')} className="btn btn-white !py-3">Get Started</Link>
-                        </Disclose>
+                        <Link href={urls.web.home} className="btn btn-white !py-3">Get Started</Link>
+                        
                         <Disclose show={!!props.auth.user} >
                             <Menu >
                                 <Menu.Button className="btn btn-white px-2">

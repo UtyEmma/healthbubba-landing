@@ -25,7 +25,7 @@ export default function Practitioners({ testimonials = [], features = []}) {
                         </div>
 
                         <div className="space-x-4">
-                            <Link href={'/download'} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </Link>
+                            <Link href={props.urls.web.home} target='__blank' className="btn btn-primary shadow-[#0000001A]" >Get Started <PlayIcon class={'text-white text-opacity-80 w-5 h-5'} /> </Link>
                             <Link href={route('practitioners.how-it-works')} target='__blank' className="btn bg-white shadow-[#0000001A]" >See How It Works</Link>
                         </div>
                     </div>
