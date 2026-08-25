@@ -2,7 +2,7 @@ import Button from '@/Components/Button'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { useEffect, useRef, useState } from 'react'
 
-const REGISTER_URL = 'https://web.healthbubba.com/register'
+const REGISTER_URL = import.meta.env.WHATSAPP_CONSULT_URL
 
 const WhatsAppIcon = ({ className = '' }) => (
     <svg
@@ -48,7 +48,7 @@ export const WhatsAppChatButton = () => {
     return (
         <aside
             ref={widgetRef}
-            aria-label="HealthBubba registration help"
+            aria-label="HealthBubba Whatsapp consultation"
             className="fixed bottom-5 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-8 sm:right-8"
         >
             {isOpen && (
@@ -76,7 +76,7 @@ export const WhatsAppChatButton = () => {
                             Need medical help?
                         </h2>
                         <p className="mt-1 text-sm leading-5 text-muted">
-                            Create an account to connect with a licensed healthcare professional.
+                            Speak to a doctor on WhatsApp.
                         </p>
                     </div>
 
