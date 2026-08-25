@@ -6,6 +6,7 @@ import { ScrollToTop } from './Partials/ScrollToTop';
 import CartContext from '@/Context/CartContext';
 import { Toaster } from 'react-hot-toast';
 import Toast from '@/Components/Toast';
+import { WhatsAppChatButton } from './Partials/WhatsAppChatButton';
 
 export const DownloadContext = createContext({
     status: false,
@@ -36,6 +37,7 @@ export default function ({ children, hideGap = false, ...props }) {
 
 
                     <ScrollToTop />
+                    <WhatsAppChatButton />
                     <DownloadModal />
 
                     <Toaster
