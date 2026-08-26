@@ -139,7 +139,7 @@ const PractitionersMenu = () => {
                                     </Menu.Items>
                                 </Menu>
                             </Disclose>
-                            <Disclose as="div" show={!is_practitioner} >
+                            {/* <Disclose as="div" show={!is_practitioner} >
                                 <a href={urls.web.login} className="btn btn-white w-auto">
                                     <div className="relative">
                                         <CartIcon className="w-6 h-6 stroke-black" />
@@ -148,7 +148,7 @@ const PractitionersMenu = () => {
                                         }
                                     </div>
                                 </a>
-                            </Disclose>
+                            </Disclose> */}
                         </div>
                     </div>
                 </div>
@@ -317,7 +317,7 @@ const PatientsMenu = () => {
                                     </Menu.Items>
                                 </Menu>
                             </Disclose>
-                            <div>
+                            {/* <div>
                                 <a href={props.urls.web.login} className="btn btn-white w-auto">
                                     <div className="relative">
                                         <CartIcon className="w-6 h-6 stroke-black" />
@@ -326,7 +326,7 @@ const PatientsMenu = () => {
                                         }
                                     </div>
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
