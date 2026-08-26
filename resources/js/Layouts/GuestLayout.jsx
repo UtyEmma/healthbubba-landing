@@ -25,7 +25,7 @@ export default function ({ children, hideGap = false, ...props }) {
                 open: () => setDownload(true),
                 close: () => setDownload(false)
             }}>
-                <div className={`min-h-screen relative pt-28 ${props.className ?? ''}`}>
+                <div className={`min-h-screen relative pt-20 md:pt-28 ${props.className ?? ''}`}>
 
                     <main className={`  ${hideGap ? '' : 'md:py-10'}`}>
                         <Header />

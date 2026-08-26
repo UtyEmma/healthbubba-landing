@@ -24,7 +24,7 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
     return (
         <>
             <Head title='Home' />
-            <GuestLayout className="pt-10!" hideGap >
+            <GuestLayout className="md:pt-10!" hideGap >
                 <main>
                     <HeroArea />
 

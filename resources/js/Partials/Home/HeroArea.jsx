@@ -25,7 +25,7 @@ export default function HeroArea() {
                 </div>
             </div>
 
-            <div className="my-10 mx-auto">
+            <div className="my-5 mx-auto">
                 <img src="/assets/imgs/media/banner.png" className='mx-auto' alt="haelthbubba" />
             </div>
         </section>

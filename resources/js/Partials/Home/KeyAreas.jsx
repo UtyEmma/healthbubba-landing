@@ -66,7 +66,7 @@ export default function KeyAreas() {
 
         <div key="text-about" className='lg:hidden'>
             <Marquee >
-                <div className="text-sm mx-auto py-10 px-0 justify-between overflow-x-auto gap-7 md:gap-10 flex" >
+                <div className="text-sm mx-auto py-0 px-0 justify-between overflow-x-auto gap-7 md:gap-10 flex" >
                 <div className="flex flex-col items-center justify-stretch shrink-0 text-center">
                     <div className="shadow border rounded-xl p-2 w-16 flex items-center justify-center aspect-square mb-4">
                         <img src="/assets/icons/primary-care.png" className="w-2/3" />
