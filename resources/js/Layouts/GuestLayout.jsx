@@ -35,7 +35,6 @@ export default function ({ children, hideGap = false, ...props }) {
 
                     <Footer />
 
-
                     <ScrollToTop />
                     <WhatsAppChatButton />
                     <DownloadModal />

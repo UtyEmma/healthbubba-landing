@@ -8,6 +8,7 @@ export default function WelcomeModal() {
     const [isOpen, setIsOpen] = useState(false);
 
     const close = () => {
+        window.sessionStorage.setItem('VISITOR_TYPE', type)
         setIsOpen(false);
     };
 
