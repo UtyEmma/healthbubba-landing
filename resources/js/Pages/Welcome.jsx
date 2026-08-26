@@ -14,6 +14,7 @@ import TestimonialSection from '@/Partials/Home/TestimonialSection';
 import KeyAreas from '@/Partials/Home/KeyAreas';
 import WelcomeModal from '@/Partials/Home/WelcomeModal';
 import ContactForm from '@/Partials/Contact/ContactForm';
+import SponsorAccounts from '@/Partials/Home/SponsorAccounts';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
@@ -23,12 +24,13 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
     return (
         <>
             <Head title='Home' />
-            <GuestLayout >
+            <GuestLayout className="pt-10!" hideGap >
                 <main>
                     <HeroArea />
 
                     <KeyAreas />
 
+                    <SponsorAccounts />
 
                     <PartnerPharmacies />
                     <HospitalLogosDisplay />

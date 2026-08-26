@@ -21,6 +21,9 @@
         @apply bg-primary rounded-lg overflow-hidden text-white ring-2 ring-primary shadow-lg shadow-primary-200  hover:shadow-none
     }
 
+    
+    
+
     .btn-light {
         @apply bg-gray-100 overflow-hidden rounded-lg font-semibold text-muted ring-2 ring-gray-200 shadow-lg shadow-gray-200  hover:shadow-none
     }
@@ -31,6 +34,25 @@
     }
 
     .btn-primary::before {
+        content: '';
+        @apply bg-white absolute top-0 left-0 right-0 bottom-[50%] bg-opacity-10
+    }
+
+    .btn-purple {
+        @apply bg-[#7a2bd0] overflow-hidden text-white ring-2 ring-[#7a2bd0] shadow-lg shadow-purple-200 hover:shadow-none
+    }
+
+    .btn-blue {
+        @apply bg-[#1478ee] overflow-hidden text-white ring-2 ring-[#1478ee] shadow-lg shadow-blue-200 hover:shadow-none
+    }
+
+    .btn-green {
+        @apply bg-[#079e55] overflow-hidden text-white ring-2 ring-[#079e55] shadow-lg shadow-green-200 hover:shadow-none
+    }
+
+    .btn-purple::before,
+    .btn-blue::before,
+    .btn-green::before {
         content: '';
         @apply bg-white absolute top-0 left-0 right-0 bottom-[50%] bg-opacity-10
     }

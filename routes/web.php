@@ -29,6 +29,7 @@ Route::prefix('practitioners')->group(function(){
 
 Route::get('frequently-asked-questions', [FaqController::class, 'index'])->name('faqs');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
+Route::get('/sponsor-accounts', [PagesController::class, 'sponsorAccounts'])->name('sponsor-accounts');
 
 // Route::prefix('register')->group(function(){
 //     Route::get('', [RegisteredUserController::class, 'create'])->name('register');

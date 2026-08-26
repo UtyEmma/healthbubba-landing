@@ -67,7 +67,10 @@ class HandleInertiaRequests extends Middleware
                     'home' => $web_url,
                     'login' => "{$web_url}/login",
                     'register' => "{$web_url}/register",
-                ]
+                ],
+                'whatsapp' => env('WHATSAPP_CONSULT_URL'),
+                'whatsapp_support' => env('WHATSAPP_SUPPORT_URL'),
+                'sponsors' => env('SPONSORS_URL'),
             ],
             'is_practitioner' => request()->routeIs('practitioners*'),
             'ziggy' => fn () => [

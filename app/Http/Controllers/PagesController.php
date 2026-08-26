@@ -26,6 +26,10 @@ class PagesController extends Controller {
         return Inertia::render('About', compact('testimonials'));
     }
 
+    function sponsorAccounts(){
+        return Inertia::render('SponsorAccounts');
+    }
+
     function download(){
         $testimonials = config('content.testimonials');
         return Inertia::render('Download', compact('testimonials'));

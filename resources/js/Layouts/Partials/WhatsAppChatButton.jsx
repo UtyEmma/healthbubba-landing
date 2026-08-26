@@ -1,8 +1,7 @@
 import Button from '@/Components/Button'
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import { usePage } from '@inertiajs/react'
 import { useEffect, useRef, useState } from 'react'
-
-const REGISTER_URL = import.meta.env.WHATSAPP_CONSULT_URL
 
 const WhatsAppIcon = ({ className = '' }) => (
     <svg
@@ -22,6 +21,8 @@ const WhatsAppIcon = ({ className = '' }) => (
 export const WhatsAppChatButton = () => {
     const [isOpen, setIsOpen] = useState(true)
     const widgetRef = useRef(null)
+
+    const {urls} = usePage().props
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -80,7 +81,7 @@ export const WhatsAppChatButton = () => {
                         </p>
                     </div>
 
-                    <a href={REGISTER_URL} target='__blank' className='pt-2'>
+                    <a href={urls.whatsapp} target='__blank' className='pt-2'>
                         <Button className='btn-primary py-2 w-full '>
                             Get Started
                         </Button>
