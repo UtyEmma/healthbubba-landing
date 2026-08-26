@@ -11,19 +11,31 @@ import { WhatsAppChatButton } from './Partials/WhatsAppChatButton';
 export const DownloadContext = createContext({
     status: false,
     open: () => {},
-    close: () => {}
+    close: () => {},
+    whatsapp: false,
+    onCloseWelcome: () => {},
+    setWhatsApp: () => {}
 })
 
 export default function ({ children, hideGap = false, ...props }) {
 
     const [download, setDownload] = useState(false)
+    const [whatsapp, setWhatsApp] = useState(false)
+
+    const onCloseWelcome = () => {
+        setWhatsApp(true)
+    }
+    
 
     return (
         <CartContext>
             <DownloadContext.Provider value={{
                 status: download,
                 open: () => setDownload(true),
-                close: () => setDownload(false)
+                close: () => setDownload(false),
+                onCloseWelcome,
+                whatsapp,
+                setWhatsApp
             }}>
                 <div className={`min-h-screen relative pt-20 md:pt-28 ${props.className ?? ''}`}>
 

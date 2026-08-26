@@ -1,15 +1,22 @@
 import Button from "@/Components/Button";
+import { DownloadContext } from "@/Layouts/GuestLayout";
 import { Dialog } from "@headlessui/react";
 import { PlayIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { router } from "@inertiajs/react";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 
 export default function WelcomeModal() {
     const [isOpen, setIsOpen] = useState(false);
 
+    const {onCloseWelcome} = useContext(DownloadContext)
+
     const close = () => {
         window.sessionStorage.setItem('VISITOR_TYPE', 'home')
         setIsOpen(false);
+
+        setTimeout(() => {
+            onCloseWelcome()
+        }, 3000)
     };
 
 	const [type, setType] = useState('')

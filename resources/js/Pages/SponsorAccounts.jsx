@@ -1,3 +1,4 @@
+import Underline from '@/Components/underline'
 import GuestLayout from '@/Layouts/GuestLayout'
 import { Head, Link, usePage } from '@inertiajs/react'
 import { useState } from 'react'
@@ -97,7 +98,10 @@ export default function SponsorAccounts() {
                 <main className="mx-auto max-w-7xl pb-8 px-2">
                     <section className="px-2 pb-7 md:pt-3 text-center sm:pb-9">
                         <h1 className="text-4xl font-bold md:leading-loose sm:text-6xl">
-                            Sponsor healthcare.  Make a <span className="relative inline-block text-[#079e55]">real impact.<span className="absolute -bottom-2 left-0 h-1 w-full rounded-full bg-[#079e55]" aria-hidden="true" /></span>
+                            Sponsor healthcare.  Make a <span className='relative text-primary'>real impact. <Underline className={'absolute -bottom-4 md:-bottom-7 left-2 right-2'} /> </span>
+                            {/* <span className="relative inline-block text-[#079e55]">real impact.
+                                <span className="absolute -bottom-2 left-0 h-1 w-full rounded-full bg-[#079e55]" aria-hidden="true" />
+                                </span> */}
                         </h1>
                         <p className="mx-auto mt-8 max-w-2xl leading-6 text-[#58657a] sm:text-lg sm:leading-7">
                             Choose the type of sponsor account that fits your purpose.

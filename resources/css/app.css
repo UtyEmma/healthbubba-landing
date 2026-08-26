@@ -86,3 +86,7 @@
         @apply shadow md:p-5 p-4 rounded-xl border border-gray-200 shadow-gray-100
     }
 }
+
+.grecaptcha-badge {
+    display: none !important;
+}

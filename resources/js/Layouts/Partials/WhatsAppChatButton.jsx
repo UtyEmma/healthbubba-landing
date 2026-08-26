@@ -1,7 +1,8 @@
 import Button from '@/Components/Button'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { usePage } from '@inertiajs/react'
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef } from 'react'
+import { DownloadContext } from '../GuestLayout'
 
 const WhatsAppIcon = ({ className = '' }) => (
     <svg
@@ -19,21 +20,26 @@ const WhatsAppIcon = ({ className = '' }) => (
 )
 
 export const WhatsAppChatButton = () => {
-    const [isOpen, setIsOpen] = useState(true)
     const widgetRef = useRef(null)
 
     const {urls} = usePage().props
 
+    const {whatsapp, setWhatsApp} = useContext(DownloadContext)
+
     useEffect(() => {
+        if(window.sessionStorage.getItem('VISITOR_TYPE')) {
+            setWhatsApp(true)
+        }
+
         const handleKeyDown = (event) => {
             if (event.key === 'Escape') {
-                setIsOpen(false)
+                setWhatsApp(false)
             }
         }
 
         const handlePointerDown = (event) => {
             if (widgetRef.current && !widgetRef.current.contains(event.target)) {
-                setIsOpen(false)
+                setWhatsApp(false)
             }
         }
 
@@ -52,12 +58,12 @@ export const WhatsAppChatButton = () => {
             aria-label="HealthBubba Whatsapp consultation"
             className="fixed bottom-5 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-8 sm:right-8"
         >
-            {isOpen && (
+            {whatsapp && (
                 <div
                     id="whatsapp-registration-popover"
                     role="dialog"
                     aria-labelledby="whatsapp-registration-title"
-                    className="relative w-[min(19rem,calc(100vw-2rem))] rounded-2xl border border-gray-100 bg-white p-4 shadow-[0_12px_35px_rgba(0,0,0,0.16)]"
+                    className="relative rounded-2xl border border-gray-100 bg-white p-3 pr-2 shadow-[0_12px_35px_rgba(0,0,0,0.16)]"
                 >
                     <span
                         aria-hidden="true"
@@ -66,7 +72,7 @@ export const WhatsAppChatButton = () => {
                     <button
                         type="button"
                         aria-label="Close registration help"
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => setWhatsApp(false)}
                         className="absolute right-3 top-3 rounded-full p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                     >
                         <XMarkIcon className="size-5" />
@@ -91,10 +97,10 @@ export const WhatsAppChatButton = () => {
 
             <button
                 type="button"
-                aria-label={isOpen ? 'Close registration help' : 'Open registration help'}
-                aria-expanded={isOpen}
+                aria-label={whatsapp ? 'Close registration help' : 'Open registration help'}
+                aria-expanded={whatsapp}
                 aria-controls="whatsapp-registration-popover"
-                onClick={() => setIsOpen((open) => !open)}
+                onClick={() => setWhatsApp((open) => !open)}
                 className="flex size-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_25px_rgba(37,211,102,0.38)] transition hover:-translate-y-0.5 hover:bg-[#20bd5a] hover:shadow-[0_12px_30px_rgba(37,211,102,0.48)] focus-visible:ring-4 focus-visible:ring-[#25D366]/30 focus-visible:ring-offset-2 active:translate-y-0"
             >
                 <WhatsAppIcon className="size-9" />
