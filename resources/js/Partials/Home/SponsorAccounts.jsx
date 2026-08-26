@@ -84,14 +84,14 @@ export default function SponsorAccounts() {
                                 />
                             </svg>
                         </a>
-                        <p className="mt-2 text-center text-sm text-muted">
+                        <p className="mt-4 text-center text-sm text-muted">
                             Already have a Sponsor Account?{" "}
                             <a href={urls.sponsors} className="font-semibold text-[#079447] hover:underline">Sign In</a>
                         </p>
                     </div>
                 </div>
 
-                <div className="relative">
+                <div className="relative pt-5">
                     <div className="grid grid-cols-1 gap-3 items-center sm:grid-cols-3 sm:gap-4">
                         {accountTypes.map((account) => (
                             <article

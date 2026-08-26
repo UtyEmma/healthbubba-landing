@@ -94,9 +94,9 @@ export default function SponsorAccounts() {
         <>
             <Head title="Sponsor Accounts" />
             <GuestLayout >
-                <main className="mx-auto max-w-7xl pb-8">
-                    <section className="px-2 pb-7 pt-3 text-center sm:pb-9">
-                        <h1 className="text-5xl font-bold leading-loose sm:text-6xl">
+                <main className="mx-auto max-w-7xl pb-8 px-2">
+                    <section className="px-2 pb-7 md:pt-3 text-center sm:pb-9">
+                        <h1 className="text-4xl font-bold md:leading-loose sm:text-6xl">
                             Sponsor healthcare.  Make a <span className="relative inline-block text-[#079e55]">real impact.<span className="absolute -bottom-2 left-0 h-1 w-full rounded-full bg-[#079e55]" aria-hidden="true" /></span>
                         </h1>
                         <p className="mx-auto mt-8 max-w-2xl leading-6 text-[#58657a] sm:text-lg sm:leading-7">
@@ -109,20 +109,20 @@ export default function SponsorAccounts() {
                         {sponsorAccounts.map((account) => (
                             <article key={account.name} className="rounded-2xl border border-[#e4e9ed] bg-white p-5 shadow-[0_3px_12px_rgba(17,36,55,0.05)] sm:p-6">
                                 <div className="grid gap-6 md:grid-cols-[1.5fr_1fr_1fr] md:items-center">
-                                    <div className="flex md:items-center gap-5 md:border-r md:border-[#d9e1e8] md:pr-7">
+                                    <div className="flex flex-col md:flex-row md:items-center gap-5 md:border-r md:border-[#d9e1e8] md:pr-7">
                                         <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-xl lg:h-28 lg:w-28" style={{ backgroundColor: account.softColor }}>
                                             <SponsorIcon type={account.icon} color={account.color} />
                                         </div>
 
                                         <div>
                                             <h2 className="text-xl font-bold sm:text-2xl">{account.name}</h2>
-                                            <p className="mt-2 font-bold leading-6" style={{ color: account.color }}>{account.tagline}</p>
-                                            <p className="mt-4 text-sm leading-6 text-[#58657a]">{account.description}</p>
+                                            <p className="mt-1 font-semibold leading-6" style={{ color: account.color }}>{account.tagline}</p>
+                                            <p className="mt-2 text-sm leading-6 text-[#58657a]">{account.description}</p>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <h3 className="mb-3 text-sm font-bold sm:text-base">How it works</h3>
+                                        <h3 className="mb-2 font-bold">How it works</h3>
                                         <ol className="space-y-2">
                                             {account.steps.map((step, index) => (
                                                 <li key={step} className="flex items-center gap-3 text-sm text-[#58657a]">
