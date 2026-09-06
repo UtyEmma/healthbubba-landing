@@ -65,7 +65,7 @@ export default function SponsorAccounts() {
         <section className="mx-auto max-w-7xl md:px-2 py-5 sm:px-4 md:py-10" aria-labelledby="sponsor-accounts-title" >
             <div className="overflow-hidden md:rounded-2xl border border-[#dce9df] bg-[#f7fbf8] px-2 md:px-5 py-6 shadow-[0_8px_24px_rgba(25,79,48,0.07)] sm:px-7 lg:grid lg:grid-cols-[1.25fr_2fr] lg:items-stretch lg:gap-8 lg:px-10 lg:py-7">
                 <div className="flex flex-col justify-center px-2 text-center md:text-left">
-                    <h2 id="sponsor-accounts-title" className="md:text-3xl text-3xl gap-3 tracking-tight leading-tight font-bold" >
+                    <h2 id="sponsor-accounts-title" className="md:text-3xl text-3xl gap-3 tracking-tight inline-flex leading-tight font-bold" >
                         <span className="text-primary relative">Sponsor <Underline className={'absolute -bottom-1 left-2 right-2'} /></span> healthcare for the people who matter.
                     </h2>
                     <p className="mt-3  leading-6 text-muted">Provide healthcare access for your family, employees, communities, large groups or beneficiaries through Health Bubba.</p>
