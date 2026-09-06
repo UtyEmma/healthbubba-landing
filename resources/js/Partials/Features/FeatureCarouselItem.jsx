@@ -1,3 +1,5 @@
+import AppStoreButton from '@/Components/Buttons/AppStoreButton';
+import PlaystoreButton from '@/Components/Buttons/PlaystoreButton';
 import { ChevronLeftIcon, ChevronRightIcon, PlayIcon } from '@heroicons/react/24/solid'
 import { Link } from '@inertiajs/react'
 import React, { useMemo } from 'react'
@@ -17,7 +19,7 @@ export default function FeatureCarouselItem({title, next, prev, stopAutoplay, de
     return (
         <div className="rounded-xl border-[3px] mx-auto bg-white border-gray-200" >
             <div className="pb-4 pt-3 px-3 md:px-5  border-b border-gray-200">
-                <div className='flex px-2...........\...., space-x-1'>
+                <div className='flex px-2 space-x-1'>
                     <div className="size-2 rounded-full bg-[#FF0000]"></div>
                     <div className="size-2 rounded-full bg-[rgb(0,128,0)]"></div>
                     <div className="size-2 rounded-full bg-[#FF8000]"></div>
@@ -50,7 +52,10 @@ export default function FeatureCarouselItem({title, next, prev, stopAutoplay, de
                 </div>
             </div>
             <div className='flex justify-center py-5'>
-                <Link href='/download' className='btn btn-primary'>Download App <PlayIcon className='text-white text-opacity-80 w-5 h-5' /></Link>
+                <div className="flex flex-wrap gap-4">
+                    <PlaystoreButton type='doctor' />
+                    <AppStoreButton type='doctor' />
+                </div>
             </div>
         </div>
     )

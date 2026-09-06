@@ -4,7 +4,7 @@ import { usePage } from '@inertiajs/react'
 import { useContext, useEffect, useRef } from 'react'
 import { DownloadContext } from '../GuestLayout'
 
-const WhatsAppIcon = ({ className = '' }) => (
+export const WhatsAppIcon = ({ className = '' }) => (
     <svg
         aria-hidden="true"
         className={className}
@@ -37,18 +37,18 @@ export const WhatsAppChatButton = () => {
             }
         }
 
-        const handlePointerDown = (event) => {
+        const handleClickOutside = (event) => {
             if (widgetRef.current && !widgetRef.current.contains(event.target)) {
                 setWhatsApp(false)
             }
         }
 
         document.addEventListener('keydown', handleKeyDown)
-        document.addEventListener('pointerdown', handlePointerDown)
+        document.addEventListener('click', handleClickOutside)
 
         return () => {
             document.removeEventListener('keydown', handleKeyDown)
-            document.removeEventListener('pointerdown', handlePointerDown)
+            document.removeEventListener('click', handleClickOutside)
         }
     }, [])
 
@@ -63,33 +63,31 @@ export const WhatsAppChatButton = () => {
                     id="whatsapp-registration-popover"
                     role="dialog"
                     aria-labelledby="whatsapp-registration-title"
-                    className="relative rounded-2xl border border-gray-100 bg-white p-3 pr-2 shadow-[0_12px_35px_rgba(0,0,0,0.16)]"
+                    className="relative rounded-2xl border border-gray-100 bg-white w-2/3 p-3 shadow-[0_12px_35px_rgba(0,0,0,0.16)]"
                 >
                     <span
                         aria-hidden="true"
                         className="absolute -bottom-2 right-6 size-4 rotate-45 border-b border-r border-gray-100 bg-white"
                     />
-                    <button
+                    {/* <button
                         type="button"
                         aria-label="Close registration help"
                         onClick={() => setWhatsApp(false)}
                         className="absolute right-3 top-3 rounded-full p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                     >
                         <XMarkIcon className="size-5" />
-                    </button>
+                    </button> */}
 
-                    <div className="pr-8 mb-4">
-                        <h2 id="whatsapp-registration-title" className="text-base font-bold leading-tight text-gray-900">
-                            Need medical help?
-                        </h2>
+                    <div className=" mb-4">
+                        <h2 id="whatsapp-registration-title" className="text-base font-semibold leading-tight text-gray-900">Speak to a doctor in minutes</h2>
                         <p className="mt-1 text-sm leading-5 text-muted">
-                            Speak to a doctor on WhatsApp.
+                            Simply send "Hi" on WhatsApp and follow the prompts.
                         </p>
                     </div>
 
                     <a href={urls.whatsapp} target='__blank' className='pt-2'>
                         <Button className='btn-primary py-2 w-full '>
-                            Get Started
+                            Start Instant Consultation
                         </Button>
                     </a>
                 </div>

@@ -15,6 +15,7 @@ import KeyAreas from '@/Partials/Home/KeyAreas';
 import WelcomeModal from '@/Partials/Home/WelcomeModal';
 import ContactForm from '@/Partials/Contact/ContactForm';
 import SponsorAccounts from '@/Partials/Home/SponsorAccounts';
+import WhatsAppCta from '@/Partials/Home/WhatsAppCta';
 
 export default function Welcome({ categories, faqs = [], testimonials = [] }) {
 
@@ -28,6 +29,7 @@ export default function Welcome({ categories, faqs = [], testimonials = [] }) {
                 <main>
                     <HeroArea />
 
+                    <WhatsAppCta />
                     <KeyAreas />
 
                     <SponsorAccounts />
