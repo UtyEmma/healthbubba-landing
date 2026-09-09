@@ -71,6 +71,7 @@ class HandleInertiaRequests extends Middleware
                 'whatsapp' => env('WHATSAPP_CONSULT_URL'),
                 'whatsapp_support' => env('WHATSAPP_SUPPORT_URL'),
                 'sponsors' => env('SPONSORS_URL'),
+                'sponsors_login' => env('SPONSORS_URL_LOGIN'),
             ],
             'is_practitioner' => request()->routeIs('practitioners*'),
             'ziggy' => fn () => [

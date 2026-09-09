@@ -85,7 +85,7 @@ export default function SponsorAccounts() {
                         </a>
                         <p className="mt-4 text-center text-sm text-muted">
                             Already have a Sponsor Account?{" "}
-                            <a href={urls.sponsors} className="font-semibold text-[#079447] hover:underline">Sign In</a>
+                            <a href={urls.sponsors_login} className="font-semibold text-[#079447] hover:underline">Sign In</a>
                         </p>
                     </div>
                 </div>
