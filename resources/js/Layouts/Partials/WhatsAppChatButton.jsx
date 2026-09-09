@@ -1,8 +1,4 @@
-import Button from '@/Components/Button'
-import { XMarkIcon } from '@heroicons/react/24/solid'
 import { usePage } from '@inertiajs/react'
-import { useContext, useEffect, useRef } from 'react'
-import { DownloadContext } from '../GuestLayout'
 
 export const WhatsAppIcon = ({ className = '' }) => (
     <svg
@@ -20,89 +16,47 @@ export const WhatsAppIcon = ({ className = '' }) => (
 )
 
 export const WhatsAppChatButton = () => {
-    const widgetRef = useRef(null)
-
-    const {urls} = usePage().props
-
-    const {whatsapp, setWhatsApp} = useContext(DownloadContext)
-
-    useEffect(() => {
-        if(window.sessionStorage.getItem('VISITOR_TYPE')) {
-            setWhatsApp(true)
-        }
-
-        const handleKeyDown = (event) => {
-            if (event.key === 'Escape') {
-                setWhatsApp(false)
-            }
-        }
-
-        const handleClickOutside = (event) => {
-            if (widgetRef.current && !widgetRef.current.contains(event.target)) {
-                setWhatsApp(false)
-            }
-        }
-
-        document.addEventListener('keydown', handleKeyDown)
-        document.addEventListener('click', handleClickOutside)
-
-        return () => {
-            document.removeEventListener('keydown', handleKeyDown)
-            document.removeEventListener('click', handleClickOutside)
-        }
-    }, [])
+    const { urls } = usePage().props
 
     return (
         <aside
-            ref={widgetRef}
-            aria-label="HealthBubba Whatsapp consultation"
-            className="fixed bottom-5 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-8 sm:right-8"
+            aria-label="HealthBubba WhatsApp consultation"
+            className="fixed bottom-5 right-2 z-[60] flex flex-col items-center gap-3 sm:bottom-8 sm:right-8"
         >
-            {whatsapp && (
-                <div
-                    id="whatsapp-registration-popover"
-                    role="dialog"
-                    aria-labelledby="whatsapp-registration-title"
-                    className="relative rounded-2xl border border-gray-100 bg-white w-2/3 p-3 shadow-[0_12px_35px_rgba(0,0,0,0.16)]"
-                >
-                    <span
-                        aria-hidden="true"
-                        className="absolute -bottom-2 right-6 size-4 rotate-45 border-b border-r border-gray-100 bg-white"
-                    />
-                    {/* <button
-                        type="button"
-                        aria-label="Close registration help"
-                        onClick={() => setWhatsApp(false)}
-                        className="absolute right-3 top-3 rounded-full p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    >
-                        <XMarkIcon className="size-5" />
-                    </button> */}
-
-                    <div className=" mb-4">
-                        <h2 id="whatsapp-registration-title" className="text-base font-semibold leading-tight text-gray-900">Speak to a doctor in minutes</h2>
-                        <p className="mt-1 text-sm leading-5 text-muted">
-                            Simply send "Hi" on WhatsApp and follow the prompts.
-                        </p>
-                    </div>
-
-                    <a href={urls.whatsapp} target='__blank' className='pt-2'>
-                        <Button className='btn-primary py-2 w-full '>
-                            Start Instant Consultation
-                        </Button>
-                    </a>
-                </div>
-            )}
-
-            <button
-                type="button"
-                aria-label={whatsapp ? 'Close registration help' : 'Open registration help'}
-                aria-expanded={whatsapp}
-                aria-controls="whatsapp-registration-popover"
-                onClick={() => setWhatsApp((open) => !open)}
-                className="flex size-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_25px_rgba(37,211,102,0.38)] transition hover:-translate-y-0.5 hover:bg-[#20bd5a] hover:shadow-[0_12px_30px_rgba(37,211,102,0.48)] focus-visible:ring-4 focus-visible:ring-[#25D366]/30 focus-visible:ring-offset-2 active:translate-y-0"
+            <div
+                id="whatsapp-chat-tooltip"
+                role="tooltip"
+                className="relative whitespace-nowrap rounded-lg bg-[#00b881] px-3 py-2 text-xs font-medium text-white shadow-[0_4px_16px_rgba(0,184,129,0.2)]"
             >
-                <WhatsAppIcon className="size-9" />
-            </button>
+                Speak to a doctor
+                <span
+                    aria-hidden="true"
+                    className="absolute -bottom-1 left-1/2 size-2 -translate-x-1/2 rotate-45 bg-[#00b881]"
+                />
+            </div>
+            <div className="relative">
+                <svg
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -left-6 top-3 h-10 w-5 text-[#00b881]"
+                    fill="none"
+                    viewBox="0 0 20 40"
+                >
+                    <path
+                        d="M12 7 6 2M9 20H2M12 33l-6 5"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeWidth="4"
+                    />
+                </svg>
+                <a
+                    href={urls.whatsapp}
+                    aria-label="Speak to a doctor on WhatsApp"
+                    aria-describedby="whatsapp-chat-tooltip"
+                    className="flex size-14 items-center justify-center rounded-full bg-[#00cf68] text-white shadow-[0_10px_30px_rgba(0,207,104,0.35)] transition hover:-translate-y-0.5 hover:bg-[#00bd5f] hover:shadow-[0_12px_35px_rgba(0,207,104,0.45)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#00cf68]/30 focus-visible:ring-offset-2 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                >
+                    <WhatsAppIcon className="size-8" />
+                </a>
+            </div>
         </aside>
     )
 }

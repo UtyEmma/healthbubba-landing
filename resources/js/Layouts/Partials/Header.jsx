@@ -221,7 +221,7 @@ const PatientsMenu = () => {
                                 </Menu>
                             </li> */}
                             <li>
-                                <button onClick={open} >Download</button>
+                                <Link href={route('download')} >Download</Link>
                             </li>
                             <li>
                                 <Link href={`${route('blog')}`}>Blog</Link>
