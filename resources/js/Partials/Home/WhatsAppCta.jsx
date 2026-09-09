@@ -10,21 +10,21 @@ export default function () {
 
     return (
         <div className="px-2 mb-5">
-            <div className="flex mb-5 gap-2 flex-row items-center p-1.5 max-w-7xl bg-primary-100 rounded-2xl border border-primary-200 mx-auto md:justify-between" >
-                <div className="flex gap-1 items-center">
+            <div className="flex mb-5 gap-2 flex-row items-center p-1.5 md:p-2 max-w-7xl bg-primary-100 rounded-2xl border border-primary-200 mx-auto md:justify-between" >
+                <div className="flex gap-1 md:gap-3 items-center">
                     <div className="p-3 rounded-xl bg-primary" >
-                        <WhatsAppIcon className="size-6 text-white" />
+                        <WhatsAppIcon className="size-6 md:size-8 text-white" />
                     </div>
 
                     <div>
                         <h3 className="md:text-lg text-sm">Speak to a doctor in minutes</h3>
-                        <p className="text-gray-500 text-xs md:text-md">Simply send <span className="font-semibold">"Hi"</span> on WhatsApp and follow the prompts.</p>
+                        <p className="text-gray-500 text-xs md:text-base">Simply send <span className="font-semibold">"Hi"</span> on WhatsApp and follow the prompts.</p>
                     </div>
                 </div>
 
                 <div className="">
                     {/* <ArrowRightIcon className='size-6' /> */}
-                    <a href={urls.whatsapp} target="__blank" className='btn btn-primary text-xs p-2 py-1'>Start Instant Consultation</a>
+                    <a href={urls.whatsapp} target="__blank" className='btn btn-primary text-xs p-2 py-1 md:text-base md:p-3 md:py-2'>Start Instant Consultation</a>
                 </div>
             </div>
         </div>
