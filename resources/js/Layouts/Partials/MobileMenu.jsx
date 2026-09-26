@@ -1,9 +1,10 @@
 import { Disclosure, Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link, usePage } from '@inertiajs/react'
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { DownloadContext } from '../GuestLayout'
 import Disclose from '@/Components/Display/Disclose'
+import { useAppUrls } from '@/Hooks/useAppUrls'
 
 export const MobileMenu = () => {
 
@@ -11,6 +12,7 @@ export const MobileMenu = () => {
 
     const {is_practitioner, urls} = usePage().props
 
+    const { doctor, patient } = useAppUrls()
     return (
         <>
             <Popover className={'h-full'}>
@@ -69,12 +71,8 @@ export const MobileMenu = () => {
                                                 </Link>
                                             </Disclosure.Panel>
                                         </Disclosure> */}
-
-                                        <div role='button' onClick={() => {
-                                            close();
-                                            openDownload();
-                                        }} className='p-3 w-full'>
-                                            Download
+                                        <div className='flex justify-between items-center'>
+                                            <Link className="p-3 w-full" href={`${route(`download`)}`}>Download</Link>
                                         </div>
                                         <div className='flex justify-between items-center'>
                                             <Link className="p-3 w-full" href={`${route(`faqs`)}`}>FAQ</Link>
@@ -103,11 +101,8 @@ export const MobileMenu = () => {
                                         <div className='flex justify-between items-center'>
                                             <Link className="p-3 w-full" href={route(`practitioners.support`)}>Support</Link>
                                         </div>
-                                        <div role='button' onClick={() => {
-                                            close();
-                                            openDownload();
-                                        }} className='p-3 w-full'>
-                                            Download
+                                        <div className='flex justify-between items-center'>
+                                            <a href={ doctor} target='__blank' className="p-3 w-full" >Download</a>
                                         </div>
                                     </Disclose>
                                 </div>

@@ -9,10 +9,9 @@ import { CartModal } from './CartModal'
 import { MobileMenu } from './MobileMenu'
 import { useCart } from '@/Context/CartContext'
 import Disclose from '@/Components/Display/Disclose'
+import { useAppUrls } from '@/Hooks/useAppUrls'
 
 export const Header = () => {
-
-    
 
     const {is_practitioner} = usePage().props
 
@@ -24,8 +23,7 @@ export const Header = () => {
 const PractitionersMenu = () => {
     const {open} = useContext(DownloadContext)
 
-    const {items} = useCart()
-
+    const { doctor, patient } = useAppUrls()
     const scrollTo = (selector) => {
         const elm = document.getElementById(selector)
         window.scrollTo({
@@ -59,7 +57,7 @@ const PractitionersMenu = () => {
                             <Link href={`${route('blog')}`}>Blog</Link>
                         </li>
                         <li>
-                            <button onClick={open} >Download App</button>
+                            <a target='__blank' href={doctor}>Download App</a>
                         </li>
                     </ul>
                     <div>
