@@ -24,7 +24,7 @@ export default function () {
 
                 <div className="">
                     {/* <ArrowRightIcon className='size-6' /> */}
-                    <a href={urls.whatsapp} target="__blank" className='btn btn-primary text-xs p-2 py-1 md:text-base md:p-3 md:py-2'>Start Instant Consultation</a>
+                    <a href={urls.whatsapp} target="__blank" className='btn btn-primary text-xs p-2 py-1 md:text-base md:p-3 md:py-2 text-center'>Start Instant Consultation</a>
                 </div>
             </div>
         </div>
