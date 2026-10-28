@@ -219,7 +219,7 @@ const PatientsMenu = () => {
                                 </Menu>
                             </li> */}
                             <li>
-                                <Link target='__blank' href={props.urls.sales.dashboard} >Sales Portal</Link>
+                                <a target='__blank' href={props.urls.sales.dashboard} >Sales Portal</a>
                             </li>
                             <li>
                                 <Link href={`${route('blog')}`}>Blog</Link>
