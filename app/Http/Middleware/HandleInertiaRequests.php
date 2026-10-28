@@ -68,6 +68,9 @@ class HandleInertiaRequests extends Middleware
                     'login' => "{$web_url}/login",
                     'register' => "{$web_url}/register",
                 ],
+                'sales' => [
+                    'dashboard' => env('SALES_PORTAL'),
+                ],
                 'whatsapp' => env('WHATSAPP_CONSULT_URL'),
                 'whatsapp_support' => env('WHATSAPP_SUPPORT_URL'),
                 'sponsors' => env('SPONSORS_URL'),

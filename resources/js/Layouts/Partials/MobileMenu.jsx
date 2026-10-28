@@ -72,7 +72,7 @@ export const MobileMenu = () => {
                                             </Disclosure.Panel>
                                         </Disclosure> */}
                                         <div className='flex justify-between items-center'>
-                                            <Link className="p-3 w-full" href={`${route(`download`)}`}>Download</Link>
+                                            <Link className="p-3 w-full" href={urls.sales.dashboard}>Sales Portal</Link>
                                         </div>
                                         <div className='flex justify-between items-center'>
                                             <Link className="p-3 w-full" href={`${route(`faqs`)}`}>FAQ</Link>
